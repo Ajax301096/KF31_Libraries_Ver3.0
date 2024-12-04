@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KF31_図書館システム版3.0", "KF31_図書館システム版3.0\KF31_図書館システム版3.0.csproj", "{B04ACAE6-540E-4143-B632-80A881E0648E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B04ACAE6-540E-4143-B632-80A881E0648E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B04ACAE6-540E-4143-B632-80A881E0648E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B04ACAE6-540E-4143-B632-80A881E0648E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B04ACAE6-540E-4143-B632-80A881E0648E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2CFAA148-1BEF-4CD7-85BB-0DF45B1798AB}
+	EndGlobalSection
+EndGlobal
