@@ -4,9 +4,107 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KF31_図書館システム版3._0.BooKModel"
-        mc:Ignorable="d"
-        Title="Book_AddWindow" Height="450" Width="800">
-    <Grid>
+                                                                mc:Ignorable="d"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:uc="clr-namespace:KF31_図書館システム版3._0.UserControl_KF31"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"      
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
         
+        DataContext="{StaticResource BookViewModel}"
+        Title="本登録" Height="510" Width="800"
+        Name="book_add"
+        >
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}" 
+                       CommandParameter="{Binding ElementName=book_add}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid Background="#F2F2F2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"  Background="#c7816f">
+            <uc:Hamburger_Control Tag="{Binding Title,ElementName=book_add}"></uc:Hamburger_Control>
+        </Grid>
+        <Grid Grid.Row="1" Margin="37,0,0,50" Background="#e6e1dd" Height="292" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="711">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBlock Text="本登録" Foreground="#4c6462" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <!--タイトル-->
+                    <TextBlock  Grid.Row="0" Grid.Column="0" Width="150" Height="36" TextAlignment="Center"  Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" Padding="0,6,0,0" Text="カテゴリ"></TextBlock>
+                    <TextBlock  Grid.Row="1" Grid.Column="0" Width="150" Height="36" TextAlignment="Center"  Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" Padding="0,6,0,0" Text="出版社"></TextBlock>
+                    <!--入力コントロール-->
+                    <ComboBox  TabIndex="0" Grid.Row="0" Grid.Column="1" Width="150" Height="36"  Background="#eee" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" Padding="0,6,0,0"
+                               DisplayMemberPath="CategoryName" ItemsSource="{Binding Category}" SelectedItem="{Binding Selection_Category}"></ComboBox>
+                    <ComboBox  TabIndex="1" Grid.Row="1" Grid.Column="1" Width="150" Height="36"  Background="#eee" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" Padding="0,6,0,0"
+                               DisplayMemberPath="PublisherID" ItemsSource="{Binding Publisher}" SelectedItem="{Binding Selection_Publisher}"></ComboBox>
+
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <!--タイトル-->
+                    <TextBlock  Grid.Row="0" Grid.Column="0" Width="150" Height="36" TextAlignment="Center"  Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" Padding="0,6,0,0" Text="タイトル"></TextBlock>
+                    <TextBlock  Grid.Row="1" Grid.Column="0" Width="150" Height="36" TextAlignment="Center"  Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" Padding="0,6,0,0" Text="著者"></TextBlock>
+                    <!--入力コントロール-->
+                    <TextBox  TabIndex="2" Grid.Row="0" Grid.Column="1" Width="150" Height="36"  Background="#eee" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" Padding="0,6,0,0"
+                              Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                    <TextBox  TabIndex="3" Grid.Row="1" Grid.Column="1" Width="150" Height="36"  Background="#eee" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" Padding="0,6,0,0" 
+                              Text="{Binding Author, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+
+
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Button  BorderBrush="#b0816f" Background="#b0816f" Width="90" Height="40" FontSize="16" HorizontalAlignment="Right" Margin="0,0,130,0"
+                         Command="{Binding BookAddCommand}" CommandParameter="{Binding ElementName=book_add}" Content="登録"></Button>
+                <Button  BorderBrush="#b0816f" Background="#b0816f" Width="90" Height="40" FontSize="16" HorizontalAlignment="Right" Margin="0,0,30,0"
+              Command="{Binding BackBookCommand}" CommandParameter="{Binding ElementName=book_add}">戻る</Button>
+
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2" Background="#99b9a4" Height="57" VerticalAlignment="Bottom"/>
+
+
+
     </Grid>
 </Window>
+
+

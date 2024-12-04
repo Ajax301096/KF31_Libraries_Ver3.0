@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KF31_LliM5_DataBaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Book_table">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="BookID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Book_title" Type="nvarchar" MaxLength="250" />
+    <Property Name="CategoryID" Type="varchar" MaxLength="50" />
+    <Property Name="Book_Author" Type="nvarchar" MaxLength="250" />
+    <Property Name="PublisherID" Type="varchar" MaxLength="50" />
+    <Property Name="Book_Image" Type="varchar" MaxLength="50" />
+    <Property Name="Book_BarCode" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Category_table">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Employee_table">
+    <Key>
+      <PropertyRef Name="EmployID" />
+    </Key>
+    <Property Name="EmployID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="possitionID" Type="varchar" MaxLength="50" />
+    <Property Name="Em_userName" Type="varchar" MaxLength="50" />
+    <Property Name="Em_password" Type="varchar" MaxLength="50" />
+    <Property Name="Em_Birthday" Type="datetime" />
+    <Property Name="Em_Hiredate" Type="datetime" />
+    <Property Name="Em_Address" Type="nvarchar(max)" />
+    <Property Name="Em_Email" Type="nvarchar(max)" />
+    <Property Name="Em_DisplayName" Type="nvarchar(max)" />
+    <Property Name="Em_BarCode" Type="nvarchar(max)" />
+    <Property Name="Em_Lastlogin" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Lend_table">
+    <Key>
+      <PropertyRef Name="Lend_ID" />
+    </Key>
+    <Property Name="Lend_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="YoyakuID" Type="varchar" MaxLength="50" />
+    <Property Name="Rental_Date" Type="datetime" />
+    <Property Name="Return_Date" Type="datetime" />
+    <Property Name="Lend_Status" Type="nvarchar" MaxLength="250" />
+    <Property Name="EmployID" Type="varchar" MaxLength="50" />
+    <Property Name="Upload_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Libraty_table">
+    <Key>
+      <PropertyRef Name="LibratyID" />
+    </Key>
+    <Property Name="LibratyID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LibretyName" Type="nvarchar" MaxLength="250" />
+    <Property Name="Book_Quantity" Type="int" />
+  </EntityType>
+  <EntityType Name="Possition_table">
+    <Key>
+      <PropertyRef Name="possitionID" />
+    </Key>
+    <Property Name="possitionID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="possitionName" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Publisher_table">
+    <Key>
+      <PropertyRef Name="PublisherID" />
+    </Key>
+    <Property Name="PublisherID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PublisherName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Publisher_email" Type="varchar" MaxLength="255" />
+    <Property Name="Publisher_Phone" Type="varchar" MaxLength="13" />
+  </EntityType>
+  <EntityType Name="Status_table">
+    <Key>
+      <PropertyRef Name="statusID" />
+    </Key>
+    <Property Name="statusID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Stock_table">
+    <Key>
+      <PropertyRef Name="StockID" />
+    </Key>
+    <Property Name="StockID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BookID" Type="varchar" MaxLength="50" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="LibratyID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="StockIn_Detail_table">
+    <Key>
+      <PropertyRef Name="StockInDetailID" />
+    </Key>
+    <Property Name="StockInDetailID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="StockIn_ID" Type="varchar" MaxLength="50" />
+    <Property Name="BookID" Type="varchar" MaxLength="50" />
+    <Property Name="EmployID" Type="varchar" MaxLength="50" />
+    <Property Name="StockIn_Quantity" Type="int" />
+  </EntityType>
+  <EntityType Name="StockIN_Table">
+    <Key>
+      <PropertyRef Name="StockIN_ID" />
+    </Key>
+    <Property Name="StockIN_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="statusID" Type="varchar" MaxLength="50" />
+    <Property Name="stockIn_Count" Type="int" />
+    <Property Name="stockIn_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="StockOut_Detail_table">
+    <Key>
+      <PropertyRef Name="StockOutDetail_ID" />
+    </Key>
+    <Property Name="StockOutDetail_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="StockOut_ID" Type="varchar" MaxLength="50" />
+    <Property Name="BookID" Type="varchar" MaxLength="50" />
+    <Property Name="StockOut_Quantity" Type="int" />
+    <Property Name="EmployID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="StockOut_table">
+    <Key>
+      <PropertyRef Name="StockOut_ID" />
+    </Key>
+    <Property Name="StockOut_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LibratyID" Type="varchar" MaxLength="50" />
+    <Property Name="statusID" Type="varchar" MaxLength="50" />
+    <Property Name="stockOut_Count" Type="int" />
+    <Property Name="stockOut_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="User_table">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+    <Property Name="Birthday" Type="datetime" />
+    <Property Name="address" Type="nvarchar(max)" />
+    <Property Name="lasslogin" Type="datetime" />
+    <Property Name="mail" Type="nvarchar(max)" />
+    <Property Name="Tell" Type="varchar" MaxLength="13" />
+  </EntityType>
+  <EntityType Name="Yoyaku_table">
+    <Key>
+      <PropertyRef Name="YoyakuID" />
+    </Key>
+    <Property Name="YoyakuID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="userID" Type="varchar" MaxLength="50" />
+    <Property Name="StockID" Type="varchar" MaxLength="50" />
+    <Property Name="ReturnTime" Type="datetime" />
+    <Property Name="statusID" Type="varchar" MaxLength="50" />
+    <Property Name="Yoyaku_Barcode" Type="varchar(max)" />
+    <Property Name="start_time" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__Book_tabl__Categ__4CA06362">
+    <End Role="Category_table" Type="Self.Category_table" Multiplicity="0..1" />
+    <End Role="Book_table" Type="Self.Book_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category_table">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Book_table">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Book_tabl__Publi__4D94879B">
+    <End Role="Publisher_table" Type="Self.Publisher_table" Multiplicity="0..1" />
+    <End Role="Book_table" Type="Self.Book_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Publisher_table">
+        <PropertyRef Name="PublisherID" />
+      </Principal>
+      <Dependent Role="Book_table">
+        <PropertyRef Name="PublisherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee___possi__3F466844">
+    <End Role="Possition_table" Type="Self.Possition_table" Multiplicity="0..1" />
+    <End Role="Employee_table" Type="Self.Employee_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Possition_table">
+        <PropertyRef Name="possitionID" />
+      </Principal>
+      <Dependent Role="Employee_table">
+        <PropertyRef Name="possitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Lend_tabl__Emplo__6383C8BA">
+    <End Role="Employee_table" Type="Self.Employee_table" Multiplicity="0..1" />
+    <End Role="Lend_table" Type="Self.Lend_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_table">
+        <PropertyRef Name="EmployID" />
+      </Principal>
+      <Dependent Role="Lend_table">
+        <PropertyRef Name="EmployID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Lend_tabl__Yoyak__628FA481">
+    <End Role="Yoyaku_table" Type="Self.Yoyaku_table" Multiplicity="0..1" />
+    <End Role="Lend_table" Type="Self.Lend_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Yoyaku_table">
+        <PropertyRef Name="YoyakuID" />
+      </Principal>
+      <Dependent Role="Lend_table">
+        <PropertyRef Name="YoyakuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Stock_tab__BookI__5165187F">
+    <End Role="Book_table" Type="Self.Book_table" Multiplicity="0..1" />
+    <End Role="Stock_table" Type="Self.Stock_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Book_table">
+        <PropertyRef Name="BookID" />
+      </Principal>
+      <Dependent Role="Stock_table">
+        <PropertyRef Name="BookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Stock_tab__Libra__5070F446">
+    <End Role="Libraty_table" Type="Self.Libraty_table" Multiplicity="0..1" />
+    <End Role="Stock_table" Type="Self.Stock_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Libraty_table">
+        <PropertyRef Name="LibratyID" />
+      </Principal>
+      <Dependent Role="Stock_table">
+        <PropertyRef Name="LibratyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StockIn_D__BookI__5535A963">
+    <End Role="Book_table" Type="Self.Book_table" Multiplicity="0..1" />
+    <End Role="StockIn_Detail_table" Type="Self.StockIn_Detail_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Book_table">
+        <PropertyRef Name="BookID" />
+      </Principal>
+      <Dependent Role="StockIn_Detail_table">
+        <PropertyRef Name="BookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StockIn_D__Emplo__5629CD9C">
+    <End Role="Employee_table" Type="Self.Employee_table" Multiplicity="0..1" />
+    <End Role="StockIn_Detail_table" Type="Self.StockIn_Detail_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_table">
+        <PropertyRef Name="EmployID" />
+      </Principal>
+      <Dependent Role="StockIn_Detail_table">
+        <PropertyRef Name="EmployID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StockIn_D__Stock__5441852A">
+    <End Role="StockIN_Table" Type="Self.StockIN_Table" Multiplicity="0..1" />
+    <End Role="StockIn_Detail_table" Type="Self.StockIn_Detail_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StockIN_Table">
+        <PropertyRef Name="StockIN_ID" />
+      </Principal>
+      <Dependent Role="StockIn_Detail_table">
+        <PropertyRef Name="StockIn_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StockIN_T__statu__45F365D3">
+    <End Role="Status_table" Type="Self.Status_table" Multiplicity="0..1" />
+    <End Role="StockIN_Table" Type="Self.StockIN_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status_table">
+        <PropertyRef Name="statusID" />
+      </Principal>
+      <Dependent Role="StockIN_Table">
+        <PropertyRef Name="statusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StockOut___BookI__59FA5E80">
+    <End Role="Book_table" Type="Self.Book_table" Multiplicity="0..1" />
+    <End Role="StockOut_Detail_table" Type="Self.StockOut_Detail_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Book_table">
+        <PropertyRef Name="BookID" />
+      </Principal>
+      <Dependent Role="StockOut_Detail_table">
+        <PropertyRef Name="BookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StockOut___Emplo__5AEE82B9">
+    <End Role="Employee_table" Type="Self.Employee_table" Multiplicity="0..1" />
+    <End Role="StockOut_Detail_table" Type="Self.StockOut_Detail_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_table">
+        <PropertyRef Name="EmployID" />
+      </Principal>
+      <Dependent Role="StockOut_Detail_table">
+        <PropertyRef Name="EmployID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StockOut___Libra__49C3F6B7">
+    <End Role="Libraty_table" Type="Self.Libraty_table" Multiplicity="0..1" />
+    <End Role="StockOut_table" Type="Self.StockOut_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Libraty_table">
+        <PropertyRef Name="LibratyID" />
+      </Principal>
+      <Dependent Role="StockOut_table">
+        <PropertyRef Name="LibratyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StockOut___statu__48CFD27E">
+    <End Role="Status_table" Type="Self.Status_table" Multiplicity="0..1" />
+    <End Role="StockOut_table" Type="Self.StockOut_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status_table">
+        <PropertyRef Name="statusID" />
+      </Principal>
+      <Dependent Role="StockOut_table">
+        <PropertyRef Name="statusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StockOut___Stock__59063A47">
+    <End Role="StockOut_table" Type="Self.StockOut_table" Multiplicity="0..1" />
+    <End Role="StockOut_Detail_table" Type="Self.StockOut_Detail_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StockOut_table">
+        <PropertyRef Name="StockOut_ID" />
+      </Principal>
+      <Dependent Role="StockOut_Detail_table">
+        <PropertyRef Name="StockOut_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Yoyaku_ta__statu__5EBF139D">
+    <End Role="Status_table" Type="Self.Status_table" Multiplicity="0..1" />
+    <End Role="Yoyaku_table" Type="Self.Yoyaku_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status_table">
+        <PropertyRef Name="statusID" />
+      </Principal>
+      <Dependent Role="Yoyaku_table">
+        <PropertyRef Name="statusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Yoyaku_ta__Stock__5DCAEF64">
+    <End Role="Stock_table" Type="Self.Stock_table" Multiplicity="0..1" />
+    <End Role="Yoyaku_table" Type="Self.Yoyaku_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock_table">
+        <PropertyRef Name="StockID" />
+      </Principal>
+      <Dependent Role="Yoyaku_table">
+        <PropertyRef Name="StockID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Yoyaku_ta__userI__5FB337D6">
+    <End Role="User_table" Type="Self.User_table" Multiplicity="0..1" />
+    <End Role="Yoyaku_table" Type="Self.Yoyaku_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_table">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="Yoyaku_table">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KF31_LliM5_DataBaseModelStoreContainer">
+    <EntitySet Name="Book_table" EntityType="Self.Book_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category_table" EntityType="Self.Category_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee_table" EntityType="Self.Employee_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lend_table" EntityType="Self.Lend_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Libraty_table" EntityType="Self.Libraty_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Possition_table" EntityType="Self.Possition_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Publisher_table" EntityType="Self.Publisher_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status_table" EntityType="Self.Status_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stock_table" EntityType="Self.Stock_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StockIn_Detail_table" EntityType="Self.StockIn_Detail_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StockIN_Table" EntityType="Self.StockIN_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StockOut_Detail_table" EntityType="Self.StockOut_Detail_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StockOut_table" EntityType="Self.StockOut_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_table" EntityType="Self.User_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Yoyaku_table" EntityType="Self.Yoyaku_table" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Book_tabl__Categ__4CA06362" Association="Self.FK__Book_tabl__Categ__4CA06362">
+      <End Role="Category_table" EntitySet="Category_table" />
+      <End Role="Book_table" EntitySet="Book_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Book_tabl__Publi__4D94879B" Association="Self.FK__Book_tabl__Publi__4D94879B">
+      <End Role="Publisher_table" EntitySet="Publisher_table" />
+      <End Role="Book_table" EntitySet="Book_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee___possi__3F466844" Association="Self.FK__Employee___possi__3F466844">
+      <End Role="Possition_table" EntitySet="Possition_table" />
+      <End Role="Employee_table" EntitySet="Employee_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Lend_tabl__Emplo__6383C8BA" Association="Self.FK__Lend_tabl__Emplo__6383C8BA">
+      <End Role="Employee_table" EntitySet="Employee_table" />
+      <End Role="Lend_table" EntitySet="Lend_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Lend_tabl__Yoyak__628FA481" Association="Self.FK__Lend_tabl__Yoyak__628FA481">
+      <End Role="Yoyaku_table" EntitySet="Yoyaku_table" />
+      <End Role="Lend_table" EntitySet="Lend_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Stock_tab__BookI__5165187F" Association="Self.FK__Stock_tab__BookI__5165187F">
+      <End Role="Book_table" EntitySet="Book_table" />
+      <End Role="Stock_table" EntitySet="Stock_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Stock_tab__Libra__5070F446" Association="Self.FK__Stock_tab__Libra__5070F446">
+      <End Role="Libraty_table" EntitySet="Libraty_table" />
+      <End Role="Stock_table" EntitySet="Stock_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StockIn_D__BookI__5535A963" Association="Self.FK__StockIn_D__BookI__5535A963">
+      <End Role="Book_table" EntitySet="Book_table" />
+      <End Role="StockIn_Detail_table" EntitySet="StockIn_Detail_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StockIn_D__Emplo__5629CD9C" Association="Self.FK__StockIn_D__Emplo__5629CD9C">
+      <End Role="Employee_table" EntitySet="Employee_table" />
+      <End Role="StockIn_Detail_table" EntitySet="StockIn_Detail_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StockIn_D__Stock__5441852A" Association="Self.FK__StockIn_D__Stock__5441852A">
+      <End Role="StockIN_Table" EntitySet="StockIN_Table" />
+      <End Role="StockIn_Detail_table" EntitySet="StockIn_Detail_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StockIN_T__statu__45F365D3" Association="Self.FK__StockIN_T__statu__45F365D3">
+      <End Role="Status_table" EntitySet="Status_table" />
+      <End Role="StockIN_Table" EntitySet="StockIN_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StockOut___BookI__59FA5E80" Association="Self.FK__StockOut___BookI__59FA5E80">
+      <End Role="Book_table" EntitySet="Book_table" />
+      <End Role="StockOut_Detail_table" EntitySet="StockOut_Detail_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StockOut___Emplo__5AEE82B9" Association="Self.FK__StockOut___Emplo__5AEE82B9">
+      <End Role="Employee_table" EntitySet="Employee_table" />
+      <End Role="StockOut_Detail_table" EntitySet="StockOut_Detail_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StockOut___Libra__49C3F6B7" Association="Self.FK__StockOut___Libra__49C3F6B7">
+      <End Role="Libraty_table" EntitySet="Libraty_table" />
+      <End Role="StockOut_table" EntitySet="StockOut_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StockOut___statu__48CFD27E" Association="Self.FK__StockOut___statu__48CFD27E">
+      <End Role="Status_table" EntitySet="Status_table" />
+      <End Role="StockOut_table" EntitySet="StockOut_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StockOut___Stock__59063A47" Association="Self.FK__StockOut___Stock__59063A47">
+      <End Role="StockOut_table" EntitySet="StockOut_table" />
+      <End Role="StockOut_Detail_table" EntitySet="StockOut_Detail_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Yoyaku_ta__statu__5EBF139D" Association="Self.FK__Yoyaku_ta__statu__5EBF139D">
+      <End Role="Status_table" EntitySet="Status_table" />
+      <End Role="Yoyaku_table" EntitySet="Yoyaku_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Yoyaku_ta__Stock__5DCAEF64" Association="Self.FK__Yoyaku_ta__Stock__5DCAEF64">
+      <End Role="Stock_table" EntitySet="Stock_table" />
+      <End Role="Yoyaku_table" EntitySet="Yoyaku_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Yoyaku_ta__userI__5FB337D6" Association="Self.FK__Yoyaku_ta__userI__5FB337D6">
+      <End Role="User_table" EntitySet="User_table" />
+      <End Role="Yoyaku_table" EntitySet="Yoyaku_table" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

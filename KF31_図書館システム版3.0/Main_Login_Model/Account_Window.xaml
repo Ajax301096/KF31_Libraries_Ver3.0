@@ -4,9 +4,71 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KF31_図書館システム版3._0.Main_Login_Model"
-        mc:Ignorable="d"
-        Title="Account_Window" Height="450" Width="800">
-    <Grid>
+                                                                       mc:Ignorable="d"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:uc="clr-namespace:KF31_図書館システム版3._0.UserControl_KF31"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"      
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
         
+        DataContext="{StaticResource MainViewModel}"
+        Title="アカウント" Height="400" Width="500"
+        Name="account"
+        >
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}" 
+                       CommandParameter="{Binding ElementName=account}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid Background="#F2F2F2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"  Background="#c7816f">
+            <uc:Account_Control Tag="{Binding Title,ElementName=account}"></uc:Account_Control>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"></ColumnDefinition>
+                <ColumnDefinition Width="10"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <StackPanel>
+                    <TextBlock FontSize="18" Margin="30,45,0,0" Text="{Binding Employ_ID}"></TextBlock>
+                    <TextBlock FontSize="18" Margin="30,10,0,0" Text="{Binding Employ_Name}"></TextBlock>
+                    <TextBlock FontSize="18" Margin="30,10,0,0" Text="{Binding Possition_Name}"></TextBlock>
+                    <TextBlock FontSize="18" Margin="30,10,0,0" Text="{Binding Birthday}"></TextBlock>
+                    <TextBlock FontSize="18" Margin="30,10,0,0" Text="{Binding Hiredate}"></TextBlock>
+                    <TextBlock FontSize="18" Margin="30,10,0,0" Text="{Binding Email}" TextWrapping="Wrap"></TextBlock>
+                    <TextBlock FontSize="18" Margin="30,10,0,0" Text="{Binding Address}" TextWrapping="Wrap"></TextBlock>
+                </StackPanel>
+
+            </Grid>
+            <Border Background="#a2b1b3" Grid.Column="1" Height="250" Width="2" />
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="250"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Height="150" Width="150" Source="{Binding Path=QRCodeImage}"></Image>
+                <Button Grid.Row="1" Content="パスワード更新" HorizontalAlignment="Center" Height="44" BorderBrush="#b0816f" Background="#b0816f" VerticalAlignment="Center" Width="100" FontSize="12"
+         Command="{Binding PassUpdate_WindowCommand}" CommandParameter="{Binding ElementName=account}"/>
+
+            </Grid>
+        </Grid>
+
+
     </Grid>
 </Window>
+

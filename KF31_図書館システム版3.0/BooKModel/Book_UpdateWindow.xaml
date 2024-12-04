@@ -4,9 +4,65 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KF31_図書館システム版3._0.BooKModel"
-        mc:Ignorable="d"
-        Title="Book_UpdateWindow" Height="450" Width="800">
-    <Grid>
+                        mc:Ignorable="d"
+        xmlns:uc="clr-namespace:KF31_図書館システム版3._0.UserControl_KF31"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"      
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
         
+         DataContext="{StaticResource BookViewModel}"
+        Title="本情報更新" Height="510" Width="800"
+        Name="update_book"
+        >
+    <Grid>
+
+        <!-- 背景ベージュにする -->
+        <Grid Background="#F2F2F2" HorizontalAlignment="Center" Width="800"></Grid>
+
+        <!-- 中の枠を変える -->
+        <Grid Background="#F0EBE7" HorizontalAlignment="Center" Width="750" Margin="0,110,0,45"/>
+
+        <!-- ハンバーガー -->
+        <uc:Hamburger_Control Tag="{Binding Title,ElementName=update_book}"></uc:Hamburger_Control>
+
+        <!-- 本IDとComboBox -->
+        <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="35" Margin="63,173,0,0" TextWrapping="Wrap" Text=" 本ID"  VerticalAlignment="Top" Width="200" FontSize="23" FontWeight="Bold"/>
+        <ComboBox HorizontalAlignment="Left" Background="#eee" Margin="263,173,0,0" VerticalAlignment="Top" Width="168" Height="39"
+                       DisplayMemberPath="BookID" ItemsSource="{Binding Books}" SelectedItem="{Binding Selection_Book, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+        <!-- タイトル名とTextBox -->
+        <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="35" Margin="63,209,0,0" TextWrapping="Wrap" Text=" タイトル"  VerticalAlignment="Top" Width="200" FontSize="23" FontWeight="Bold"/>
+        <TextBox TabIndex="0" Foreground="#2a3837" Background="#eee" HorizontalAlignment="Left" Height="34" Margin="263,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="14"
+                      Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+
+
+        <!-- カテゴリ Name とTextBox -->
+        <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="36" Margin="63,245,0,0" TextWrapping="Wrap" Text="カテゴリ"  VerticalAlignment="Top" Width="200" FontSize="23" FontWeight="Bold"/>
+        <ComboBox HorizontalAlignment="Left" Background="#eee" Margin="263,246,0,0" VerticalAlignment="Top" Width="168" Height="40"
+                       DisplayMemberPath="CategoryName" ItemsSource="{Binding Category}" SelectedItem="{Binding Selection_Category, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <!-- 著者 -->
+        <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="35" Margin="63,282,0,0" TextWrapping="Wrap" Text=" 著者"  VerticalAlignment="Top" Width="200" FontSize="23" FontWeight="Bold"/>
+        <TextBox TabIndex="0" Foreground="#2a3837" Background="#eee" HorizontalAlignment="Center" Height="30" Margin="0,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" FontSize="14"
+                      Text="{Binding Author, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+
+        <!-- 出版社IDとTextBox -->
+        <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="35" Margin="63,318,0,0" TextWrapping="Wrap" Text=" 出版社"  VerticalAlignment="Top" Width="200" FontSize="23" FontWeight="Bold"/>
+        <ComboBox HorizontalAlignment="Left" Background="#eee" Margin="263,320,0,0" VerticalAlignment="Top" Width="168" Height="40"
+                DisplayMemberPath="PublisherID" ItemsSource="{Binding Publisher}" SelectedItem="{Binding Selection_Publisher, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <!-- 更新ボタン -->
+
+        <Button Content="更新" HorizontalAlignment="Left" FontSize="28" Margin="522,387,0,0" VerticalAlignment="Top" Width="117" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" Height="56"
+                    Command="{Binding BookUpdateCommand}" CommandParameter="{Binding ElementName=update_book}"/>
+
     </Grid>
 </Window>
+
+

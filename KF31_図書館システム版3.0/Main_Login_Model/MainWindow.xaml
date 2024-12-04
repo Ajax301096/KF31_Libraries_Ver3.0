@@ -4,9 +4,134 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KF31_図書館システム版3._0.Main_Login_Model"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+                           mc:Ignorable="d"
+         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+         xmlns:uc="clr-namespace:KF31_図書館システム版3._0.UserControl_KF31"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"      
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
         
+        DataContext="{StaticResource MainViewModel }"
+        Name="mainWindow"
+        Title="メイン" Height="700" Width="1000"
+        
+        >
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}" 
+                               CommandParameter="{Binding ElementName=mainWindow}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid Background="#F2F2F2" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#c7816f">
+            <uc:Main_Control Tag="{Binding Title,ElementName=mainWindow}"></uc:Main_Control>
+        </Grid>
+        <Grid Grid.Row="1" Background="#E6E1DD" Height="500" Width="900">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="400"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <!--タイトル-->
+                    <ColumnDefinition Width="250"></ColumnDefinition>
+                    <ColumnDefinition Width="450"></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <!--社員名と社員ID-->
+                    <Border Grid.Column="1" Margin="10,10,20,0" BorderBrush="#d0d9d4" BorderThickness="2">
+                        <StackPanel>
+                            <TextBlock Margin="10,10,0,0" Text="{Binding Employ_ID}"></TextBlock>
+                            <TextBlock Margin="10,10,0,0" Text="{Binding Employ_Name}"></TextBlock>
+                            <TextBlock Margin="10,10,0,0" Text="{Binding Possition_Name}"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <!--タイトル画面-->
+                    <Label Foreground="#4C6462" FontSize="50"  VerticalAlignment="Center" Margin="80,0,90,0" >メイン</Label>
+                    <Label Foreground="#4C6462" FontSize="50"  VerticalAlignment="Center" Margin="190,0,0,0">管理</Label>
+                </Grid>
+
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="600"></ColumnDefinition>
+                    <ColumnDefinition Width="300"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <WrapPanel Margin="20,30,40,40">
+                        <Button Width="100" Height="100" Margin="0,30,20,30" BorderBrush="#B0816F" BorderThickness="2" Background="#B0816F" Foreground="#170d02" FontSize="30" 
+                                Command="{Binding EmployWindowCommand}" CommandParameter="{Binding ElementName=mainWindow}">社員</Button>
+                        <Button Width="100" Height="100" Margin="0,30,20,30" BorderBrush="#B0816F" BorderThickness="2" Background="#B0816F" Foreground="#170d02" FontSize="30"
+                                Command="{Binding StockWindowCommand}" CommandParameter="{Binding ElementName=mainWindow}">在庫</Button>
+                        <Button Width="100" Height="100" Margin="0,30,20,30" BorderBrush="#B0816F" BorderThickness="2" Background="#B0816F" Foreground="#170d02" FontSize="30"
+                                Command="{Binding StockInWindowCommand}" CommandParameter="{Binding ElementName=mainWindow}">入庫</Button>
+                        <Button Width="100" Height="100" Margin="0,30,20,30" BorderBrush="#B0816F" BorderThickness="2" Background="#B0816F" Foreground="#170d02" FontSize="30"
+                                Command="{Binding StockOutWindowCommand}" CommandParameter="{Binding ElementName=mainWindow}">出庫</Button>
+                        <Button Width="100" Height="100" Margin="0,30,20,30" BorderBrush="#B0816F" BorderThickness="2" Background="#B0816F" Foreground="#170d02" FontSize="30">貸出</Button>
+                        <Button Width="100" Height="100" Margin="0,30,20,30" BorderBrush="#B0816F" BorderThickness="2" Background="#B0816F" Foreground="#170d02" FontSize="30"
+                                Command="{Binding BookWindowCommand}" CommandParameter="{Binding ElementName=mainWindow}">本</Button>
+                        <Button Width="220" Height="100" Margin="0,30,20,30" BorderBrush="#B0816F" BorderThickness="2" Background="#B0816F" Foreground="#170d02" FontSize="30"
+                                Command="{Binding PushlisherWindowCommand}" CommandParameter="{Binding ElementName=mainWindow}" >出版社</Button>
+
+
+                    </WrapPanel>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"></RowDefinition>
+                        <RowDefinition Height="200"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" Height="120" Width="250" Margin="17,60,33,20" Background="#96b079"  BorderThickness="1" CornerRadius="20">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Margin="16 16 16 4" FontSize="25">現在の蔵書数
+                            </TextBlock>
+                            <Separator Grid.Row="1" Height="10" Width="120" Style="{StaticResource MaterialDesignLightSeparator}" />
+                            <TextBlock Grid.Row="2" Margin="16 0 16 8" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding stock_Count}">2000
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Row="1" Height="120" Width="250" Margin="0,0,20,35" Background="#96b079"  BorderThickness="1" CornerRadius="20">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Margin="16 16 16 4" FontSize="25">社員数
+                            </TextBlock>
+                            <Separator Grid.Row="1" Height="10" Width="120" Style="{StaticResource MaterialDesignLightSeparator}" />
+                            <TextBlock Grid.Row="2" Margin="16 0 16 8" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Employ_Count}">2000
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2" Height="80" Background="#CAD2C5"  />
     </Grid>
 </Window>
+

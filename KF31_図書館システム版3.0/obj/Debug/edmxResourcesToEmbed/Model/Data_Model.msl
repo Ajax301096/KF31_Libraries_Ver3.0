@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KF31_LliM5_DataBaseModelStoreContainer" CdmEntityContainer="KF31_LliM5_DataBaseEntities">
+    <EntitySetMapping Name="Book_table">
+      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.Book_table">
+        <MappingFragment StoreEntitySet="Book_table">
+          <ScalarProperty Name="BookID" ColumnName="BookID" />
+          <ScalarProperty Name="Book_title" ColumnName="Book_title" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="Book_Author" ColumnName="Book_Author" />
+          <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+          <ScalarProperty Name="Book_Image" ColumnName="Book_Image" />
+          <ScalarProperty Name="Book_BarCode" ColumnName="Book_BarCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Category_table">
+      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.Category_table">
+        <MappingFragment StoreEntitySet="Category_table">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee_table">
+      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.Employee_table">
+        <MappingFragment StoreEntitySet="Employee_table">
+          <ScalarProperty Name="EmployID" ColumnName="EmployID" />
+          <ScalarProperty Name="possitionID" ColumnName="possitionID" />
+          <ScalarProperty Name="Em_userName" ColumnName="Em_userName" />
+          <ScalarProperty Name="Em_password" ColumnName="Em_password" />
+          <ScalarProperty Name="Em_Birthday" ColumnName="Em_Birthday" />
+          <ScalarProperty Name="Em_Hiredate" ColumnName="Em_Hiredate" />
+          <ScalarProperty Name="Em_Address" ColumnName="Em_Address" />
+          <ScalarProperty Name="Em_Email" ColumnName="Em_Email" />
+          <ScalarProperty Name="Em_DisplayName" ColumnName="Em_DisplayName" />
+          <ScalarProperty Name="Em_BarCode" ColumnName="Em_BarCode" />
+          <ScalarProperty Name="Em_Lastlogin" ColumnName="Em_Lastlogin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lend_table">
+      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.Lend_table">
+        <MappingFragment StoreEntitySet="Lend_table">
+          <ScalarProperty Name="Lend_ID" ColumnName="Lend_ID" />
+          <ScalarProperty Name="YoyakuID" ColumnName="YoyakuID" />
+          <ScalarProperty Name="Rental_Date" ColumnName="Rental_Date" />
+          <ScalarProperty Name="Return_Date" ColumnName="Return_Date" />
+          <ScalarProperty Name="Lend_Status" ColumnName="Lend_Status" />
+          <ScalarProperty Name="EmployID" ColumnName="EmployID" />
+          <ScalarProperty Name="Upload_Date" ColumnName="Upload_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Libraty_table">
+      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.Libraty_table">
+        <MappingFragment StoreEntitySet="Libraty_table">
+          <ScalarProperty Name="LibratyID" ColumnName="LibratyID" />
+          <ScalarProperty Name="LibretyName" ColumnName="LibretyName" />
+          <ScalarProperty Name="Book_Quantity" ColumnName="Book_Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Possition_table">
+      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.Possition_table">
+        <MappingFragment StoreEntitySet="Possition_table">
+          <ScalarProperty Name="possitionID" ColumnName="possitionID" />
+          <ScalarProperty Name="possitionName" ColumnName="possitionName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Publisher_table">
+      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.Publisher_table">
+        <MappingFragment StoreEntitySet="Publisher_table">
+          <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+          <ScalarProperty Name="PublisherName" ColumnName="PublisherName" />
+          <ScalarProperty Name="Publisher_email" ColumnName="Publisher_email" />
+          <ScalarProperty Name="Publisher_Phone" ColumnName="Publisher_Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status_table">
+      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.Status_table">
+        <MappingFragment StoreEntitySet="Status_table">
+          <ScalarProperty Name="statusID" ColumnName="statusID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stock_table">
+      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.Stock_table">
+        <MappingFragment StoreEntitySet="Stock_table">
+          <ScalarProperty Name="StockID" ColumnName="StockID" />
+          <ScalarProperty Name="BookID" ColumnName="BookID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="LibratyID" ColumnName="LibratyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StockIn_Detail_table">
+      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.StockIn_Detail_table">
+        <MappingFragment StoreEntitySet="StockIn_Detail_table">
+          <ScalarProperty Name="StockInDetailID" ColumnName="StockInDetailID" />
+          <ScalarProperty Name="StockIn_ID" ColumnName="StockIn_ID" />
+          <ScalarProperty Name="BookID" ColumnName="BookID" />
+          <ScalarProperty Name="EmployID" ColumnName="EmployID" />
+          <ScalarProperty Name="StockIn_Quantity" ColumnName="StockIn_Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StockIN_Table">
+      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.StockIN_Table">
+        <MappingFragment StoreEntitySet="StockIN_Table">
+          <ScalarProperty Name="StockIN_ID" ColumnName="StockIN_ID" />
+          <ScalarProperty Name="statusID" ColumnName="statusID" />
+          <ScalarProperty Name="stockIn_Count" ColumnName="stockIn_Count" />
+          <ScalarProperty Name="stockIn_Date" ColumnName="stockIn_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StockOut_Detail_table">
+      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.StockOut_Detail_table">
+        <MappingFragment StoreEntitySet="StockOut_Detail_table">
+          <ScalarProperty Name="StockOutDetail_ID" ColumnName="StockOutDetail_ID" />
+          <ScalarProperty Name="StockOut_ID" ColumnName="StockOut_ID" />
+          <ScalarProperty Name="BookID" ColumnName="BookID" />
+          <ScalarProperty Name="StockOut_Quantity" ColumnName="StockOut_Quantity" />
+          <ScalarProperty Name="EmployID" ColumnName="EmployID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StockOut_table">
+      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.StockOut_table">
+        <MappingFragment StoreEntitySet="StockOut_table">
+          <ScalarProperty Name="StockOut_ID" ColumnName="StockOut_ID" />
+          <ScalarProperty Name="LibratyID" ColumnName="LibratyID" />
+          <ScalarProperty Name="statusID" ColumnName="statusID" />
+          <ScalarProperty Name="stockOut_Count" ColumnName="stockOut_Count" />
+          <ScalarProperty Name="stockOut_Date" ColumnName="stockOut_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_table">
+      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.User_table">
+        <MappingFragment StoreEntitySet="User_table">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="lasslogin" ColumnName="lasslogin" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="Tell" ColumnName="Tell" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yoyaku_table">
+      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.Yoyaku_table">
+        <MappingFragment StoreEntitySet="Yoyaku_table">
+          <ScalarProperty Name="YoyakuID" ColumnName="YoyakuID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="StockID" ColumnName="StockID" />
+          <ScalarProperty Name="ReturnTime" ColumnName="ReturnTime" />
+          <ScalarProperty Name="statusID" ColumnName="statusID" />
+          <ScalarProperty Name="Yoyaku_Barcode" ColumnName="Yoyaku_Barcode" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

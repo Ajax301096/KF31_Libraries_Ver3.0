@@ -4,9 +4,65 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KF31_図書館システム版3._0.UserControl_KF31"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+                                  mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             d:DesignHeight="450" d:DesignWidth="800"
+
+    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+    TextElement.FontWeight="Regular"
+    TextElement.FontSize="13"
+    TextOptions.TextFormattingMode="Ideal"
+    TextOptions.TextRenderingMode="Auto"
+    Background="{DynamicResource MaterialDesignPaper}"
+    FontFamily="{DynamicResource MaterialDesignFont}"
+             DataContext="{StaticResource ControlViewModel}"
+Name="accountControlBar"
+            >
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="MouseLeftButtonDown">
+            <i:InvokeCommandAction Command="{Binding MouseMoveWindowCommand}"
+                               CommandParameter="{Binding ElementName=accountControlBar}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Grid>
-            
+        <materialDesign:ColorZone
+  Mode="PrimaryDark"
+  Padding="16"
+  CornerRadius="3"
+  Margin="2" Background="#c7816f">
+            <DockPanel>
+                <StackPanel Orientation="Horizontal" Background="Transparent" DockPanel.Dock="Right">
+
+                    <Button  Background="#c7816f" BorderBrush="#c7816f" Command="{Binding MinimizeWindowCommand}"
+                        CommandParameter="{Binding ElementName=accountControlBar}"   Cursor="Hand" >
+                        <materialDesign:PackIcon Kind="WindowMinimize" />
+                    </Button>
+                    <Button   Background="#c7816f" BorderBrush="#c7816f" Command="{Binding MaximizeWindowCommand}"
+                        CommandParameter="{Binding ElementName=accountControlBar}"  Cursor="Hand" >
+                        <materialDesign:PackIcon Kind="WindowMaximize" />
+                    </Button>
+                    <Button  Background="#c7816f" BorderBrush="#c7816f" Command="{Binding CloseWindowCommand}"
+                        CommandParameter="{Binding ElementName=accountControlBar}" Cursor="Hand"  >
+                        <materialDesign:PackIcon Kind="WindowClose" />
+                    </Button>
+                </StackPanel>
+                <StackPanel DockPanel.Dock="Left"
+                         Orientation="Horizontal">
+                    <Grid Margin="-14,-14,0,-14" Width="80" Height="50" Background="#c7816f">
+                        <materialDesign:PackIcon Kind="Account" Width="40" Height="40" Margin="20,0,0,0"/>
+                    </Grid>
+                    <TextBlock
+      VerticalAlignment="Center"
+      Margin="16 0 0 0" Text="{Binding Tag, ElementName=LoginControlBar}">
+
+                    </TextBlock>
+                </StackPanel>
+
+            </DockPanel>
+
+        </materialDesign:ColorZone>
     </Grid>
 </UserControl>
+
+

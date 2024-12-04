@@ -4,9 +4,55 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KF31_図書館システム版3._0.BooKModel"
-        mc:Ignorable="d"
-        Title="Book_Window" Height="450" Width="800">
-    <Grid>
+                      mc:Ignorable="d"
+        xmlns:uc="clr-namespace:KF31_図書館システム版3._0.UserControl_KF31"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"      
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
         
+         DataContext="{StaticResource BookViewModel}"
+        Title="本管理" Height="510" Width="800"
+        Name="Bookwindow"
+        >
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}" 
+                           CommandParameter="{Binding ElementName=Bookwindow}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid Background="#F2F2F2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"  Background="#c7816f">
+            <uc:Hamburger_Control Tag="{Binding Title,ElementName=Bookwindow}"></uc:Hamburger_Control>
+        </Grid>
+        <Grid Grid.Row="1" Margin="37,0,0,50" Background="#e6e1dd" Height="292" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="711">
+            <Button Content="登録" HorizontalAlignment="Left" Height="84" Margin="51,135,0,0" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" VerticalAlignment="Top" Width="99" FontSize="22"
+                    Command="{Binding BookAddWindowCommand}" CommandParameter="{Binding ElementName=Bookwindow}"/>
+            <Button Content="更新" HorizontalAlignment="Left" Height="84" Margin="216,135,0,0" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" VerticalAlignment="Top" Width="99" FontSize="22"
+                       Command="{Binding BookUpdateWindowCommand}" CommandParameter="{Binding ElementName=Bookwindow}"/>
+            <Button Content="一覧&#xD;&#xA;表示" HorizontalAlignment="Left" Height="84" Margin="386,133,0,0" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" VerticalAlignment="Top" Width="99" FontSize="22"
+                    Command="{Binding BookListAndSearchWindowCommand}" CommandParameter="{Binding ElementName=Bookwindow}"/>
+            <Button Content="削除" HorizontalAlignment="Left" Height="84" Margin="556,135,0,0" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" VerticalAlignment="Top" Width="99" FontSize="22"
+                       Command="{Binding BookDeleteWindowCommand}" CommandParameter="{Binding ElementName=Bookwindow}"/>
+            <Label Content="本" HorizontalAlignment="Left" Margin="275,31,0,0" Foreground="#4c6462" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
+            <Label Content="管理" HorizontalAlignment="Left" Margin="310,31,0,0" Foreground="#4c6462" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
+        </Grid>
+
+        <Grid Grid.Row="2"  Margin="0,0,0.333,-0.333" Background="#99b9a4" Height="57" VerticalAlignment="Bottom"/>
+
+
+
     </Grid>
 </Window>
