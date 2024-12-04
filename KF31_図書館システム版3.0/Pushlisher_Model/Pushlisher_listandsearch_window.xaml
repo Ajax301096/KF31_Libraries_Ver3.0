@@ -4,9 +4,69 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KF31_図書館システム版3._0.Pushlisher_Model"
-        mc:Ignorable="d"
-        Title="Pushlisher_listandsearch_window" Height="450" Width="800">
-    <Grid>
+                                                               mc:Ignorable="d"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:uc="clr-namespace:KF31_図書館システム版3._0.UserControl_KF31"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"      
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
         
+        DataContext="{StaticResource PushlisherViewModel}"
+        Title="出版社一覧" Height="510" Width="800"
+        Name="list_pushlisher"
+        >
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}" 
+                       CommandParameter="{Binding ElementName=list_pushlisher}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid Background="#F2F2F2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition ></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"  Background="#c7816f">
+            <uc:Hamburger_Control Tag="{Binding Title,ElementName=list_pushlisher}"></uc:Hamburger_Control>
+        </Grid>
+        <materialDesign:Card Grid.Row="1" Margin="5" Background="#F2F2F2">
+            <WrapPanel Margin="0 10 0 10">
+                <ComboBox Margin="5 5 15 5" DisplayMemberPath="PublisherID" ItemsSource="{Binding Pushlisher}" SelectedItem="{Binding Select_PusID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                materialDesign:HintAssist.Hint="出版社ID" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}" ></ComboBox>
+                <TextBox Text="{Binding PublisherName, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="出版社名" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox Text="{Binding Publisher_email, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="メールアドレス" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox Text="{Binding Publisher_Phone, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="電話番号" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <Button Margin="20,10,0,0" Width="100" BorderBrush="#b0816f" Background="#b0816f" 
+                        Command="{Binding Search_PushlisherCommand}" Content="検索"></Button>
+
+            </WrapPanel>
+        </materialDesign:Card >
+        <materialDesign:Card Grid.Row="2" Margin="5" VerticalAlignment="Stretch" Background="#F2F2F2">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="auto">
+                <ListView ItemsSource="{Binding PushlisherList}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="出版社ID" Width="auto"  DisplayMemberBinding="{Binding PublisherID}"></GridViewColumn>
+                            <GridViewColumn Header="出版社名" Width="auto" DisplayMemberBinding="{Binding PublisherName}"></GridViewColumn>
+                            <GridViewColumn Header="メールアドレス" Width="auto" DisplayMemberBinding="{Binding Publisher_email}"></GridViewColumn>
+                            <GridViewColumn Header="電話番号" Width="auto" DisplayMemberBinding="{Binding Publisher_Phone}"></GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </ScrollViewer>
+        </materialDesign:Card>
+
+
+
     </Grid>
 </Window>
+
+

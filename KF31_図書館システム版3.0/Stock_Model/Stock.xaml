@@ -4,9 +4,91 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KF31_図書館システム版3._0.Stock_Model"
-        mc:Ignorable="d"
-        Title="Stock" Height="450" Width="800">
-    <Grid>
+                          mc:Ignorable="d"
         
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:uc="clr-namespace:KF31_図書館システム版3._0.UserControl_KF31"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"      
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        
+        DataContext="{StaticResource StockViewModel}"
+        Title="在庫一覧" Height="510" Width="800"
+        Name="list_Stock">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}" 
+                       CommandParameter="{Binding ElementName=list_Stock}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid Background="#F2F2F2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"  Background="#c7816f">
+            <uc:Hamburger_Control Tag="{Binding Title,ElementName=list_Stock}"></uc:Hamburger_Control>
+        </Grid>
+        <Grid Grid.Row="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Margin="5" Grid.Row="0"  Background="#F2F2F2">
+                <WrapPanel Margin="0 10 0 10">
+                    <!--在庫ID-->
+                    <ComboBox Margin="35 5 15 5" FontSize="15"
+                          DisplayMemberPath="StockID"
+                          ItemsSource="{Binding Stocks}"
+                          SelectedItem="{Binding Selected_Stock, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          materialDesign:HintAssist.Hint="在庫ID"
+                          Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                          ></ComboBox>
+                    <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" Margin="15 5 15 5" materialDesign:HintAssist.Hint="タイトル" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <!--在庫数量-->
+                    <materialDesign:NumericUpDown Margin="35 5 15 -5" materialDesign:HintAssist.Hint="数量" Minimum="0"
+                       Value="{Binding Value, Mode=TwoWay}"></materialDesign:NumericUpDown>
+
+                    <!--本ID-->
+
+                    <Button Margin="20,0,0,0" Width="50" BorderBrush="#b0816f" Background="#b0816f"
+                    Command="{Binding ClearCommand}" CommandParameter="{Binding ElementName=list_Stock}" >
+                        <materialDesign:PackIcon Kind="Broom" />
+
+                    </Button>
+                    <Button Margin="20,0,0,0" Width="100" BorderBrush="#b0816f" Background="#b0816f"
+                    Command="{Binding SearchCommand}" CommandParameter="{Binding ElementName=list_Stock}" >検索</Button>
+                    <Button Margin="20,0,0,0" Width="100" BorderBrush="#b0816f" Background="#b0816f"
+                     Command="{Binding BackMainWindowCommand}" CommandParameter="{Binding ElementName=list_Stock}" >戻る</Button>
+                </WrapPanel>
+            </materialDesign:Card>
+            <materialDesign:Card Grid.Row="1" Margin="5" Background="#F2F2F2" >
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="auto">
+                    <ListView ItemsSource="{Binding Stocks_Search}" >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="在庫ID" Width="auto"  DisplayMemberBinding="{Binding StockID}"></GridViewColumn>
+                                <GridViewColumn Header="タイトル" Width="150" DisplayMemberBinding="{Binding Book_table.Book_title}"></GridViewColumn>
+                                <GridViewColumn Header="数量" Width="auto" DisplayMemberBinding="{Binding Quantity}"></GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </ScrollViewer>
+            </materialDesign:Card>
+        </Grid>
+
+        <Grid Grid.Row="2" Background="#99b9a4" Height="57" VerticalAlignment="Bottom"/>
+
+
+
     </Grid>
 </Window>
+

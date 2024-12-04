@@ -4,9 +4,56 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KF31_図書館システム版3._0.Output_Model"
-        mc:Ignorable="d"
-        Title="Output_Window" Height="450" Width="800">
-    <Grid>
-        
+                                           mc:Ignorable="d"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:uc="clr-namespace:KF31_図書館システム版3._0.UserControl_KF31"
+xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+TextElement.FontSize="13"
+TextOptions.TextFormattingMode="Ideal"
+TextOptions.TextRenderingMode="Auto"
+WindowStartupLocation="CenterScreen"
+ResizeMode="NoResize"
+WindowStyle="None"      
+Background="{DynamicResource MaterialDesignPaper}"
+FontFamily="{DynamicResource MaterialDesignFont}"
+     
+     DataContext="{StaticResource OutPutViewModel}"
+            Name="Output_Main"
+        Title="出庫管理画面" Height="510" Width="800">
+
+
+    <!-- 背景ベージュにする -->
+    <Grid Background="#F2F2F2" HorizontalAlignment="Center" Width="800">
+
+        <!-- ハンバーガー -->
+        <uc:Hamburger_Control Tag="{Binding Title,ElementName=Update_Employ}"></uc:Hamburger_Control>
+
+        <!-- 中の枠を変える -->
+        <Grid Background="#F0EBE7" HorizontalAlignment="Center" Width="750" Margin="0,96,0,74">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="407*"/>
+                <ColumnDefinition Width="12*"/>
+                <ColumnDefinition Width="331*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+
+        <!-- 下の緑のあれ -->
+        <Grid Background="#99b9a4" Height="51" Margin="0,459,0,0"/>
+
+        <!-- ボタン -->
+        <Button Content="登録" HorizontalAlignment="Center" Height="105" Margin="-450,240,0,0" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" VerticalAlignment="Top" Width="115" FontSize="30"/>
+        <Button Content="更新" HorizontalAlignment="Center" Height="105" Margin="0,240,0,0" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" VerticalAlignment="Top" Width="116" FontSize="30"/>
+        <Button HorizontalAlignment="Left" Height="105" Margin="567,240,0,0" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" VerticalAlignment="Top" Width="115" FontSize="30">
+            <Button.Content>
+                <TextBlock TextAlignment="Center">
+            一覧<LineBreak />表示
+                </TextBlock>
+            </Button.Content>
+        </Button>
+        <!-- Title(出庫管理) -->
+        <Label Content="出庫管理" HorizontalAlignment="Center" Margin="0,120,0,0" Foreground="#4c6462" VerticalAlignment="Top" FontSize="50" FontWeight="Bold"/>
+
+
     </Grid>
 </Window>
