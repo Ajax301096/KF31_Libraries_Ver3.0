@@ -14,6 +14,8 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,8 +37,33 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=3.1.0.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.3.1.0\lib\net462\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=5.1.0.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.5.1.0\lib\net462\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -49,26 +76,229 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net47\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Compile Include="Pushlisher_Model\Pushliser_window.xaml.cs">
+      <DependentUpon>Pushliser_window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pushlisher_Model\Pushlisher_Add_window.xaml.cs">
+      <DependentUpon>Pushlisher_Add_window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pushlisher_Model\Pushlisher_listandsearch_window.xaml.cs">
+      <DependentUpon>Pushlisher_listandsearch_window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pushlisher_Model\Pushlisher_update_window.xaml.cs">
+      <DependentUpon>Pushlisher_update_window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stock_Model\Stock.xaml.cs">
+      <DependentUpon>Stock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_KF31\Account_Control.xaml.cs">
+      <DependentUpon>Account_Control.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_KF31\Hamburger_Control.xaml.cs">
+      <DependentUpon>Hamburger_Control.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_KF31\Login_Control.xaml.cs">
+      <DependentUpon>Login_Control.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_KF31\Main_Control.xaml.cs">
+      <DependentUpon>Main_Control.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\BookViewModel.cs" />
+    <Compile Include="ViewModel\ControlBarViewModel.cs" />
+    <Compile Include="ViewModel\EmployViewModel.cs" />
+    <Compile Include="ViewModel\Employ_Data.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\PushlisherViewModel.cs" />
+    <Compile Include="ViewModel\StockInViewModel.cs" />
+    <Compile Include="ViewModel\StockOutViewModel.cs" />
+    <Compile Include="ViewModel\StockViewModel.cs" />
+    <Page Include="BooKModel\Book_AddWindow.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BooKModel\Book_DeleteWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BooKModel\Book_ListAndSearch_WIndow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BooKModel\Book_UpdateWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BooKModel\Book_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employ\Add_Employ_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employ\Employ_ListandSearch_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employ\Employ_PasswordChange_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employ\Employ_QRCode_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employ\Employ_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employ\Update_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Input_Model\Add_InputDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Input_Model\input_ListandSearch_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="BooKModel\Book_AddWindow.xaml.cs">
+      <DependentUpon>Book_AddWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BooKModel\Book_DeleteWindow.xaml.cs">
+      <DependentUpon>Book_DeleteWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BooKModel\Book_ListAndSearch_WIndow.xaml.cs">
+      <DependentUpon>Book_ListAndSearch_WIndow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BooKModel\Book_UpdateWindow.xaml.cs">
+      <DependentUpon>Book_UpdateWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BooKModel\Book_Window.xaml.cs">
+      <DependentUpon>Book_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employ\Add_Employ_Window.xaml.cs">
+      <DependentUpon>Add_Employ_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employ\Employ_ListandSearch_Window.xaml.cs">
+      <DependentUpon>Employ_ListandSearch_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employ\Employ_PasswordChange_Window.xaml.cs">
+      <DependentUpon>Employ_PasswordChange_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employ\Employ_QRCode_Window.xaml.cs">
+      <DependentUpon>Employ_QRCode_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employ\Employ_Window.xaml.cs">
+      <DependentUpon>Employ_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employ\Update_Window.xaml.cs">
+      <DependentUpon>Update_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Input_Model\Add_InputDetailWindow.xaml.cs">
+      <DependentUpon>Add_InputDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Input_Model\input_ListandSearch_Window.xaml.cs">
+      <DependentUpon>input_ListandSearch_Window.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Main_Login_Model\Account_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Main_Login_Model\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Output_Model\AddOutput_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Output_Model\Output_ListAndSearch_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Output_Model\Output_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pushlisher_Model\Pushliser_window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pushlisher_Model\Pushlisher_Add_window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pushlisher_Model\Pushlisher_listandsearch_window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pushlisher_Model\Pushlisher_update_window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceXAML\MainReSource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stock_Model\Stock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl_KF31\Account_Control.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl_KF31\Hamburger_Control.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl_KF31\Login_Control.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl_KF31\Main_Control.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Main_Login_Model\Account_Window.xaml.cs">
+      <DependentUpon>Account_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Main_Login_Model\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataProvider.cs" />
+    <Compile Include="Output_Model\AddOutput_Window.xaml.cs">
+      <DependentUpon>AddOutput_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Output_Model\Output_ListAndSearch_Window.xaml.cs">
+      <DependentUpon>Output_ListAndSearch_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Output_Model\Output_Window.xaml.cs">
+      <DependentUpon>Output_Window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -86,6 +316,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -94,5 +325,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Image\" />
+    <Folder Include="Loan_Model\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>このプロジェクトは、このコンピューター上にない NuGet パッケージを参照しています。それらのパッケージをダウンロードするには、[NuGet パッケージの復元] を使用します。詳細については、http://go.microsoft.com/fwlink/?LinkID=322105 を参照してください。見つからないファイルは {0} です。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets'))" />
+  </Target>
 </Project>
