@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="374c9f83990246ff87999aa18c1ccd3b" Name="Diagram1">
+        <EntityTypeShape EntityType="KF31_LliM5_DataBaseModel.Book_table" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KF31_LliM5_DataBaseModel.Category_table" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KF31_LliM5_DataBaseModel.Employee_table" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="KF31_LliM5_DataBaseModel.Lend_table" Width="1.5" PointX="12.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KF31_LliM5_DataBaseModel.Libraty_table" Width="1.5" PointX="0.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KF31_LliM5_DataBaseModel.Possition_table" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KF31_LliM5_DataBaseModel.Publisher_table" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KF31_LliM5_DataBaseModel.Status_table" Width="1.5" PointX="0.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KF31_LliM5_DataBaseModel.Stock_table" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KF31_LliM5_DataBaseModel.StockIn_Detail_table" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KF31_LliM5_DataBaseModel.StockIN_Table" Width="1.5" PointX="6" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KF31_LliM5_DataBaseModel.StockOut_Detail_table" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="KF31_LliM5_DataBaseModel.StockOut_table" Width="1.5" PointX="3" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KF31_LliM5_DataBaseModel.User_table" Width="1.5" PointX="8.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KF31_LliM5_DataBaseModel.Yoyaku_table" Width="1.5" PointX="10.5" PointY="4.625" IsExpanded="true" />
+        <AssociationConnector Association="KF31_LliM5_DataBaseModel.FK__Book_tabl__Categ__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="KF31_LliM5_DataBaseModel.FK__Book_tabl__Publi__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="KF31_LliM5_DataBaseModel.FK__Stock_tab__BookI__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="KF31_LliM5_DataBaseModel.FK__StockIn_D__BookI__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="KF31_LliM5_DataBaseModel.FK__StockOut___BookI__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="KF31_LliM5_DataBaseModel.FK__Employee___possi__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="KF31_LliM5_DataBaseModel.FK__Lend_tabl__Emplo__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="KF31_LliM5_DataBaseModel.FK__StockIn_D__Emplo__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="KF31_LliM5_DataBaseModel.FK__StockOut___Emplo__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="KF31_LliM5_DataBaseModel.FK__Lend_tabl__Yoyak__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="KF31_LliM5_DataBaseModel.FK__Stock_tab__Libra__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="KF31_LliM5_DataBaseModel.FK__StockOut___Libra__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="KF31_LliM5_DataBaseModel.FK__StockIN_T__statu__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="KF31_LliM5_DataBaseModel.FK__StockOut___statu__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="KF31_LliM5_DataBaseModel.FK__Yoyaku_ta__statu__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="KF31_LliM5_DataBaseModel.FK__Yoyaku_ta__Stock__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="KF31_LliM5_DataBaseModel.FK__StockIn_D__Stock__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="KF31_LliM5_DataBaseModel.FK__StockOut___Stock__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="KF31_LliM5_DataBaseModel.FK__Yoyaku_ta__userI__5FB337D6" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
