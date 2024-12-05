@@ -23,5 +23,10 @@ namespace KF31_図書館システム版3._0.Stock_Model
         {
             InitializeComponent();
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

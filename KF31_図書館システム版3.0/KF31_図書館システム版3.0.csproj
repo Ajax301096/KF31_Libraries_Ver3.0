@@ -403,10 +403,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Image\" />
     <Folder Include="Loan_Model\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Image\library.jpg" />
     <Content Include="Model\Data_Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Data_Model.edmx</DependentUpon>
