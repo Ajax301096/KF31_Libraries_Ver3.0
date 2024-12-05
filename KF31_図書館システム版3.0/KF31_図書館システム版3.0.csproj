@@ -91,6 +91,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Lend\Lend_Order_Window.xaml.cs">
+      <DependentUpon>Lend_Order_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lend\Lend_Window.xaml.cs">
+      <DependentUpon>Lend_Window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Login_Window.xaml.cs">
       <DependentUpon>Login_Window.xaml</DependentUpon>
     </Compile>
@@ -287,6 +293,14 @@
     <Compile Include="Input_Model\input_ListandSearch_Window.xaml.cs">
       <DependentUpon>input_ListandSearch_Window.xaml</DependentUpon>
     </Compile>
+    <Page Include="Lend\Lend_Order_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lend\Lend_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Login_Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
