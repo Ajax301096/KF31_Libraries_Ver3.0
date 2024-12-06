@@ -91,6 +91,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Loan_Model\Loan_Order_Window.xaml.cs">
+      <DependentUpon>Loan_Order_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Loan_Model\Loan_Window.xaml.cs">
+      <DependentUpon>Loan_Window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Login_Window.xaml.cs">
       <DependentUpon>Login_Window.xaml</DependentUpon>
     </Compile>
@@ -287,6 +293,14 @@
     <Compile Include="Input_Model\input_ListandSearch_Window.xaml.cs">
       <DependentUpon>input_ListandSearch_Window.xaml</DependentUpon>
     </Compile>
+    <Page Include="Loan_Model\Loan_Order_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Loan_Model\Loan_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Login_Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -402,9 +416,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Loan_Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Image\library.jpg" />
     <Content Include="Model\Data_Model.Context.tt">
