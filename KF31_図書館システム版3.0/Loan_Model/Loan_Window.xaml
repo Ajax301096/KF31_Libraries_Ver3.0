@@ -33,7 +33,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
         <Grid Grid.Row="1" Background="#F2F2F2">
             <Rectangle Width="800" Height="384" Fill="#E6E1DD" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Button Content="予約処理" HorizontalAlignment="Left" Height="116" Margin="140,177,0,0" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" VerticalAlignment="Top" Width="200" FontSize="40" 
-                 Command="{Binding Add_Pushlisher_WindowCommand}" CommandParameter="{Binding ElementName=pushliser}"/>
+                 Command="{Binding LoanOrderCommand}" CommandParameter="{Binding ElementName=Loan}"/>
             <Button Content="貸出一覧" HorizontalAlignment="Center" Height="116" Margin="250,177,0,0" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" VerticalAlignment="Top" Width="200" FontSize="40" 
                  Command="{Binding Update_Pushlisher_WindowCommand}" CommandParameter="{Binding ElementName=pushliser}"/>
              <Button Content="戻る" HorizontalAlignment="Left" Margin="669,44,0,0" VerticalAlignment="Top" Height="49" Width="89" Background="#B0816F" BorderBrush="Green" BorderThickness="0.5" FontSize="20" Foreground="White"
