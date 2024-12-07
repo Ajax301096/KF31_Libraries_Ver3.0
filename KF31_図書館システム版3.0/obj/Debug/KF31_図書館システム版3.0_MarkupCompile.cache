@@ -12,9 +12,9 @@ DEBUG;TRACE
 C:\Users\hoany\OneDrive\Máy tính\各部の提出宿題\システム開発演習２\KF31_図書館システム版3.0\KF31_図書館システム版3.0\App.xaml
 31-556097176
 2-417470735
-64-1813944947
+65-918977615
 27-857158105
 BooKModel\Book_AddWindow.xaml;BooKModel\Book_DeleteWindow.xaml;BooKModel\Book_ListAndSearch_WIndow.xaml;BooKModel\Book_UpdateWindow.xaml;BooKModel\Book_Window.xaml;Employ\Add_Employ_Window.xaml;Employ\Employ_ListandSearch_Window.xaml;Employ\Employ_PasswordChange_Window.xaml;Employ\Employ_QRCode_Window.xaml;Employ\Employ_Window.xaml;Employ\Update_Window.xaml;Input_Model\Add_InputDetailWindow.xaml;Input_Model\input_ListandSearch_Window.xaml;Loan_Model\Loan_Order_Window.xaml;Loan_Model\Loan_Window.xaml;Login_Window.xaml;Main_Login_Model\Account_Window.xaml;Main_Login_Model\MainWindow.xaml;Output_Model\AddOutput_Window.xaml;Output_Model\Output_ListAndSearch_Window.xaml;Output_Model\Output_Window.xaml;Pushlisher_Model\Pushliser_window.xaml;Pushlisher_Model\Pushlisher_Add_window.xaml;Pushlisher_Model\Pushlisher_listandsearch_window.xaml;Pushlisher_Model\Pushlisher_update_window.xaml;ResourceXAML\MainReSource.xaml;Stock_Model\Stock.xaml;UserControl_KF31\Account_Control.xaml;UserControl_KF31\Hamburger_Control.xaml;UserControl_KF31\Login_Control.xaml;UserControl_KF31\Main_Control.xaml;
 
-True
+False
 

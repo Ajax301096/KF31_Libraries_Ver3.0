@@ -85,7 +85,8 @@
                                 Command="{Binding StockInWindowCommand}" CommandParameter="{Binding ElementName=mainWindow}">入庫</Button>
                         <Button Width="100" Height="100" Margin="0,30,20,30" BorderBrush="#B0816F" BorderThickness="2" Background="#B0816F" Foreground="#170d02" FontSize="30"
                                 Command="{Binding StockOutWindowCommand}" CommandParameter="{Binding ElementName=mainWindow}">出庫</Button>
-                        <Button Width="100" Height="100" Margin="0,30,20,30" BorderBrush="#B0816F" BorderThickness="2" Background="#B0816F" Foreground="#170d02" FontSize="30">貸出</Button>
+                        <Button Width="100" Height="100" Margin="0,30,20,30" BorderBrush="#B0816F" BorderThickness="2" Background="#B0816F" Foreground="#170d02" FontSize="30"
+                                Command="{Binding LoanWindowCommand}" CommandParameter="{Binding ElementName=mainWindow}">貸出</Button>
                         <Button Width="100" Height="100" Margin="0,30,20,30" BorderBrush="#B0816F" BorderThickness="2" Background="#B0816F" Foreground="#170d02" FontSize="30"
                                 Command="{Binding BookWindowCommand}" CommandParameter="{Binding ElementName=mainWindow}">本</Button>
                         <Button Width="220" Height="100" Margin="0,30,20,30" BorderBrush="#B0816F" BorderThickness="2" Background="#B0816F" Foreground="#170d02" FontSize="30"
@@ -109,7 +110,7 @@
                             <TextBlock Grid.Row="0" Margin="16 16 16 4" FontSize="25">現在の蔵書数
                             </TextBlock>
                             <Separator Grid.Row="1" Height="10" Width="120" Style="{StaticResource MaterialDesignLightSeparator}" />
-                            <TextBlock Grid.Row="2" Margin="16 0 16 8" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding stock_Count}">2000
+                            <TextBlock Grid.Row="2" Margin="16 0 16 8" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding stock_Count}">
                             </TextBlock>
                         </Grid>
                     </Border>
@@ -124,7 +125,7 @@
                             <TextBlock Grid.Row="0" Margin="16 16 16 4" FontSize="25">社員数
                             </TextBlock>
                             <Separator Grid.Row="1" Height="10" Width="120" Style="{StaticResource MaterialDesignLightSeparator}" />
-                            <TextBlock Grid.Row="2" Margin="16 0 16 8" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Employ_Count}">2000
+                            <TextBlock Grid.Row="2" Margin="16 0 16 8" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Employ_Count}">
                             </TextBlock>
                         </Grid>
                     </Border>

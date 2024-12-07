@@ -10,4 +10,5 @@
     <viewmodel:StockInViewModel x:Key="StockInViewModel"></viewmodel:StockInViewModel>
     <viewmodel:StockOutViewModel x:Key="StockOutViewModel"></viewmodel:StockOutViewModel>
     <viewmodel:StockViewModel x:Key="StockViewModel"></viewmodel:StockViewModel>
+    <viewmodel:LoanViewModel x:Key="LoanViewModel"></viewmodel:LoanViewModel>
 </ResourceDictionary>

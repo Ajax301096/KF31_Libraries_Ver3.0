@@ -18,7 +18,7 @@ ResizeMode="NoResize"
 WindowStyle="None"      
 Background="{DynamicResource MaterialDesignPaper}"
 FontFamily="{DynamicResource MaterialDesignFont}"
-DataContext="{StaticResource StockOutViewModel}"
+DataContext="{StaticResource LoanViewModel}"
         Title="Lend_Order_Window" Height="510" Width="800"
         Name="order">
     <i:Interaction.Triggers>

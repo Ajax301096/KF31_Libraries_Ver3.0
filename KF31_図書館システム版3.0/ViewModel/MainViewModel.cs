@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows;
+using KF31_図書館システム版3._0.Loan_Model;
 
 namespace KF31_図書館システム版3._0.ViewModel
 {
@@ -35,6 +36,10 @@ namespace KF31_図書館システム版3._0.ViewModel
         private string _Hiredate { get; set; }
         public string Hiredate { get => _Hiredate; set { _Hiredate = value; OnPropertyChanged(); } }
 
+        private string _stock_Count {  get; set; }
+        public string stock_Count { get => _stock_Count; set { _stock_Count = value;OnPropertyChanged(); } }
+        private string _Employ_Count {  get; set; }
+        public string Employ_Count {  get=>_Employ_Count; set { _Employ_Count = value;OnPropertyChanged(); } }
         private BitmapImage _qrCodeImage;
         public BitmapImage QRCodeImage
         {
@@ -51,21 +56,15 @@ namespace KF31_図書館システム版3._0.ViewModel
         public ICommand StockInWindowCommand { get; set; } // 入庫管理
         public ICommand StockOutWindowCommand { get; set; } // 出庫管理
         public ICommand StockWindowCommand { get; set; } // 在庫管理
+        public ICommand LoanWindowCommand { get; set; } // 貸出管理
 
 
 
 
         public MainViewModel()
         {
-            Employ_ID = "ID : " + Employ_Data.Instance.Em_ID;
-            Employ_Name = "名前： " + Employ_Data.Instance.Em_DisplayName;
-            Possition_Name = "役職: " + Employ_Data.Instance.Possition_Name;
-            Birthday = "生年月日: " + Employ_Data.Instance.Birthday.ToString("yyyy/MM/dd");
-            Hiredate = "入社日付: " + Employ_Data.Instance.Hiredate.ToString("yyyy/MM/dd");
-            Email = "メール: " + Employ_Data.Instance.Email.ToString();
-            Address = "住所: " + Employ_Data.Instance.Address.ToString();
-
-            PushlisherWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) =>
+            LoadWindow();
+           PushlisherWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) =>
             {
                 p.Hide();
                 Pushliser_window pushliser = new Pushliser_window();
@@ -107,7 +106,12 @@ namespace KF31_図書館システム版3._0.ViewModel
                 p.Close();
                 stock.ShowDialog();
             });
-
+            LoanWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) =>
+            {
+                Loan_Window loan = new Loan_Window();
+                p.Close();
+                loan.ShowDialog();
+            });
             LogOutCommand = new RelayCommand<Window>((p) => { return true; }, (p) =>
             {
                 var question = MessageBox.Show("ログアウトしてもよろしいでしょうか？", "確認",
@@ -133,6 +137,26 @@ namespace KF31_図書館システム版3._0.ViewModel
                 OnPropertyChanged();
             });
             QRCodeImage = GenerateQRCodeImage(Employ_Data.Instance.EmQRCode);
+
+        }
+        public void LoadWindow()
+        {
+            Employ_ID = "ID : " + Employ_Data.Instance.Em_ID;
+            Employ_Name = "名前： " + Employ_Data.Instance.Em_DisplayName;
+            Possition_Name = "役職: " + Employ_Data.Instance.Possition_Name;
+            Birthday = "生年月日: " + Employ_Data.Instance.Birthday.ToString("yyyy/MM/dd");
+            Hiredate = "入社日付: " + Employ_Data.Instance.Hiredate.ToString("yyyy/MM/dd");
+            Email = "メール: " + Employ_Data.Instance.Email.ToString();
+            Address = "住所: " + Employ_Data.Instance.Address.ToString();
+            int? stockcount = 0;
+            var stocklist = DataProvider.Ins.Db.Stock_table.Where(x => x.Libraty_table.LibratyID == Employ_Data.Instance.LibratyID);
+            foreach ( var stock in stocklist)
+            {
+                stockcount += stock.Quantity;
+            }
+            stock_Count = stockcount.ToString();
+            Employ_Count = DataProvider.Ins.Db.Employee_table.Count().ToString();
+           
 
         }
         public BitmapImage GenerateQRCodeImage(string qrCodeBase64)

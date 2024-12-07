@@ -192,6 +192,7 @@
     <Compile Include="ViewModel\ControlBarViewModel.cs" />
     <Compile Include="ViewModel\EmployViewModel.cs" />
     <Compile Include="ViewModel\Employ_Data.cs" />
+    <Compile Include="ViewModel\LoanViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\PushlisherViewModel.cs" />
