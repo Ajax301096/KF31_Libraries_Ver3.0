@@ -623,6 +623,7 @@ namespace KF31_図書館システム版3._0.ViewModel
         }
         public void LoadDetailWindow()
         {
+            Employ_Data.Instance.CheckStatusYoyaku();
             Status = new ObservableCollection<Status_table>(DataProvider.Ins.Db.Status_table.Where(x => x.statusID == "YT01" || x.statusID == "SKR02" || x.statusID == "KS01"));
             StockOut = new ObservableCollection<StockOut_table>(DataProvider.Ins.Db.StockOut_table);
             Books = new ObservableCollection<Book_table>(DataProvider.Ins.Db.Book_table);

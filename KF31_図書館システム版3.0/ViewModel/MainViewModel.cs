@@ -141,6 +141,7 @@ namespace KF31_図書館システム版3._0.ViewModel
         }
         public void LoadWindow()
         {
+            Employ_Data.Instance.CheckStatusYoyaku();
             Employ_ID = "ID : " + Employ_Data.Instance.Em_ID;
             Employ_Name = "名前： " + Employ_Data.Instance.Em_DisplayName;
             Possition_Name = "役職: " + Employ_Data.Instance.Possition_Name;

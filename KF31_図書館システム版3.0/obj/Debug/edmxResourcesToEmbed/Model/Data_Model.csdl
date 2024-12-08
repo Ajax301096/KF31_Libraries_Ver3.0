@@ -41,23 +41,9 @@
     <Property Name="Em_BarCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Em_Lastlogin" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Possition_table" Relationship="Self.FK__Employee___possi__3F466844" FromRole="Employee_table" ToRole="Possition_table" />
-    <NavigationProperty Name="Lend_table" Relationship="Self.FK__Lend_tabl__Emplo__6383C8BA" FromRole="Employee_table" ToRole="Lend_table" />
     <NavigationProperty Name="StockIn_Detail_table" Relationship="Self.FK__StockIn_D__Emplo__5629CD9C" FromRole="Employee_table" ToRole="StockIn_Detail_table" />
     <NavigationProperty Name="StockOut_Detail_table" Relationship="Self.FK__StockOut___Emplo__5AEE82B9" FromRole="Employee_table" ToRole="StockOut_Detail_table" />
-  </EntityType>
-  <EntityType Name="Lend_table">
-    <Key>
-      <PropertyRef Name="Lend_ID" />
-    </Key>
-    <Property Name="Lend_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="YoyakuID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Rental_Date" Type="DateTime" Precision="3" />
-    <Property Name="Return_Date" Type="DateTime" Precision="3" />
-    <Property Name="Lend_Status" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="EmployID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Upload_Date" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="Employee_table" Relationship="Self.FK__Lend_tabl__Emplo__6383C8BA" FromRole="Lend_table" ToRole="Employee_table" />
-    <NavigationProperty Name="Yoyaku_table" Relationship="Self.FK__Lend_tabl__Yoyak__628FA481" FromRole="Lend_table" ToRole="Yoyaku_table" />
+    <NavigationProperty Name="Lend_table" Relationship="KF31_LliM5_DataBaseModel.FK__Lend_tabl__Emplo__6477ECF3" FromRole="Employee_table" ToRole="Lend_table" />
   </EntityType>
   <EntityType Name="Libraty_table">
     <Key>
@@ -96,6 +82,7 @@
     <NavigationProperty Name="StockIN_Table" Relationship="Self.FK__StockIN_T__statu__45F365D3" FromRole="Status_table" ToRole="StockIN_Table" />
     <NavigationProperty Name="StockOut_table" Relationship="Self.FK__StockOut___statu__48CFD27E" FromRole="Status_table" ToRole="StockOut_table" />
     <NavigationProperty Name="Yoyaku_table" Relationship="Self.FK__Yoyaku_ta__statu__5EBF139D" FromRole="Status_table" ToRole="Yoyaku_table" />
+    <NavigationProperty Name="Lend_table" Relationship="KF31_LliM5_DataBaseModel.FK__Lend_tabl__statu__6383C8BA" FromRole="Status_table" ToRole="Lend_table" />
   </EntityType>
   <EntityType Name="Stock_table">
     <Key>
@@ -185,10 +172,10 @@
     <Property Name="statusID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Yoyaku_Barcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="start_time" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="Lend_table" Relationship="Self.FK__Lend_tabl__Yoyak__628FA481" FromRole="Yoyaku_table" ToRole="Lend_table" />
     <NavigationProperty Name="Status_table" Relationship="Self.FK__Yoyaku_ta__statu__5EBF139D" FromRole="Yoyaku_table" ToRole="Status_table" />
     <NavigationProperty Name="Stock_table" Relationship="Self.FK__Yoyaku_ta__Stock__5DCAEF64" FromRole="Yoyaku_table" ToRole="Stock_table" />
     <NavigationProperty Name="User_table" Relationship="Self.FK__Yoyaku_ta__userI__5FB337D6" FromRole="Yoyaku_table" ToRole="User_table" />
+    <NavigationProperty Name="Lend_table" Relationship="KF31_LliM5_DataBaseModel.FK__Lend_tabl__Yoyak__628FA481" FromRole="Yoyaku_table" ToRole="Lend_table" />
   </EntityType>
   <Association Name="FK__Book_tabl__Categ__4CA06362">
     <End Role="Category_table" Type="Self.Category_table" Multiplicity="0..1" />
@@ -262,18 +249,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Lend_tabl__Emplo__6383C8BA">
-    <End Role="Employee_table" Type="Self.Employee_table" Multiplicity="0..1" />
-    <End Role="Lend_table" Type="Self.Lend_table" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Employee_table">
-        <PropertyRef Name="EmployID" />
-      </Principal>
-      <Dependent Role="Lend_table">
-        <PropertyRef Name="EmployID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__StockIn_D__Emplo__5629CD9C">
     <End Role="Employee_table" Type="Self.Employee_table" Multiplicity="0..1" />
     <End Role="StockIn_Detail_table" Type="Self.StockIn_Detail_table" Multiplicity="*" />
@@ -295,18 +270,6 @@
       </Principal>
       <Dependent Role="StockOut_Detail_table">
         <PropertyRef Name="EmployID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Lend_tabl__Yoyak__628FA481">
-    <End Role="Yoyaku_table" Type="Self.Yoyaku_table" Multiplicity="0..1" />
-    <End Role="Lend_table" Type="Self.Lend_table" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Yoyaku_table">
-        <PropertyRef Name="YoyakuID" />
-      </Principal>
-      <Dependent Role="Lend_table">
-        <PropertyRef Name="YoyakuID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -422,7 +385,6 @@
     <EntitySet Name="Book_table" EntityType="Self.Book_table" />
     <EntitySet Name="Category_table" EntityType="Self.Category_table" />
     <EntitySet Name="Employee_table" EntityType="Self.Employee_table" />
-    <EntitySet Name="Lend_table" EntityType="Self.Lend_table" />
     <EntitySet Name="Libraty_table" EntityType="Self.Libraty_table" />
     <EntitySet Name="Possition_table" EntityType="Self.Possition_table" />
     <EntitySet Name="Publisher_table" EntityType="Self.Publisher_table" />
@@ -458,10 +420,6 @@
       <End Role="Possition_table" EntitySet="Possition_table" />
       <End Role="Employee_table" EntitySet="Employee_table" />
     </AssociationSet>
-    <AssociationSet Name="FK__Lend_tabl__Emplo__6383C8BA" Association="Self.FK__Lend_tabl__Emplo__6383C8BA">
-      <End Role="Employee_table" EntitySet="Employee_table" />
-      <End Role="Lend_table" EntitySet="Lend_table" />
-    </AssociationSet>
     <AssociationSet Name="FK__StockIn_D__Emplo__5629CD9C" Association="Self.FK__StockIn_D__Emplo__5629CD9C">
       <End Role="Employee_table" EntitySet="Employee_table" />
       <End Role="StockIn_Detail_table" EntitySet="StockIn_Detail_table" />
@@ -469,10 +427,6 @@
     <AssociationSet Name="FK__StockOut___Emplo__5AEE82B9" Association="Self.FK__StockOut___Emplo__5AEE82B9">
       <End Role="Employee_table" EntitySet="Employee_table" />
       <End Role="StockOut_Detail_table" EntitySet="StockOut_Detail_table" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Lend_tabl__Yoyak__628FA481" Association="Self.FK__Lend_tabl__Yoyak__628FA481">
-      <End Role="Yoyaku_table" EntitySet="Yoyaku_table" />
-      <End Role="Lend_table" EntitySet="Lend_table" />
     </AssociationSet>
     <AssociationSet Name="FK__Stock_tab__Libra__5070F446" Association="Self.FK__Stock_tab__Libra__5070F446">
       <End Role="Libraty_table" EntitySet="Libraty_table" />
@@ -510,5 +464,69 @@
       <End Role="User_table" EntitySet="User_table" />
       <End Role="Yoyaku_table" EntitySet="Yoyaku_table" />
     </AssociationSet>
+    <EntitySet Name="Lend_table" EntityType="KF31_LliM5_DataBaseModel.Lend_table" />
+    <AssociationSet Name="FK__Lend_tabl__Emplo__6477ECF3" Association="KF31_LliM5_DataBaseModel.FK__Lend_tabl__Emplo__6477ECF3">
+      <End Role="Employee_table" EntitySet="Employee_table" />
+      <End Role="Lend_table" EntitySet="Lend_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Lend_tabl__statu__6383C8BA" Association="KF31_LliM5_DataBaseModel.FK__Lend_tabl__statu__6383C8BA">
+      <End Role="Status_table" EntitySet="Status_table" />
+      <End Role="Lend_table" EntitySet="Lend_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Lend_tabl__Yoyak__628FA481" Association="KF31_LliM5_DataBaseModel.FK__Lend_tabl__Yoyak__628FA481">
+      <End Role="Yoyaku_table" EntitySet="Yoyaku_table" />
+      <End Role="Lend_table" EntitySet="Lend_table" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Lend_table">
+    <Key>
+      <PropertyRef Name="Lend_ID" />
+    </Key>
+    <Property Name="Lend_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YoyakuID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Rental_Date" Type="DateTime" Precision="3" />
+    <Property Name="Return_Date" Type="DateTime" Precision="3" />
+    <Property Name="statusID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmployID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Upload_Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Employee_table" Relationship="KF31_LliM5_DataBaseModel.FK__Lend_tabl__Emplo__6477ECF3" FromRole="Lend_table" ToRole="Employee_table" />
+    <NavigationProperty Name="Status_table" Relationship="KF31_LliM5_DataBaseModel.FK__Lend_tabl__statu__6383C8BA" FromRole="Lend_table" ToRole="Status_table" />
+    <NavigationProperty Name="Yoyaku_table" Relationship="KF31_LliM5_DataBaseModel.FK__Lend_tabl__Yoyak__628FA481" FromRole="Lend_table" ToRole="Yoyaku_table" />
+  </EntityType>
+  <Association Name="FK__Lend_tabl__Emplo__6477ECF3">
+    <End Type="KF31_LliM5_DataBaseModel.Employee_table" Role="Employee_table" Multiplicity="0..1" />
+    <End Type="KF31_LliM5_DataBaseModel.Lend_table" Role="Lend_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_table">
+        <PropertyRef Name="EmployID" />
+      </Principal>
+      <Dependent Role="Lend_table">
+        <PropertyRef Name="EmployID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Lend_tabl__statu__6383C8BA">
+    <End Type="KF31_LliM5_DataBaseModel.Status_table" Role="Status_table" Multiplicity="0..1" />
+    <End Type="KF31_LliM5_DataBaseModel.Lend_table" Role="Lend_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status_table">
+        <PropertyRef Name="statusID" />
+      </Principal>
+      <Dependent Role="Lend_table">
+        <PropertyRef Name="statusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Lend_tabl__Yoyak__628FA481">
+    <End Type="KF31_LliM5_DataBaseModel.Yoyaku_table" Role="Yoyaku_table" Multiplicity="0..1" />
+    <End Type="KF31_LliM5_DataBaseModel.Lend_table" Role="Lend_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Yoyaku_table">
+        <PropertyRef Name="YoyakuID" />
+      </Principal>
+      <Dependent Role="Lend_table">
+        <PropertyRef Name="YoyakuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

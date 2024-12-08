@@ -81,6 +81,7 @@ namespace KF31_図書館システム版3._0.ViewModel
 
         public BookViewModel()
         {
+            Employ_Data.Instance.CheckStatusYoyaku();
             Category = new ObservableCollection<Category_table>(DataProvider.Ins.Db.Category_table);
             Publisher = new ObservableCollection<Publisher_table>(DataProvider.Ins.Db.Publisher_table);
             Books = new ObservableCollection<Book_table>(DataProvider.Ins.Db.Book_table);

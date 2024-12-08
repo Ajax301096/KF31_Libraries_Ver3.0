@@ -39,19 +39,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Lend_table">
-      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.Lend_table">
-        <MappingFragment StoreEntitySet="Lend_table">
-          <ScalarProperty Name="Lend_ID" ColumnName="Lend_ID" />
-          <ScalarProperty Name="YoyakuID" ColumnName="YoyakuID" />
-          <ScalarProperty Name="Rental_Date" ColumnName="Rental_Date" />
-          <ScalarProperty Name="Return_Date" ColumnName="Return_Date" />
-          <ScalarProperty Name="Lend_Status" ColumnName="Lend_Status" />
-          <ScalarProperty Name="EmployID" ColumnName="EmployID" />
-          <ScalarProperty Name="Upload_Date" ColumnName="Upload_Date" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Libraty_table">
       <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.Libraty_table">
         <MappingFragment StoreEntitySet="Libraty_table">
@@ -165,6 +152,19 @@
           <ScalarProperty Name="statusID" ColumnName="statusID" />
           <ScalarProperty Name="Yoyaku_Barcode" ColumnName="Yoyaku_Barcode" />
           <ScalarProperty Name="start_time" ColumnName="start_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lend_table">
+      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.Lend_table">
+        <MappingFragment StoreEntitySet="Lend_table">
+          <ScalarProperty Name="Upload_Date" ColumnName="Upload_Date" />
+          <ScalarProperty Name="EmployID" ColumnName="EmployID" />
+          <ScalarProperty Name="statusID" ColumnName="statusID" />
+          <ScalarProperty Name="Return_Date" ColumnName="Return_Date" />
+          <ScalarProperty Name="Rental_Date" ColumnName="Rental_Date" />
+          <ScalarProperty Name="YoyakuID" ColumnName="YoyakuID" />
+          <ScalarProperty Name="Lend_ID" ColumnName="Lend_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

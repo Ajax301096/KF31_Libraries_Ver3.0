@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KF31_図書館システム版3._0.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,7 +38,28 @@ namespace KF31_図書館システム版3._0.ViewModel
         public string LibratyID { get => _LibratyID; set { _LibratyID = value; OnPropertyChanged(); } }
 
         private Employ_Data() { }
+        public void CheckStatusYoyaku()
+        {
+            var yoyakulist = DataProvider.Ins.Db.Yoyaku_table.ToList();
+            foreach (var item in yoyakulist)
+            {
+                if (item.start_time != null)
+                {
 
+                    var time = DateTime.Now - item.start_time;
+                    if (time.Value.TotalHours > 2 && item.statusID == "YYK01")
+                    {
+                        var stock_item = DataProvider.Ins.Db.Stock_table.Where(x => x.StockID == item.StockID).FirstOrDefault();
+                        if (stock_item != null)
+                        {
+                            stock_item.Quantity += 1;
+                        }
+                        item.statusID = "KS01";
+                    }
+                    DataProvider.Ins.Db.SaveChanges();
+                }
+            }
+        }
         public static Employ_Data Instance
         {
             get

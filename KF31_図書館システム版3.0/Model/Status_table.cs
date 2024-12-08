@@ -20,6 +20,7 @@ namespace KF31_図書館システム版3._0.Model
             this.StockIN_Table = new HashSet<StockIN_Table>();
             this.StockOut_table = new HashSet<StockOut_table>();
             this.Yoyaku_table = new HashSet<Yoyaku_table>();
+            this.Lend_table = new HashSet<Lend_table>();
         }
     
         public string statusID { get; set; }
@@ -31,5 +32,7 @@ namespace KF31_図書館システム版3._0.Model
         public virtual ICollection<StockOut_table> StockOut_table { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Yoyaku_table> Yoyaku_table { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Lend_table> Lend_table { get; set; }
     }
 }

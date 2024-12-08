@@ -29,10 +29,10 @@ namespace KF31_図書館システム版3._0.Model
         public string Yoyaku_Barcode { get; set; }
         public Nullable<System.DateTime> start_time { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Lend_table> Lend_table { get; set; }
         public virtual Status_table Status_table { get; set; }
         public virtual Stock_table Stock_table { get; set; }
         public virtual User_table User_table { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Lend_table> Lend_table { get; set; }
     }
 }

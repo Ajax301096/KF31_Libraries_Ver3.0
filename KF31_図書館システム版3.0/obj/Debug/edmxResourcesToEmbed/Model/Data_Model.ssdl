@@ -43,7 +43,7 @@
     <Property Name="YoyakuID" Type="varchar" MaxLength="50" />
     <Property Name="Rental_Date" Type="datetime" />
     <Property Name="Return_Date" Type="datetime" />
-    <Property Name="Lend_Status" Type="nvarchar" MaxLength="250" />
+    <Property Name="statusID" Type="varchar" MaxLength="50" />
     <Property Name="EmployID" Type="varchar" MaxLength="50" />
     <Property Name="Upload_Date" Type="datetime" />
   </EntityType>
@@ -188,7 +188,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Lend_tabl__Emplo__6383C8BA">
+  <Association Name="FK__Lend_tabl__Emplo__6477ECF3">
     <End Role="Employee_table" Type="Self.Employee_table" Multiplicity="0..1" />
     <End Role="Lend_table" Type="Self.Lend_table" Multiplicity="*" />
     <ReferentialConstraint>
@@ -197,6 +197,18 @@
       </Principal>
       <Dependent Role="Lend_table">
         <PropertyRef Name="EmployID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Lend_tabl__statu__6383C8BA">
+    <End Role="Status_table" Type="Self.Status_table" Multiplicity="0..1" />
+    <End Role="Lend_table" Type="Self.Lend_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status_table">
+        <PropertyRef Name="statusID" />
+      </Principal>
+      <Dependent Role="Lend_table">
+        <PropertyRef Name="statusID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -408,8 +420,12 @@
       <End Role="Possition_table" EntitySet="Possition_table" />
       <End Role="Employee_table" EntitySet="Employee_table" />
     </AssociationSet>
-    <AssociationSet Name="FK__Lend_tabl__Emplo__6383C8BA" Association="Self.FK__Lend_tabl__Emplo__6383C8BA">
+    <AssociationSet Name="FK__Lend_tabl__Emplo__6477ECF3" Association="Self.FK__Lend_tabl__Emplo__6477ECF3">
       <End Role="Employee_table" EntitySet="Employee_table" />
+      <End Role="Lend_table" EntitySet="Lend_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Lend_tabl__statu__6383C8BA" Association="Self.FK__Lend_tabl__statu__6383C8BA">
+      <End Role="Status_table" EntitySet="Status_table" />
       <End Role="Lend_table" EntitySet="Lend_table" />
     </AssociationSet>
     <AssociationSet Name="FK__Lend_tabl__Yoyak__628FA481" Association="Self.FK__Lend_tabl__Yoyak__628FA481">
