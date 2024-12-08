@@ -25,10 +25,28 @@ namespace KF31_図書館システム版3._0.ViewModel
         public DateTime DateTimeStart {  get; set; }
         private string _YoyakuID {  get; set; }
         public string YoyakuID { get =>_YoyakuID; set { _YoyakuID = value;OnPropertyChanged(); } }
+        private bool _isDatePickerEnabled { get; set; }
+        public bool IsDatePickerEnabled
+        {
+            get => _isDatePickerEnabled;
+            set
+            {
+                _isDatePickerEnabled = value;
+                OnPropertyChanged(nameof(IsDatePickerEnabled));
+            }
+        }
         public ICommand LoanOrderCommand { get; set; }
         public ICommand SearchOrderCommand { get; set; }
+        public ICommand EnableDatePickerCommand { get; set; }
+
         public LoanViewModel()
         {
+            IsDatePickerEnabled = false;
+            EnableDatePickerCommand = new RelayCommand<Window>((p) => true, (p) =>
+            {
+                EnableDatePicker();
+
+            });
             DateTimeStart = DateTime.Today.AddDays(1);
             LoanOrderCommand = new RelayCommand<Window>((p) => true, (p) =>
             {
@@ -61,10 +79,17 @@ namespace KF31_図書館システム版3._0.ViewModel
                     stockID = YoyakuItem.StockID;
                     title = YoyakuItem.Stock_table.Book_table.Book_title;
                     returnTime = YoyakuItem.ReturnTime.Value;
+                    IsDatePickerEnabled = false;
+
                     OnPropertyChanged();
 
 
                 });
         }
+        private void EnableDatePicker()
+        {
+            IsDatePickerEnabled = true;
+        }
+       
     }
 }

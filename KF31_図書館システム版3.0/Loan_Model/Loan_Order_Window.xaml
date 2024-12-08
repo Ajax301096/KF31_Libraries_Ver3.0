@@ -89,14 +89,17 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                 </Grid>
                 <Grid Grid.Row="3">
                     <TextBlock HorizontalAlignment="Left" FontSize="20" Margin="70,0,0,0">返却日</TextBlock>
-                    <DatePicker  HorizontalAlignment="Left" Height="40" Width="200" Margin="25,20,0,0" Background="#fff" DisplayDateStart="{Binding DateTimeStart}"></DatePicker>
+                    <DatePicker  HorizontalAlignment="Left" Height="40" Width="200" Margin="25,20,0,0" Background="#fff" DisplayDateStart="{Binding DateTimeStart}"
+                                  SelectedDate="{Binding returnTime, UpdateSourceTrigger=PropertyChanged}" FontSize="25" Padding="20,10,0,0"
+                                  IsEnabled="{Binding IsDatePickerEnabled}"></DatePicker>
                 </Grid>
                 <Grid Grid.Row="4">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Width="100" Background="#c7816f" BorderBrush="#c7816f">編集</Button>
+                    <Button Grid.Column="0" Width="100" Background="#c7816f" BorderBrush="#c7816f"
+                            Command="{Binding EnableDatePickerCommand}">編集</Button>
                     <Button Grid.Column="1" Width="100" Background="#c7816f" BorderBrush="#c7816f">確認</Button>
                 </Grid>
             </Grid>
