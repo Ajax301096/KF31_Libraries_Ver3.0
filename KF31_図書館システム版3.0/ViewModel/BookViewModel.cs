@@ -13,6 +13,7 @@ using ZXing.Common;
 using ZXing;
 using System.Windows.Media.Imaging;
 using System.Drawing.Imaging;
+using Microsoft.Win32;
 
 
 namespace KF31_図書館システム版3._0.ViewModel
@@ -63,7 +64,31 @@ namespace KF31_図書館システム版3._0.ViewModel
         public string CategoryName { get => _CategoryName; set { _CategoryName = value; OnPropertyChanged(); } }
         private string _PublisherName { get; set; }
         public string PublisherName { get => _PublisherName; set { _PublisherName = value; OnPropertyChanged(); } }
+        // 画像
 
+        private string _imageFileName;
+        public string ImageFileName
+        {
+            get { return _imageFileName; }
+            set
+            {
+                _imageFileName = value;
+                OnPropertyChanged(nameof(ImageFileName));
+            }
+        }
+
+        private string _selectedImagePath;
+        public string SelectedImagePath
+        {
+            get { return _selectedImagePath; }
+            set
+            {
+                _selectedImagePath = value;
+                OnPropertyChanged(nameof(SelectedImagePath));
+            }
+        }
+
+        public ICommand ChooseImageCommand { get; set; }
 
         public ICommand BackBookCommand { get; set; }
         public ICommand BookAddWindowCommand { get; set; }
@@ -81,6 +106,11 @@ namespace KF31_図書館システム版3._0.ViewModel
 
         public BookViewModel()
         {
+            ChooseImageCommand = new RelayCommand<Window>((p) => true,
+                (p) =>
+                {
+                    ChooseImage();
+                });
             Employ_Data.Instance.CheckStatusYoyaku();
             Category = new ObservableCollection<Category_table>(DataProvider.Ins.Db.Category_table);
             Publisher = new ObservableCollection<Publisher_table>(DataProvider.Ins.Db.Publisher_table);
@@ -334,6 +364,19 @@ namespace KF31_図書館システム版3._0.ViewModel
 
           });
 
+        }
+        private void ChooseImage()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Image Files (.jpeg;)|*.jpeg;"
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                SelectedImagePath = openFileDialog.FileName;
+                ImageFileName = Path.GetFileName(SelectedImagePath); 
+            }
         }
         //本のバーコード作成
         private string GenerateBarcode(string data)
