@@ -90,7 +90,7 @@
                         <RowDefinition Height="50"></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    <TextBlock  Grid.Row="0" Width="160" Height="36" TextAlignment="Center"  Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" Padding="0,6,0,0" Text="カテゴリ"></TextBlock>
+                    <TextBlock  Grid.Row="0" Width="160" Height="36" TextAlignment="Center"  Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" Padding="0,6,0,0" Text="画像"></TextBlock>
                         <TextBlock  Grid.Row="1" Width="100" Height="36" TextAlignment="Center" Background="#fff" HorizontalAlignment="Left" FontSize="12" VerticalAlignment="Top" Padding="0,6,0,0" Text="{Binding ImageFileName, UpdateSourceTrigger=PropertyChanged}" Margin="12,0,0,0"></TextBlock>
                     <Button  Grid.Row="1" Grid.Column="0" Width="50" Height="36" Background="#cad2c5" BorderBrush="#cad2c5"  HorizontalAlignment="Right" FontSize="20" VerticalAlignment="Top"  Margin="0,0,10,0"
                              Command="{Binding ChooseImageCommand}">

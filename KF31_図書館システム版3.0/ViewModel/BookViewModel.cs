@@ -431,6 +431,8 @@ namespace KF31_図書館システム版3._0.ViewModel
             KeySearch = string.Empty;
             CategoryName = string.Empty;
             PublisherName = string.Empty;
+            ImageFileName = string.Empty;
+            SelectedImagePath = string.Empty;
         }
     }
 

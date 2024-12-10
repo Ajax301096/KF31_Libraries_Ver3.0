@@ -91,6 +91,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Loan_Model\Loan_ListAndSearchWindow.xaml.cs">
+      <DependentUpon>Loan_ListAndSearchWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Loan_Model\Loan_Order_Window.xaml.cs">
       <DependentUpon>Loan_Order_Window.xaml</DependentUpon>
     </Compile>
@@ -294,6 +297,10 @@
     <Compile Include="Input_Model\input_ListandSearch_Window.xaml.cs">
       <DependentUpon>input_ListandSearch_Window.xaml</DependentUpon>
     </Compile>
+    <Page Include="Loan_Model\Loan_ListAndSearchWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Loan_Model\Loan_Order_Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
