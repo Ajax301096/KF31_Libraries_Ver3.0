@@ -100,3 +100,5 @@ C:\Users\hoany\OneDrive\Máy tính\各部の提出宿題\システム開発演�
 C:\Users\hoany\OneDrive\Máy tính\各部の提出宿題\システム開発演習２\KF31_図書館システム版3.0\KF31_図書館システム版3.0\obj\Debug\Loan_Model\Loan_Window.g.cs
 C:\Users\hoany\OneDrive\Máy tính\各部の提出宿題\システム開発演習２\KF31_図書館システム版3.0\KF31_図書館システム版3.0\obj\Debug\Loan_Model\Loan_Order_Window.baml
 C:\Users\hoany\OneDrive\Máy tính\各部の提出宿題\システム開発演習２\KF31_図書館システム版3.0\KF31_図書館システム版3.0\obj\Debug\Loan_Model\Loan_Window.baml
+C:\Users\hoany\OneDrive\Máy tính\各部の提出宿題\システム開発演習２\KF31_図書館システム版3.0\KF31_図書館システム版3.0\obj\Debug\Loan_Model\Loan_ListAndSearchWindow.g.cs
+C:\Users\hoany\OneDrive\Máy tính\各部の提出宿題\システム開発演習２\KF31_図書館システム版3.0\KF31_図書館システム版3.0\obj\Debug\Loan_Model\Loan_ListAndSearchWindow.baml

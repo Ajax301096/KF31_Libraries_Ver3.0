@@ -4,9 +4,114 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KF31_図書館システム版3._0.Loan_Model"
-        mc:Ignorable="d"
-        Title="Loan_ListAndSearchWindow" Height="450" Width="800">
-    <Grid>
+                                mc:Ignorable="d"
         
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:uc="clr-namespace:KF31_図書館システム版3._0.UserControl_KF31"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"      
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        
+        DataContext="{StaticResource StockViewModel}"
+        Title="貸出一覧" Height="510" Width="800"
+        Name="Loan_list">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}" 
+                       CommandParameter="{Binding ElementName=Loan_list}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid Background="#F2F2F2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"  Background="#c7816f">
+            <uc:Hamburger_Control Tag="{Binding Title,ElementName=Loan_list}"></uc:Hamburger_Control>
+        </Grid>
+        <Grid Grid.Row="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="90"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Grid.Row="0" Margin="5" Background="#F2F2F2">
+                <WrapPanel Margin="0 10 0 10">
+                    <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" Width="400" HorizontalAlignment="Left" Margin="15 5 15 5" materialDesign:HintAssist.Hint="キーワード入力してください！" Padding="30,0,0,0" FontSize="20" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                    <Button  Width="80" Margin="10,0,0,0" Background="#c7816f" BorderBrush="#c7816f">検索</Button>
+                </WrapPanel>
+            </materialDesign:Card>
+            <materialDesign:Card Margin="5" Grid.Row="1"  Background="#F2F2F2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="20">予約ID</TextBlock>
+                        <TextBlock Width="100" Height="35" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,10" TextAlignment="Center" FontSize="20" Padding="0,5,0,0" Text="{Binding YoyakuID,UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="20">ユーザID</TextBlock>
+                        <TextBlock Width="100" Height="35" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,10" TextAlignment="Center" FontSize="20" Padding="0,5,0,0" Text="{Binding YoyakuID,UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="20">在庫ID</TextBlock>
+                        <TextBlock Width="100" Height="35" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,10" TextAlignment="Center" FontSize="20" Padding="0,5,0,0" Text="{Binding YoyakuID,UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="3">
+                        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="20">返却日</TextBlock>
+                        <TextBlock Width="100" Height="35" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,10" TextAlignment="Center" FontSize="20" Padding="0,5,0,0" Text="{Binding YoyakuID,UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <TextBlock VerticalAlignment="Center" FontSize="20" Margin="10,0,0,0">状態</TextBlock>
+                            <ComboBox FontSize="15" Width="100" HorizontalAlignment="Right" Margin="0,0,20,0"                              DisplayMemberPath="StockID"
+                              ItemsSource="{Binding Stocks}"
+                              SelectedItem="{Binding Selected_Stock, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                             ></ComboBox>
+                        </Grid>
+                        <Button Width="100" HorizontalAlignment="Right" Background="#c7816f" BorderBrush="#c7816f" Margin="0,0,20,0" Grid.Row="1">更新</Button>
+                    </Grid>
+                </Grid>
+            </materialDesign:Card>
+            <materialDesign:Card Grid.Row="2" Margin="5" Background="#F2F2F2" >
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="auto">
+                    <ListView ItemsSource="{Binding Stocks_Search}" >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="予約ID" Width="120"  DisplayMemberBinding="{Binding StockID}"></GridViewColumn>
+                                <GridViewColumn Header="ユーザID" Width="auto" DisplayMemberBinding="{Binding Book_table.Book_title}"></GridViewColumn>
+                                <GridViewColumn Header="在庫ID" Width="120" DisplayMemberBinding="{Binding Quantity}"></GridViewColumn>
+                                <GridViewColumn Header="返却日(予定)" Width="150" DisplayMemberBinding="{Binding Quantity}"></GridViewColumn>
+                                <GridViewColumn Header="状態" Width="120" DisplayMemberBinding="{Binding Quantity}"></GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </ScrollViewer>
+            </materialDesign:Card>
+        </Grid>
+
+        <Grid Grid.Row="2" Background="#99b9a4" Height="57" VerticalAlignment="Bottom"/>
+
+
+
     </Grid>
 </Window>
+
