@@ -1,4 +1,5 @@
 ﻿using KF31_図書館システム版3._0.Loan_Model;
+using KF31_図書館システム版3._0.Main_Login_Model;
 using KF31_図書館システム版3._0.Model;
 using System;
 using System.Collections.Generic;
@@ -36,14 +37,23 @@ namespace KF31_図書館システム版3._0.ViewModel
             }
         }
         public ICommand LoanOrderCommand { get; set; }
+        public ICommand LoanListCommand { get; set; }
         public ICommand OrderConfirmCommand { get; set; }
         public ICommand SearchOrderCommand { get; set; }
+        public ICommand BackMainCommand { get; set; }
         public ICommand EnableDatePickerCommand { get; set; }
 
         public LoanViewModel()
         {
             LoadWindow();
             IsDatePickerEnabled = false;
+            BackMainCommand = new RelayCommand<Window>((p) => { return true; },
+          (p) =>
+          {
+              MainWindow main = new MainWindow();
+              p.Close();
+              main.ShowDialog();
+          });
             EnableDatePickerCommand = new RelayCommand<Window>(
                 (p) => {
                     if (returnTime == null)
@@ -63,6 +73,14 @@ namespace KF31_図書館システム版3._0.ViewModel
             {
                 LoadWindow();
                 Loan_Order_Window loanorder = new Loan_Order_Window();
+                p.Close();
+                loanorder.ShowDialog();
+
+            });
+            LoanListCommand = new RelayCommand<Window>((p) => true, (p) =>
+            {
+                LoadWindow();
+                Loan_ListAndSearchWindow loanorder = new Loan_ListAndSearchWindow();
                 p.Close();
                 loanorder.ShowDialog();
 

@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-﻿C:\Users\hoany\OneDrive\Máy tính\各部の提出宿題\システム開発演習２\KF31_図書館システム版3.0\KF31_図書館システム版3.0\obj\Debug\GeneratedInternalTypeHelper.g.cs
+﻿
 FC:\Users\hoany\OneDrive\Máy tính\各部の提出宿題\システム開発演習２\KF31_図書館システム版3.0\KF31_図書館システム版3.0\App.xaml;;
 FC:\Users\hoany\OneDrive\Máy tính\各部の提出宿題\システム開発演習２\KF31_図書館システム版3.0\KF31_図書館システム版3.0\BooKModel\Book_AddWindow.xaml;;
 FC:\Users\hoany\OneDrive\Máy tính\各部の提出宿題\システム開発演習２\KF31_図書館システム版3.0\KF31_図書館システム版3.0\BooKModel\Book_DeleteWindow.xaml;;
@@ -33,40 +32,4 @@ FC:\Users\hoany\OneDrive\Máy tính\各部の提出宿題\システム開発演�
 FC:\Users\hoany\OneDrive\Máy tính\各部の提出宿題\システム開発演習２\KF31_図書館システム版3.0\KF31_図書館システム版3.0\UserControl_KF31\Hamburger_Control.xaml;;
 FC:\Users\hoany\OneDrive\Máy tính\各部の提出宿題\システム開発演習２\KF31_図書館システム版3.0\KF31_図書館システム版3.0\UserControl_KF31\Login_Control.xaml;;
 FC:\Users\hoany\OneDrive\Máy tính\各部の提出宿題\システム開発演習２\KF31_図書館システム版3.0\KF31_図書館システム版3.0\UserControl_KF31\Main_Control.xaml;;
-=======
-﻿
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\App.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\BooKModel\Book_AddWindow.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\BooKModel\Book_DeleteWindow.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\BooKModel\Book_ListAndSearch_WIndow.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\BooKModel\Book_UpdateWindow.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\BooKModel\Book_Window.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Employ\Add_Employ_Window.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Employ\Employ_ListandSearch_Window.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Employ\Employ_PasswordChange_Window.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Employ\Employ_QRCode_Window.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Employ\Employ_Window.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Employ\Update_Window.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Input_Model\Add_InputDetailWindow.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Input_Model\input_ListandSearch_Window.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Loan_Model\Loan_ListAndSearchWindow.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Loan_Model\Loan_Order_Window.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Loan_Model\Loan_Window.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Login_Window.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Main_Login_Model\Account_Window.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Main_Login_Model\MainWindow.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Output_Model\AddOutput_Window.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Output_Model\Output_ListAndSearch_Window.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Output_Model\Output_Window.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Pushlisher_Model\Pushliser_window.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Pushlisher_Model\Pushlisher_Add_window.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Pushlisher_Model\Pushlisher_listandsearch_window.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Pushlisher_Model\Pushlisher_update_window.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\ResourceXAML\MainReSource.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\Stock_Model\Stock.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\UserControl_KF31\Account_Control.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\UserControl_KF31\Hamburger_Control.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\UserControl_KF31\Login_Control.xaml;;
-FC:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3.0\UserControl_KF31\Main_Control.xaml;;
->>>>>>> f4836f5165ba01102f663633099929dc11a86fef
 
