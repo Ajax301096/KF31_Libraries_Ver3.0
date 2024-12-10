@@ -14,6 +14,7 @@ using ZXing;
 using System.Windows.Media.Imaging;
 using System.Drawing.Imaging;
 using Microsoft.Win32;
+using System.Data.SqlClient;
 
 
 namespace KF31_図書館システム版3._0.ViewModel
@@ -183,7 +184,8 @@ namespace KF31_図書館システム版3._0.ViewModel
                 if (Selection_Category == null
                   || Selection_Publisher == null
                   || String.IsNullOrEmpty(Title)
-                  || String.IsNullOrEmpty(Author))
+                  || String.IsNullOrEmpty(Author)
+                  || String.IsNullOrEmpty(ImageFileName))
                 {
                     return false;
                 }
@@ -216,6 +218,16 @@ namespace KF31_図書館システム版3._0.ViewModel
                 {
                     category_count = 1;
                 }
+                // Lưu hình ảnh vào thư mục và cập nhật cơ sở dữ liệu
+
+                string destinationFolder = @"C:\Users\hoany\OneDrive\Máy tính\各部の提出宿題\システム開発演習２\KF31_WebApp\KF31_WebApp\wwwroot\picture";
+                Directory.CreateDirectory(destinationFolder);
+
+                string fileName = Path.GetFileName(_selectedImagePath);
+                string destinationPath = Path.Combine(destinationFolder, fileName);
+
+                File.Copy(_selectedImagePath, destinationPath, true);
+
                 var item = new Book_table()
                 {
                     BookID = DateTime.Now.Year.ToString() + Selection_Category.CategoryID + category_count.ToString(),
@@ -223,7 +235,8 @@ namespace KF31_図書館システム版3._0.ViewModel
                     Book_title = Title,
                     PublisherID = Selection_Publisher.PublisherID,
                     CategoryID = Selection_Category.CategoryID,
-                    Book_BarCode = GenerateBarcode(DateTime.Now.Year.ToString() + Selection_Category.CategoryID + category_count.ToString())
+                    Book_BarCode = GenerateBarcode(DateTime.Now.Year.ToString() + Selection_Category.CategoryID + category_count.ToString()),
+                    Book_Image = ImageFileName
                 };
                 DataProvider.Ins.Db.Book_table.Add(item);
                 DataProvider.Ins.Db.SaveChanges();
