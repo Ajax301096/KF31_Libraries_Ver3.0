@@ -4,6 +4,7 @@ using KF31_図書館システム版3._0.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Drawing;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
@@ -33,10 +34,13 @@ namespace KF31_図書館システム版3._0.ViewModel
                     LendID = SelectedItem.Lend_ID;
                     userID = SelectedItem.Yoyaku_table.userID;
                     stockID = SelectedItem.Yoyaku_table.StockID;
-                    returnTime = SelectedItem.Return_Date;
+                    SelectreturnTime = SelectedItem.Return_Date?.ToString("yyyy/MM/dd") ?? "N/A";
+                    
                     SelectedStatusitem = SelectedItem.Status_table;
                 }
             } }
+        private string _keyword {  get; set; }
+        public string keyword {  get =>_keyword; set { _keyword = value;OnPropertyChanged(); } }
         private Status_table _SelectedStatusitem {  get; set; }
         public Status_table SelectedStatusitem {  get => _SelectedStatusitem; set { _SelectedStatusitem = value;OnPropertyChanged(); } }
         private string _LendID {  get; set; }
@@ -49,6 +53,9 @@ namespace KF31_図書館システム版3._0.ViewModel
         public string title { get => _title; set {  _title = value;OnPropertyChanged(); } }
         private DateTime? _returnTime { get; set; }
         public DateTime? returnTime { get => _returnTime; set { _returnTime = value; OnPropertyChanged(); } }
+        private string _SelectreturnTime { get; set; }
+        public string SelectreturnTime { get => _SelectreturnTime; set { _SelectreturnTime = value; OnPropertyChanged(); } }
+
         public DateTime DateTimeStart {  get; set; }
        private string _YoyakuID {  get; set; }
         public string YoyakuID { get =>_YoyakuID; set { _YoyakuID = value;OnPropertyChanged(); } }
@@ -68,14 +75,18 @@ namespace KF31_図書館システム版3._0.ViewModel
         public ICommand SearchOrderCommand { get; set; }
         public ICommand BackMainCommand { get; set; }
         public ICommand EnableDatePickerCommand { get; set; }
+        public ICommand SearchLoanCommand { get; set; }
+        public ICommand StatusUpdateCommand { get; set; }
 
         public LoanViewModel()
         {
             LoadWindow();
+            Lend_Search = new ObservableCollection<Lend_table>(DataProvider.Ins.Db.Lend_table);
             IsDatePickerEnabled = false;
             BackMainCommand = new RelayCommand<Window>((p) => { return true; },
           (p) =>
           {
+              RefreshData();
               MainWindow main = new MainWindow();
               p.Close();
               main.ShowDialog();
@@ -97,6 +108,7 @@ namespace KF31_図書館システム版3._0.ViewModel
             DateTimeStart = DateTime.Today.AddDays(1);
             LoanOrderCommand = new RelayCommand<Window>((p) => true, (p) =>
             {
+                RefreshData();
                 LoadWindow();
                 Loan_Order_Window loanorder = new Loan_Order_Window();
                 p.Close();
@@ -105,7 +117,9 @@ namespace KF31_図書館システム版3._0.ViewModel
             });
             LoanListCommand = new RelayCommand<Window>((p) => true, (p) =>
             {
+                RefreshData();
                 LoadWindow();
+                Lend_Search = new ObservableCollection<Lend_table>(DataProvider.Ins.Db.Lend_table);
                 Loan_ListAndSearchWindow loanorder = new Loan_ListAndSearchWindow();
                 p.Close();
                 loanorder.ShowDialog();
@@ -134,6 +148,18 @@ namespace KF31_図書館システム版3._0.ViewModel
                     if(YoyakuItem.statusID == "KS01")
                     {
                         MessageBox.Show("予約アイテムはキャンセルされました！", "報告",
+                            MessageBoxButton.OK, MessageBoxImage.Information);
+                        return;
+                    }
+                    if(YoyakuItem.Stock_table.LibratyID != Employ_Data.Instance.LibratyID)
+                    {
+                        MessageBox.Show("予約アイテムは別の図書館に設定されました！", "報告",
+                          MessageBoxButton.OK, MessageBoxImage.Information);
+                        return;
+                    }
+                    if (YoyakuItem.statusID == "KSD01")
+                    {
+                        MessageBox.Show("予約アイテムは既に処理完了しました！", "報告",
                             MessageBoxButton.OK, MessageBoxImage.Information);
                         return;
                     }
@@ -187,9 +213,96 @@ namespace KF31_図書館システム版3._0.ViewModel
                    MessageBox.Show("完了しました！","報告",
                        MessageBoxButton.OK, MessageBoxImage.Information);
                    LoadWindow();
-
+                   OnPropertyChanged("Lend");
+                   OnPropertyChanged("Lend_Search");
+                   RefreshData();
 
                });
+            SearchLoanCommand = new RelayCommand<Window>(
+                (p) =>
+                {
+                    if (string.IsNullOrEmpty(keyword))
+                    {
+                        return false;
+                    }
+                    else
+                        return true;
+                },
+                (p) =>
+                {
+                    Lend_Search.Clear();
+                    var search_list = DataProvider.Ins.Db.Lend_table.Where(
+                        x => x.Lend_ID.Contains(keyword) ||
+                           x.YoyakuID.Contains(keyword) ||
+                           x.Yoyaku_table.Status_table.status.Contains(keyword) ||
+                           x.Yoyaku_table.User_table.userID.Contains(keyword) ||
+                           x.Yoyaku_table.StockID.Contains(keyword)).ToList();
+                    if(search_list != null)
+                    {
+                        foreach( var item in search_list)
+                        {
+                            Lend_Search.Add(item);
+                        }
+                    }
+                    LoadWindow();
+                });
+            StatusUpdateCommand = new RelayCommand<Window>(
+                (p) =>
+                {
+                    var selectItem = DataProvider.Ins.Db.Lend_table.Where(x => x.Lend_ID == LendID).FirstOrDefault();
+
+                    if (SelectedStatusitem == null
+                    || string.IsNullOrEmpty(LendID)
+                    || selectItem.statusID == "KS01"
+                    || selectItem.statusID == "YYK02"
+                    || SelectedStatusitem.statusID == "KSD01"
+                    )
+                    {
+                        return false;
+                    }else
+                       
+                        return true;
+                },
+                (p) =>
+                {
+                    var selectItem = DataProvider.Ins.Db.Lend_table.Where(x=>x.Lend_ID == LendID).FirstOrDefault();
+                    if (DateTime.Now <= selectItem.Return_Date && SelectedStatusitem.statusID == "KS01")
+                    {
+                        MessageBox.Show("期限切れてないので、キャンセルできません！", "報告",
+                            MessageBoxButton.OK, MessageBoxImage.Information);
+                        return;
+                    }
+                    //完了処理
+                    if(SelectedStatusitem.statusID == "YYK02")
+                    {
+
+                    var result = MessageBox.Show("貸出完了処理を行ってもよろしいでしょうか？","確認",
+                        MessageBoxButton.OKCancel, MessageBoxImage.Question);
+                    if (result == MessageBoxResult.Cancel)
+                        return;
+                    selectItem.statusID = "YYK02";
+                    var stockitem = DataProvider.Ins.Db.Stock_table.Where(x => x.StockID == selectItem.Yoyaku_table.StockID).FirstOrDefault();
+                    stockitem.Quantity += 1;
+                    }
+                    if(SelectedStatusitem.statusID == "KS01")
+                    {
+                        var result = MessageBox.Show("貸出キャンセル処理を行ってもよろしいでしょうか？", "確認",
+                      MessageBoxButton.OKCancel, MessageBoxImage.Question);
+                        if (result == MessageBoxResult.Cancel)
+                            return;
+                        selectItem.statusID = "KS01";
+
+                    }
+
+                    //
+                    DataProvider.Ins.Db.SaveChanges();
+                    MessageBox.Show("完了しました！","報告",
+                        MessageBoxButton.OK,MessageBoxImage.Information);
+                    LoadWindow();
+                    Lend_Search = new ObservableCollection<Lend_table>(DataProvider.Ins.Db.Lend_table);
+
+
+                });
         }
         private void EnableDatePicker()
         {
@@ -198,7 +311,6 @@ namespace KF31_図書館システム版3._0.ViewModel
         public void LoadWindow()
         {
             Lend = new ObservableCollection<Lend_table>(DataProvider.Ins.Db.Lend_table);
-            Lend_Search = new ObservableCollection<Lend_table>(DataProvider.Ins.Db.Lend_table);
             Status = new ObservableCollection<Status_table>(DataProvider.Ins.Db.Status_table.Where(x=>x.statusID == "KS01" || x.statusID == "KSD01" || x.statusID == "YYK02"));
 
             Employ_Data.Instance.CheckStatusYoyaku();
@@ -207,7 +319,23 @@ namespace KF31_図書館システム版3._0.ViewModel
             title = string.Empty;
             returnTime = null;
             YoyakuID = string.Empty;
+            keyword = string.Empty;
+            OnPropertyChanged("Lend");
+            OnPropertyChanged("Lend_Search");
+            LendID = string.Empty;
+            stockID = string.Empty;
+            SelectedStatusitem = null;
+            SelectreturnTime = string.Empty;
+
         }
-       
+        public void RefreshData()
+        {
+            Lend = new ObservableCollection<Lend_table>(DataProvider.Ins.Db.Lend_table);
+            Status = new ObservableCollection<Status_table>(DataProvider.Ins.Db.Status_table.Where(x => x.statusID == "KS01" || x.statusID == "KSD01" || x.statusID == "YYK02"));
+            Lend = new ObservableCollection<Lend_table>(DataProvider.Ins.Db.Lend_table);
+
+        }
+
+
     }
 }
