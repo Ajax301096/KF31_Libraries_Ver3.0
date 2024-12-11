@@ -3,7 +3,9 @@ using KF31_図書館システム版3._0.Main_Login_Model;
 using KF31_図書館システム版3._0.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -15,6 +17,30 @@ namespace KF31_図書館システム版3._0.ViewModel
 {
     public class LoanViewModel : BaseViewModel
     {
+        private ObservableCollection<Lend_table> _Lend { get; set; }
+        public ObservableCollection<Lend_table> Lend { get => _Lend; set { _Lend = value; OnPropertyChanged(); } }
+        private ObservableCollection<Lend_table> _Lend_Search { get; set; }
+        public ObservableCollection<Lend_table> Lend_Search { get => _Lend_Search; set { _Lend_Search = value; OnPropertyChanged(); } }
+        private ObservableCollection<Status_table> _Status { get; set; }
+        public ObservableCollection<Status_table> Status { get => _Status; set { _Status = value; OnPropertyChanged(); } }
+
+        private Lend_table _SelectedItem {  get; set; }
+        public Lend_table SelectedItem { get => _SelectedItem; set
+            {
+                _SelectedItem = value; OnPropertyChanged();
+                if(_SelectedItem != null)
+                {
+                    LendID = SelectedItem.Lend_ID;
+                    userID = SelectedItem.Yoyaku_table.userID;
+                    stockID = SelectedItem.Yoyaku_table.StockID;
+                    returnTime = SelectedItem.Return_Date;
+                    SelectedStatusitem = SelectedItem.Status_table;
+                }
+            } }
+        private Status_table _SelectedStatusitem {  get; set; }
+        public Status_table SelectedStatusitem {  get => _SelectedStatusitem; set { _SelectedStatusitem = value;OnPropertyChanged(); } }
+        private string _LendID {  get; set; }
+        public string LendID {  get => _LendID; set { _LendID = value;OnPropertyChanged(); } }
         private string _userID {  get; set; }
         public string userID {  get=>_userID; set { _userID = value;OnPropertyChanged(); } }
         private string _stockID {  get; set; }
@@ -24,7 +50,7 @@ namespace KF31_図書館システム版3._0.ViewModel
         private DateTime? _returnTime { get; set; }
         public DateTime? returnTime { get => _returnTime; set { _returnTime = value; OnPropertyChanged(); } }
         public DateTime DateTimeStart {  get; set; }
-        private string _YoyakuID {  get; set; }
+       private string _YoyakuID {  get; set; }
         public string YoyakuID { get =>_YoyakuID; set { _YoyakuID = value;OnPropertyChanged(); } }
         private bool _isDatePickerEnabled { get; set; }
         public bool IsDatePickerEnabled
@@ -171,6 +197,10 @@ namespace KF31_図書館システム版3._0.ViewModel
         }
         public void LoadWindow()
         {
+            Lend = new ObservableCollection<Lend_table>(DataProvider.Ins.Db.Lend_table);
+            Lend_Search = new ObservableCollection<Lend_table>(DataProvider.Ins.Db.Lend_table);
+            Status = new ObservableCollection<Status_table>(DataProvider.Ins.Db.Status_table.Where(x=>x.statusID == "KS01" || x.statusID == "KSD01" || x.statusID == "YYK02"));
+
             Employ_Data.Instance.CheckStatusYoyaku();
             userID = string.Empty;
             stockID = string.Empty;
