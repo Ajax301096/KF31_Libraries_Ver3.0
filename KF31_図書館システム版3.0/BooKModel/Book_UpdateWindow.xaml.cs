@@ -23,5 +23,10 @@ namespace KF31_図書館システム版3._0.BooKModel
         {
             InitializeComponent();
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
