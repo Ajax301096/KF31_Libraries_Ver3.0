@@ -40,13 +40,14 @@
         <materialDesign:Card Grid.Row="1" Margin="5" Background="#F2F2F2">
             <WrapPanel Margin="0 10 0 10">
                 <ComboBox Margin="15 5 15 5" DisplayMemberPath="CategoryName" ItemsSource="{Binding Category}" SelectedItem="{Binding Selection_Category, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
- materialDesign:HintAssist.Hint="カテゴリ" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}" ></ComboBox>
+materialDesign:HintAssist.Hint="カテゴリ" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}" ></ComboBox>
 
                 <TextBox Width="200" Text="{Binding KeySearch, UpdateSourceTrigger=PropertyChanged}" Margin="15 5 15 5" materialDesign:HintAssist.Hint="キーワードを入力してください !" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 <Button Margin="20,10,0,0" Width="100" BorderBrush="#b0816f" Background="#b0816f" 
-                        Command="{Binding BookSearchCommand}" CommandParameter="{Binding ElementName=list_book}">
+                       Command="{Binding BookSearchCommand}" CommandParameter="{Binding ElementName=list_book}">
                     <materialDesign:PackIcon Kind="DatabaseSearch"/>
                 </Button>
+                <Button Margin="250,10,0,0" BorderBrush="#b0816f" Background="#b0816f" Width="90" Height="35" FontSize="16" HorizontalAlignment="Left" Content="戻る"/>
 
             </WrapPanel>
         </materialDesign:Card >
