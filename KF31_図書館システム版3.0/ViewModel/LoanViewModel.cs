@@ -77,7 +77,6 @@ namespace KF31_図書館システム版3._0.ViewModel
         public ICommand EnableDatePickerCommand { get; set; }
         public ICommand SearchLoanCommand { get; set; }
         public ICommand StatusUpdateCommand { get; set; }
-        public ICommand BarCodeCommand { get; set; }
 
         public LoanViewModel()
         {
@@ -304,20 +303,9 @@ namespace KF31_図書館システム版3._0.ViewModel
 
 
                 });
-            BarCodeCommand = new RelayCommand<Window>(
-                (p) =>
-                {
-                    return true;
-                },
-                (p) =>
-                {
-                    StartBarcodeScanning();
-                });
+           
         }
-        private void StartBarcodeScanning()
-        {
-
-        }
+      
         private void EnableDatePicker()
         {
             IsDatePickerEnabled = true;
