@@ -224,51 +224,76 @@ namespace KF31_図書館システム版3._0.ViewModel
     },
     (p) =>
     {
-
-        if (Select_Possition == null) // 役職
+        // 役職
+        if (Select_Possition == null)
         {
             MessageBox.Show("役職がまだ選択されていない!", "報告",
                 MessageBoxButton.OK, MessageBoxImage.Error);
             return;
         }
-        if (String.IsNullOrEmpty(EmployID))//社員ID
+        //社員ID
+        if (String.IsNullOrEmpty(EmployID))
         {
             MessageBox.Show("社員IDは必須科目です!", "報告",
                 MessageBoxButton.OK, MessageBoxImage.Error);
             return;
 
         }
-        if (String.IsNullOrEmpty(Em_DisplayName))//社員名
+        //社員名
+        if (String.IsNullOrEmpty(Em_DisplayName))
         {
             MessageBox.Show("社員名は必須科目です!", "報告",
                 MessageBoxButton.OK, MessageBoxImage.Error);
             return;
         }
-        if (String.IsNullOrEmpty(Em_Email))//メール
+        if (!CheckViewModel.IsJapaneseOrEnglishOnly(Em_DisplayName))
+        {
+            MessageBox.Show("社員名を正しく入力してください！","報告",
+                MessageBoxButton.OK, MessageBoxImage.Error);
+            return;
+        }
+        //メール
+        if (String.IsNullOrEmpty(Em_Email))
         {
             MessageBox.Show("メールは必須科目です!", "報告",
                 MessageBoxButton.OK, MessageBoxImage.Error);
             return;
         }
-        if (String.IsNullOrEmpty(Em_Address))//住所
+        if (!CheckViewModel.IsValidEmail(Em_Email))
+        {
+            MessageBox.Show("メールを正しく入力してください！", "報告",
+                MessageBoxButton.OK, MessageBoxImage.Error);
+            return;
+        }
+        //住所
+        if (String.IsNullOrEmpty(Em_Address))
         {
             MessageBox.Show("住所は必須科目です!", "報告",
                 MessageBoxButton.OK, MessageBoxImage.Error);
             return;
         }
-        if (String.IsNullOrEmpty(Em_userName))//ユーザネーム
+        if (! CheckViewModel.IsValidAddress(Em_Address))
+        {
+            MessageBox.Show("住所は無効です。正しい形式で入力してください!", "報告",
+                MessageBoxButton.OK, MessageBoxImage.Error);
+            return;
+        }
+        //ユーザネーム
+        if (String.IsNullOrEmpty(Em_userName))
         {
             MessageBox.Show("ユーザネームは必須科目です!", "報告",
                 MessageBoxButton.OK, MessageBoxImage.Error);
             return;
         }
-        if (Em_Hiredate == null)//入社年月日
+        //入社年月日
+        if (Em_Hiredate == null)
         {
             MessageBox.Show("入社年月日は必須科目です!", "報告",
                 MessageBoxButton.OK, MessageBoxImage.Error);
             return;
         }
-        if (Em_Birthday == null)//生年月日
+        //生年月日
+        if (Em_Birthday == null)
         {
             MessageBox.Show("生年月日は必須科目です!", "報告",
                 MessageBoxButton.OK, MessageBoxImage.Error);
