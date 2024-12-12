@@ -55,7 +55,7 @@
         <!-- 著者 -->
         <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="35" Margin="63,287,0,0" TextWrapping="Wrap" Text=" 著者"  VerticalAlignment="Top" Width="200" FontSize="23" FontWeight="Bold"/>
         <TextBox TabIndex="0" Foreground="#2a3837" Background="#eee" HorizontalAlignment="Center" Height="35" Margin="0,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276" FontSize="14"
-                    Text="{Binding Author, UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged"></TextBox>
+                    Text="{Binding Author, UpdateSourceTrigger=PropertyChanged}" ></TextBox>
 
         <!-- 出版社IDとTextBox -->
         <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="35" Margin="63,325,0,0" TextWrapping="Wrap" Text=" 出版社"  VerticalAlignment="Top" Width="200" FontSize="23" FontWeight="Bold"/>

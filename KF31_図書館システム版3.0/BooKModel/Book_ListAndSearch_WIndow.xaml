@@ -47,7 +47,8 @@ materialDesign:HintAssist.Hint="カテゴリ" IsEditable="True" Style="{StaticRe
                        Command="{Binding BookSearchCommand}" CommandParameter="{Binding ElementName=list_book}">
                     <materialDesign:PackIcon Kind="DatabaseSearch"/>
                 </Button>
-                <Button Margin="250,10,0,0" BorderBrush="#b0816f" Background="#b0816f" Width="90" Height="35" FontSize="16" HorizontalAlignment="Left" Content="戻る"/>
+                <Button Margin="250,10,0,0" BorderBrush="#b0816f" Background="#b0816f" Width="90" Height="35" FontSize="16" HorizontalAlignment="Left" Content="戻る"
+                        Command="{Binding BackBookCommand}" CommandParameter="{Binding ElementName=list_book}"/>
 
             </WrapPanel>
         </materialDesign:Card >
