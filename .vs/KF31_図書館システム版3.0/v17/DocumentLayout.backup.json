@@ -3,11 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|c:\\users\\c2175\\source\\repos\\kf31_libraries_ver3.0\\kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\employ\\employ_listandsearch_window.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|solutionrelative:kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\employ\\employ_listandsearch_window.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\bookmodel\\book_updatewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|solutionrelative:kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\bookmodel\\book_updatewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|c:\\users\\c2175\\source\\repos\\kf31_libraries_ver3.0\\kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\bookmodel\\book_addwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\bookmodel\\book_deletewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|solutionrelative:kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\bookmodel\\book_deletewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\bookmodel\\book_listandsearch_window.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|solutionrelative:kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\bookmodel\\book_listandsearch_window.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\bookmodel\\book_addwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|solutionrelative:kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\bookmodel\\book_addwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -15,16 +23,12 @@
       "RelativeMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|solutionrelative:kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\bookmodel\\book_window.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\bookmodel\\book_updatewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|solutionrelative:kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\bookmodel\\book_updatewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|c:\\users\\c2175\\source\\repos\\kf31_libraries_ver3.0\\kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\employ\\add_employ_window.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|solutionrelative:kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\employ\\add_employ_window.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\bookmodel\\book_listandsearch_window.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|solutionrelative:kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\bookmodel\\book_listandsearch_window.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\bookmodel\\book_deletewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|solutionrelative:kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\bookmodel\\book_deletewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|c:\\users\\c2175\\source\\repos\\kf31_libraries_ver3.0\\kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\employ\\employ_listandsearch_window.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|solutionrelative:kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\employ\\employ_listandsearch_window.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B04ACAE6-540E-4143-B632-80A881E0648E}|KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0.csproj|C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\kf31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -42,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 166,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -61,12 +65,24 @@
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Add_Employ_Window.xaml",
+              "DocumentMoniker": "C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\Employ\\Add_Employ_Window.xaml",
+              "RelativeDocumentMoniker": "KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\Employ\\Add_Employ_Window.xaml",
+              "ToolTip": "C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\Employ\\Add_Employ_Window.xaml",
+              "RelativeToolTip": "KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\Employ\\Add_Employ_Window.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-12T04:58:00.263Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Employ_ListandSearch_Window.xaml",
               "DocumentMoniker": "C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\Employ\\Employ_ListandSearch_Window.xaml",
               "RelativeDocumentMoniker": "KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\Employ\\Employ_ListandSearch_Window.xaml",
@@ -78,51 +94,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Book_Window.xaml",
               "DocumentMoniker": "C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_Window.xaml",
               "RelativeDocumentMoniker": "KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_Window.xaml",
               "ToolTip": "C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_Window.xaml",
               "RelativeToolTip": "KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_Window.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-10T05:25:41.878Z"
+              "WhenOpened": "2024-12-10T05:25:41.878Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Book_UpdateWindow.xaml",
               "DocumentMoniker": "C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_UpdateWindow.xaml",
               "RelativeDocumentMoniker": "KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_UpdateWindow.xaml",
-              "ToolTip": "C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_UpdateWindow.xaml",
-              "RelativeToolTip": "KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_UpdateWindow.xaml",
+              "ToolTip": "C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_UpdateWindow.xaml*",
+              "RelativeToolTip": "KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_UpdateWindow.xaml*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-10T05:25:32.878Z"
+              "WhenOpened": "2024-12-10T05:25:32.878Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Book_ListAndSearch_WIndow.xaml",
               "DocumentMoniker": "C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_ListAndSearch_WIndow.xaml",
               "RelativeDocumentMoniker": "KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_ListAndSearch_WIndow.xaml",
-              "ToolTip": "C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_ListAndSearch_WIndow.xaml",
-              "RelativeToolTip": "KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_ListAndSearch_WIndow.xaml",
+              "ToolTip": "C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_ListAndSearch_WIndow.xaml*",
+              "RelativeToolTip": "KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_ListAndSearch_WIndow.xaml*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-10T05:25:31.187Z"
+              "WhenOpened": "2024-12-10T05:25:31.187Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Book_DeleteWindow.xaml",
               "DocumentMoniker": "C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_DeleteWindow.xaml",
               "RelativeDocumentMoniker": "KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_DeleteWindow.xaml",
               "ToolTip": "C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_DeleteWindow.xaml",
               "RelativeToolTip": "KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_DeleteWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-10T05:24:59.283Z"
+              "WhenOpened": "2024-12-10T05:24:59.283Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Book_AddWindow.xaml",
               "DocumentMoniker": "C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_AddWindow.xaml",
               "RelativeDocumentMoniker": "KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\BooKModel\\Book_AddWindow.xaml",
@@ -134,7 +154,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "packages.config",
               "DocumentMoniker": "C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\packages.config",
               "RelativeDocumentMoniker": "KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\packages.config",
@@ -146,7 +166,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "App.config",
               "DocumentMoniker": "C:\\Users\\C2175\\source\\repos\\KF31_Libraries_Ver3.0\\KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\App.config",
               "RelativeDocumentMoniker": "KF31_\u56F3\u66F8\u9928\u30B7\u30B9\u30C6\u30E0\u72483.0\\App.config",
