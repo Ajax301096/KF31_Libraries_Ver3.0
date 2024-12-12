@@ -31,7 +31,7 @@
         <Grid Grid.Row="0"  Background="#c7816f">
             <uc:Hamburger_Control Tag="{Binding Title,ElementName=Add_Employ}"></uc:Hamburger_Control>
         </Grid>
-        <Grid Grid.Row="1"  Margin="50,0,0,30" Background="#e6e1dd"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="715">
+        <Grid Grid.Row="1"  Margin="50,0,0,30" Background="#e6e1dd"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="715" Height="346">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="398*"/>
                 <ColumnDefinition Width="317*"/>
@@ -41,35 +41,35 @@
                 <RowDefinition Height="29*"/>
             </Grid.RowDefinitions>
             <Label Content="社員登録" HorizontalAlignment="Left" Margin="18,8,0,0" Foreground="#4c6462" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
-            <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="26" Margin="63,0,0,0" TextWrapping="Wrap" Text=" 社員ID"  VerticalAlignment="Center" Width="90" FontSize="14"/>
-            <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="26" Margin="63,100,0,0" TextWrapping="Wrap" Text=" 社員名" VerticalAlignment="Top" Width="90" FontSize="14"/>
-            <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="26" Margin="336,100,0,0" TextWrapping="Wrap" Text=" 入社年月日" VerticalAlignment="Top" Width="90" FontSize="14" Grid.ColumnSpan="2"/>
-            <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="26" Margin="64,91,0,0" TextWrapping="Wrap" Text=" 住所" VerticalAlignment="Top" Width="90" FontSize="14" Grid.Row="1"/>
-            <TextBox TabIndex="0" Foreground="#2a3837" Background="#eee" HorizontalAlignment="Left" Height="26" Margin="153,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="125" FontSize="14"
-             Text="{Binding EmployID, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox TabIndex="1" Foreground="#2a3837" Background="#eee" Height="26" Margin="153,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" HorizontalAlignment="Left" Width="125"
-              Text="{Binding Em_DisplayName, UpdateSourceTrigger=PropertyChanged}"       />
-            <TextBox TabIndex="5" Foreground="#2a3837" Background="#eee" HorizontalAlignment="Left" Height="26" Margin="154,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="465" FontSize="14" Grid.Row="1" Grid.ColumnSpan="2"
-              Text="{Binding Em_Address, UpdateSourceTrigger=PropertyChanged}"       />
-            <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="26" Margin="336,0,0,0" TextWrapping="Wrap" Text=" ユーザーネーム" VerticalAlignment="Center" Width="90" FontSize="14" Grid.ColumnSpan="2"/>
-            <TextBox TabIndex="6" Foreground="#2a3837" Background="#eee" HorizontalAlignment="Left" Height="26" Margin="28,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="190" FontSize="14" Grid.Column="1"
-              Text="{Binding Em_userName, UpdateSourceTrigger=PropertyChanged}"     />
+            <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="30" Margin="64,56,0,0" TextWrapping="Wrap" Text=" 社員ID"  VerticalAlignment="Top" Width="90" FontSize="14"/>
+            <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="30" Margin="64,92,0,0" TextWrapping="Wrap" Text=" 社員名" VerticalAlignment="Top" Width="90" FontSize="14"/>
+            <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="30" Margin="336,92,0,0" TextWrapping="Wrap" Text=" 入社年月日" VerticalAlignment="Top" Width="90" FontSize="14" Grid.ColumnSpan="2"/>
+            <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="30" Margin="64,64,0,0" TextWrapping="Wrap" Text=" 住所" VerticalAlignment="Top" Width="90" FontSize="14" Grid.Row="1"/>
+            <TextBox TabIndex="0" Foreground="#2a3837" Background="#eee" HorizontalAlignment="Left" Height="30" Margin="153,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" FontSize="14"
+           Text="{Binding EmployID, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox TabIndex="1" Foreground="#2a3837" Background="#eee" Height="30" Margin="153,92,120,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14"
+            Text="{Binding Em_DisplayName, UpdateSourceTrigger=PropertyChanged}"       />
+            <TextBox TabIndex="5" Foreground="#2a3837" Background="#eee" HorizontalAlignment="Left" Height="30" Margin="154,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="465" FontSize="14" Grid.Row="1" Grid.ColumnSpan="2"
+            Text="{Binding Em_Address, UpdateSourceTrigger=PropertyChanged}"       />
+            <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="30" Margin="336,56,0,0" TextWrapping="Wrap" Text=" ユーザーネーム" VerticalAlignment="Top" Width="90" FontSize="14" Grid.ColumnSpan="2"/>
+            <TextBox TabIndex="6" Foreground="#2a3837" Background="#eee" HorizontalAlignment="Left" Height="30" Margin="28,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontSize="14" Grid.Column="1"
+            Text="{Binding Em_userName, UpdateSourceTrigger=PropertyChanged}"     />
             <Button TabIndex="8" Content="登録" HorizontalAlignment="Left" Height="40" Margin="117,122,0,0" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" VerticalAlignment="Top" Width="89" FontSize="18" Grid.Row="1" Grid.Column="1"
-                  Command="{Binding Add_EmployCommand}"   />
+                Command="{Binding Add_EmployCommand}"   />
             <Button TabIndex="9" Content="戻る" HorizontalAlignment="Left" Height="40" Margin="228,122,0,0" Background="#b0816f" BorderBrush="#b0816f" VerticalAlignment="Top" Width="79" FontSize="16" Grid.Row="1" Grid.Column="1"
-                    Command="{Binding BackEmployCommand}"
-                    CommandParameter="{Binding ElementName=Add_Employ}" />
-            <DatePicker TabIndex="7" HorizontalAlignment="Left" Height="26"  VerticalAlignment="Top" Width="124" Grid.RowSpan="2"
-                         SelectedDate="{Binding Em_Hiredate, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Margin="28,100,0,0" Grid.Column="1" />
-            <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="26" Margin="64,63,0,0" TextWrapping="Wrap" Text=" メール" VerticalAlignment="Top" Width="90" FontSize="14" Grid.Row="1"/>
-            <TextBox TabIndex="4" Foreground="#2a3837" Background="#eee" HorizontalAlignment="Left" Height="26" Margin="154,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="464" FontSize="14" Grid.Row="1" Grid.ColumnSpan="2"
-                     Text="{Binding Em_Email, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="26" Margin="64,9,0,0" TextWrapping="Wrap" Text=" 役職" VerticalAlignment="Top" Width="90" FontSize="14" Grid.Row="1"/>
-            <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="26" Margin="64,36,0,0" TextWrapping="Wrap" Text=" 生年月日" VerticalAlignment="Top" Width="90" FontSize="14" Grid.Row="1"/>
-            <ComboBox TabIndex="2" Foreground="#2a3837" Background="#eee" HorizontalAlignment="Left" Height="26" Margin="154,9,0,0"  VerticalAlignment="Top" Width="125" FontSize="14" Grid.Row="1"
-              DisplayMemberPath="possitionName" ItemsSource="{Binding Possitions}" SelectedItem="{Binding Select_Possition, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-            <DatePicker TabIndex="3" Foreground="#2a3837" Background="#eee" HorizontalAlignment="Left" Height="26" Margin="154,36,0,0"  VerticalAlignment="Top" Width="125" FontSize="14" Grid.Row="1"
-               SelectedDate="{Binding Em_Birthday, UpdateSourceTrigger=PropertyChanged}"/>
+                  Command="{Binding BackEmployCommand}"
+                  CommandParameter="{Binding ElementName=Add_Employ}" />
+            <DatePicker TabIndex="7" HorizontalAlignment="Left" Height="30"  VerticalAlignment="Top" Width="124"
+                       SelectedDate="{Binding Em_Hiredate, UpdateSourceTrigger=PropertyChanged}" Margin="28,93,0,0" Grid.Column="1" />
+            <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="30" Margin="64,26,0,0" TextWrapping="Wrap" Text=" メール" VerticalAlignment="Top" Width="90" FontSize="14" Grid.Row="1"/>
+            <TextBox TabIndex="4" Foreground="#2a3837" Background="#eee" HorizontalAlignment="Left" Height="30" Margin="154,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="464" FontSize="14" Grid.Row="1" Grid.ColumnSpan="2"
+                   Text="{Binding Em_Email, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="30" Margin="64,128,0,0" TextWrapping="Wrap" Text=" 役職" VerticalAlignment="Top" Width="90" FontSize="14"/>
+            <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="30" Margin="64,165,0,0" TextWrapping="Wrap" Text=" 生年月日" VerticalAlignment="Top" Width="90" FontSize="14" Grid.RowSpan="2"/>
+            <ComboBox TabIndex="2" Foreground="#2a3837" Background="#eee" HorizontalAlignment="Left" Height="30" Margin="154,129,0,0"  VerticalAlignment="Top" Width="125" FontSize="14"
+            DisplayMemberPath="possitionName" ItemsSource="{Binding Possitions}" SelectedItem="{Binding Select_Possition, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <DatePicker TabIndex="3" Foreground="#2a3837" Background="#eee" HorizontalAlignment="Left" Height="30" Margin="154,166,0,0"  VerticalAlignment="Top" Width="125" FontSize="14"
+             SelectedDate="{Binding Em_Birthday, UpdateSourceTrigger=PropertyChanged}" Grid.RowSpan="2"/>
         </Grid>
         <Grid Grid.Row="2" Background="#99b9a4" Height="51"/>
 
