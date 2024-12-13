@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KF31_図書館システム版3._0.Loan_Model"
-              mc:Ignorable="d"
+                         mc:Ignorable="d"
                 xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:uc="clr-namespace:KF31_図書館システム版3._0.UserControl_KF31"
 xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -53,7 +53,9 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                             Command="{Binding SearchOrderCommand}" CommandParameter="{Binding ElementName=LoanOrder}">
                         <materialDesign:PackIcon Kind="DatabaseSearch" />
                     </Button>
-                   
+
+                    <Button Margin="270,160,0,0" Grid.Column="1" Width="100" Background="#c7816f" BorderBrush="#c7816f">戻る</Button>
+
                 </Grid>
             </Grid>
             <Grid Grid.Column="1">
@@ -68,7 +70,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="#2a3837">予約情報</TextBlock>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30" Foreground="#2a3837" Margin="0,35,0,0">予約情報</TextBlock>
                 </Grid>
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
@@ -76,23 +78,23 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
-                        <TextBlock HorizontalAlignment="Center" FontSize="20">会員ID</TextBlock>
-                        <TextBlock HorizontalAlignment="Center" Width="150" Height="40" Margin="0,20,0,0" Background="#fff" TextAlignment="Center" FontSize="20" Padding="0,7,0,0"
+                        <TextBlock HorizontalAlignment="Center" FontSize="20" Margin="0,12,0,-12">会員ID</TextBlock>
+                        <TextBlock HorizontalAlignment="Center" Width="150" Height="40" Margin="0,37,0,1" Background="#fff" TextAlignment="Center" FontSize="20" Padding="0,7,0,0"
                                    Text="{Binding userID, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
                     </Grid>
                     <Grid Grid.Column="1">
-                        <TextBlock HorizontalAlignment="Center" FontSize="20">在庫ID</TextBlock>
-                        <TextBlock HorizontalAlignment="Center" Width="150" Height="40" Margin="0,20,0,0" Background="#fff" TextAlignment="Center" FontSize="20" Padding="0,7,0,0"
+                        <TextBlock HorizontalAlignment="Center" FontSize="20" Margin="0,12,0,-12">在庫ID</TextBlock>
+                        <TextBlock HorizontalAlignment="Center" Width="150" Height="40" Margin="0,37,0,1" Background="#fff" TextAlignment="Center" FontSize="20" Padding="0,7,0,0"
                                    Text="{Binding stockID, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="2">
-                    <TextBlock HorizontalAlignment="Left" FontSize="20" Margin="70,0,0,0">本タイトル</TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Width="300" Height="40" Margin="25,20,0,0" Background="#fff" TextAlignment="Center" FontSize="20" Padding="0,7,0,0"
+                    <TextBlock HorizontalAlignment="Left" FontSize="20" Margin="70,8,0,-8">本タイトル</TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Width="300" Height="40" Margin="25,37,0,1" Background="#fff" TextAlignment="Center" FontSize="20" Padding="0,7,0,0"
                                Text="{Binding title, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
                 </Grid>
                 <Grid Grid.Row="3">
-                    <TextBlock HorizontalAlignment="Left" FontSize="20" Margin="70,0,0,0">返却日</TextBlock>
+                    <TextBlock HorizontalAlignment="Left" FontSize="20" Margin="70,10,0,-10">返却日</TextBlock>
                     <DatePicker  HorizontalAlignment="Left" Height="40" Width="200" Margin="25,20,0,0" Background="#fff" DisplayDateStart="{Binding DateTimeStart}"
                                   SelectedDate="{Binding returnTime, UpdateSourceTrigger=PropertyChanged}" FontSize="25" Padding="20,10,0,0"
                                   IsEnabled="{Binding IsDatePickerEnabled}"></DatePicker>
