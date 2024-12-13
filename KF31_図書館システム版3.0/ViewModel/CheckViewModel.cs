@@ -38,5 +38,10 @@ namespace KF31_図書館システム版3._0.ViewModel
             var regex = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
             return System.Text.RegularExpressions.Regex.IsMatch(email, regex);
         }
+        public static bool IsValidPhoneNumber(string phoneNumber)
+        {
+            var phoneRegex = @"^\d{3,4}-\d{3,4}-\d{3,4}$";
+            return System.Text.RegularExpressions.Regex.IsMatch(phoneNumber, phoneRegex);
+        }
     }
 }
