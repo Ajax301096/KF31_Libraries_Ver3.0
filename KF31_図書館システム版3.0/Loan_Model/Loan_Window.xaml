@@ -31,13 +31,11 @@ FontFamily="{DynamicResource MaterialDesignFont}"
             <uc:Hamburger_Control Tag="{Binding Title,ElementName=Loan}"></uc:Hamburger_Control>
         </Grid>
         <Grid Grid.Row="1" Background="#F2F2F2">
-            <Rectangle Width="800" Height="384" Fill="#E6E1DD" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle Width="750" Height="350" Fill="#E6E1DD" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Button Content="予約処理" HorizontalAlignment="Left" Height="116" Margin="140,177,0,0" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" VerticalAlignment="Top" Width="200" FontSize="40" 
                  Command="{Binding LoanOrderCommand}" CommandParameter="{Binding ElementName=Loan}"/>
             <Button Content="貸出一覧" HorizontalAlignment="Center" Height="116" Margin="250,177,0,0" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" VerticalAlignment="Top" Width="200" FontSize="40" 
                  Command="{Binding LoanListCommand}" CommandParameter="{Binding ElementName=Loan}"/>
-             <Button Content="戻る" HorizontalAlignment="Left" Margin="669,44,0,0" VerticalAlignment="Top" Height="49" Width="89" Background="#B0816F" BorderBrush="Green" BorderThickness="0.5" FontSize="20" Foreground="White"
-                  Command="{Binding BackMainCommand }" CommandParameter="{Binding ElementName=Loan}"/>
             <Label Content="貸出管理" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,29,0,0" VerticalAlignment="Top" FontSize="40" Foreground="#4C6462" Height="52" Width="208" />
 
         </Grid>

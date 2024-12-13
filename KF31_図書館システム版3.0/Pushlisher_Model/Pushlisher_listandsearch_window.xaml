@@ -46,6 +46,7 @@
                 <TextBox Text="{Binding Publisher_Phone, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="電話番号" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 <Button Margin="20,10,0,0" Width="100" BorderBrush="#b0816f" Background="#b0816f" 
                         Command="{Binding Search_PushlisherCommand}" Content="検索"></Button>
+                <Button Margin="240,10,0,0" Width="100" BorderBrush="#b0816f" Background="#b0816f" Content="戻る"></Button>
 
             </WrapPanel>
         </materialDesign:Card >
