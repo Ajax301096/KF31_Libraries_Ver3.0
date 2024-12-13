@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KF31_図書館システム版3._0.Loan_Model"
-                                mc:Ignorable="d"
+                                        mc:Ignorable="d"
         
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:uc="clr-namespace:KF31_図書館システム版3._0.UserControl_KF31"
@@ -47,6 +47,8 @@
                 <WrapPanel Margin="0 10 0 10">
                     <TextBox Text="{Binding keyword, UpdateSourceTrigger=PropertyChanged}" Width="400" HorizontalAlignment="Left" Margin="15 5 15 5" materialDesign:HintAssist.Hint="キーワード入力してください！" Padding="30,0,0,0" FontSize="20" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
                     <Button  Width="80" Margin="10,0,0,0" Background="#c7816f" BorderBrush="#c7816f" Command="{Binding SearchLoanCommand}" CommandParameter="{Binding ElementName=Loan_list}">検索</Button>
+                    <Button  Width="80" Margin="170,0,0,0" Background="#c7816f" BorderBrush="#c7816f" >戻る</Button>
+
                 </WrapPanel>
             </materialDesign:Card>
             <materialDesign:Card Margin="5" Grid.Row="1"  Background="#F2F2F2">
@@ -115,4 +117,5 @@
 
     </Grid>
 </Window>
+
 
