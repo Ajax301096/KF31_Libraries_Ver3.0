@@ -127,8 +127,8 @@
                         <ComboBox Grid.Column="1" Grid.Row="1" Width="150" Height="36" Background="#eee"
                           DisplayMemberPath="BookID" ItemsSource="{Binding Stocks}" SelectedItem="{Binding SelectBook,Mode=TwoWay}"
                           IsEnabled="{Binding IsEnabled_Command}"></ComboBox>
-                        <TextBlock Grid.Column="1" Grid.Row="2" Width="150" Height="36" Background="#eee"
-                                     Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="2" Width="150" Height="36" Background="#eee" Padding="10,12,0,0"
+                                    Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
                         <materialDesign:NumericUpDown Grid.Column="1" Grid.Row="3" Width="150" Height="36" Background="#eee"
                                        IsEnabled="{Binding IsEnabledInValue_Command}" Minimum="0"
                                      Value="{Binding OutValue, Mode=TwoWay}"></materialDesign:NumericUpDown>

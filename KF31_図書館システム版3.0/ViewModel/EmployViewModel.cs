@@ -364,15 +364,33 @@ namespace KF31_図書館システム版3._0.ViewModel
                 MessageBoxButton.OK, MessageBoxImage.Error);
             return;
         }
+        if (!CheckViewModel.IsJapaneseOrEnglishOnly(Em_DisplayName))
+        {
+            MessageBox.Show("社員名を正しく入力してください！", "報告",
+                MessageBoxButton.OK, MessageBoxImage.Error);
+            return;
+        }
         if (String.IsNullOrEmpty(Em_Email))//メール
         {
             MessageBox.Show("メールは必須科目です!", "報告",
                 MessageBoxButton.OK, MessageBoxImage.Error);
             return;
         }
+        if (!CheckViewModel.IsValidEmail(Em_Email))
+        {
+            MessageBox.Show("メールを正しく入力してください！", "報告",
+                MessageBoxButton.OK, MessageBoxImage.Error);
+            return;
+        }
         if (String.IsNullOrEmpty(Em_Address))//住所
         {
             MessageBox.Show("住所は必須科目です!", "報告",
+                MessageBoxButton.OK, MessageBoxImage.Error);
+            return;
+        }
+        if (!CheckViewModel.IsValidAddress(Em_Address))
+        {
+            MessageBox.Show("住所は無効です。正しい形式で入力してください!", "報告",
                 MessageBoxButton.OK, MessageBoxImage.Error);
             return;
         }
