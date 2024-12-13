@@ -77,7 +77,7 @@ namespace KF31_図書館システム版3._0.ViewModel
         public ICommand EnableDatePickerCommand { get; set; }
         public ICommand SearchLoanCommand { get; set; }
         public ICommand StatusUpdateCommand { get; set; }
-
+        public ICommand BackLoanWindow {  get; set; }
         public LoanViewModel()
         {
             LoadWindow();
@@ -91,6 +91,14 @@ namespace KF31_図書館システム版3._0.ViewModel
               p.Close();
               main.ShowDialog();
           });
+            BackLoanWindow = new RelayCommand<Window>((p) => { return true; },
+         (p) =>
+         {
+             RefreshData();
+             Loan_Window loan = new Loan_Window();
+             p.Close();
+             loan.ShowDialog();
+         });
             EnableDatePickerCommand = new RelayCommand<Window>(
                 (p) => {
                     if (returnTime == null)

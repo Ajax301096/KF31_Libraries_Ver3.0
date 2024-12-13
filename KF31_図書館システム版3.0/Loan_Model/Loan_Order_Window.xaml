@@ -54,7 +54,8 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                         <materialDesign:PackIcon Kind="DatabaseSearch" />
                     </Button>
 
-                    <Button Margin="270,160,0,0" Grid.Column="1" Width="100" Background="#c7816f" BorderBrush="#c7816f">戻る</Button>
+                    <Button Margin="270,160,0,0" Grid.Column="1" Width="100" Background="#c7816f" BorderBrush="#c7816f"
+                            Command="{Binding BackLoanWindow}" CommandParameter="{Binding ElementName=LoanOrder}">戻る</Button>
 
                 </Grid>
             </Grid>
