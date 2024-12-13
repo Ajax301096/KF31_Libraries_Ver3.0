@@ -153,14 +153,19 @@ namespace KF31_図書館システム版3._0.ViewModel
                 {
                     return false;
                 }
+                //出版社名
                 if (String.IsNullOrEmpty(PublisherName))
                 {
                     return false;
                 }
+              
+                //メール
                 if (String.IsNullOrEmpty(Publisher_email))
                 {
                     return false;
                 }
+              
+                
                 if (String.IsNullOrEmpty(Publisher_Phone))
                 {
                     return false;
@@ -169,6 +174,18 @@ namespace KF31_図書館システム版3._0.ViewModel
             },
                 (p) =>
                 {
+                    if (!CheckViewModel.IsJapaneseOrEnglishOnly(PublisherName))
+                    {
+                        MessageBox.Show("出版社名を正しく入力してください！", "報告",
+                            MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+                    if (!CheckViewModel.IsValidEmail(Publisher_email))
+                    {
+                        MessageBox.Show("メールを正しく入力してください！", "報告",
+                            MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
                     var pushlisher = DataProvider.Ins.Db.Publisher_table.FirstOrDefault(x => x.PublisherID == PublisherID);
                     if (pushlisher != null)
                     {
@@ -204,14 +221,19 @@ namespace KF31_図書館システム版3._0.ViewModel
                 {
                     return false;
                 }
+                //出版社名
                 if (String.IsNullOrEmpty(PublisherName))
                 {
                     return false;
                 }
+               
+                //メール
                 if (String.IsNullOrEmpty(Publisher_email))
                 {
                     return false;
                 }
+                
+                //電話番号
                 if (String.IsNullOrEmpty(Publisher_Phone))
                 {
                     return false;
@@ -220,6 +242,18 @@ namespace KF31_図書館システム版3._0.ViewModel
             },
              (p) =>
              {
+                 if (!CheckViewModel.IsJapaneseOrEnglishOnly(PublisherName))
+                 {
+                     MessageBox.Show("出版社名を正しく入力してください！", "報告",
+                         MessageBoxButton.OK, MessageBoxImage.Error);
+                     return;
+                 }
+                 if (!CheckViewModel.IsValidEmail(Publisher_email))
+                 {
+                     MessageBox.Show("メールを正しく入力してください！", "報告",
+                         MessageBoxButton.OK, MessageBoxImage.Error);
+                     return;
+                 }
                  var pushlisher = DataProvider.Ins.Db.Publisher_table.FirstOrDefault(x => x.PublisherID == Select_PusID.PublisherID);
 
                  var result = MessageBox.Show("出版社情報を更新してもよろしいでしょうか？", "確認",

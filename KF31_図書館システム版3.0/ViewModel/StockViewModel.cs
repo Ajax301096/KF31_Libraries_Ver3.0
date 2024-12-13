@@ -21,17 +21,28 @@ namespace KF31_図書館システム版3._0.ViewModel
 
         private Stock_table _Selected_Stock { get; set; }
         public Stock_table Selected_Stock { get => _Selected_Stock; set { _Selected_Stock = value; OnPropertyChanged(); } }
+        private Stock_table _SelectedItem { get; set; }
+        public Stock_table SelectedItem { get => _SelectedItem; set
+            { 
+                _SelectedItem = value; OnPropertyChanged(); 
+                if(SelectedItem != null)
+                {
+                    Selected_Stock = SelectedItem;
+                    Title = SelectedItem.Book_table.Book_title;
+                    Value = SelectedItem.Quantity;
+                }
+            } }
+
         private string _Title { get; set; }
         public string Title { get => _Title; set { _Title = value; OnPropertyChanged(); } }
-        private int _Value { get; set; }
-        public int Value { get => _Value; set { _Value = value; OnPropertyChanged(); } }
+        private int? _Value { get; set; }
+        public int? Value { get => _Value; set { _Value = value; OnPropertyChanged(); } }
         public ICommand SearchCommand { get; set; }
         public ICommand BackMainWindowCommand { get; set; }
         public ICommand ClearCommand { get; set; }
         public StockViewModel()
         {
             LoadWindow();
-
 
             BackMainWindowCommand = new RelayCommand<Window>((p) => { return true; },
                 (p) =>

@@ -72,7 +72,7 @@
             </materialDesign:Card>
             <materialDesign:Card Grid.Row="1" Margin="5" Background="#F2F2F2" >
                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="auto">
-                    <ListView ItemsSource="{Binding Stocks_Search}" >
+                    <ListView ItemsSource="{Binding Stocks_Search}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" >
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="在庫ID" Width="auto"  DisplayMemberBinding="{Binding StockID}"></GridViewColumn>
