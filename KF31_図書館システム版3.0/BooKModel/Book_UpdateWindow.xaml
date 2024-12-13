@@ -66,7 +66,8 @@
         <Button Content="更新"  HorizontalAlignment="Left" FontSize="17" Margin="520,373,0,0" VerticalAlignment="Top" Width="90" Height="40" BorderBrush="#b0816f" Background="#b0816f" 
                   Command="{Binding BookUpdateCommand}" CommandParameter="{Binding ElementName=update_book}"/>
 
-        <Button Margin="630,373,0,97" BorderBrush="#b0816f" Background="#b0816f" Width="90" Height="40" FontSize="16" HorizontalAlignment="Left" Content="戻る"/>
+        <Button Margin="630,373,0,97" BorderBrush="#b0816f" Background="#b0816f" Width="90" Height="40" FontSize="16" HorizontalAlignment="Left" Content="戻る"
+                Command="{Binding BackBookCommand}" CommandParameter="{Binding ElementName=update_book}"/>
 
 
         <Grid Grid.Row="2" Background="#99b9a4" Height="57" VerticalAlignment="Bottom"/>
