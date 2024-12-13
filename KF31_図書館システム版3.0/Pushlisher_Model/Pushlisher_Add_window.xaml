@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KF31_図書館システム版3._0.Pushlisher_Model"
-                                                        mc:Ignorable="d"
+                                                              mc:Ignorable="d"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:uc="clr-namespace:KF31_図書館システム版3._0.UserControl_KF31"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -37,14 +37,14 @@
         <Grid Grid.Row="0"  Background="#c7816f">
             <uc:Hamburger_Control Tag="{Binding Title,ElementName=pushlisher_add}"></uc:Hamburger_Control>
         </Grid>
-        <Grid Grid.Row="1" Margin="37,0,0,50" Background="#e6e1dd" Height="292" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="711">
+        <Grid Margin="27,0,0,22" Background="#e6e1dd" Height="350" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="750" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="70"></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition Height="70"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
-                <TextBlock Text="出版社登録" Foreground="#4c6462" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Text="出版社登録" Foreground="#4c6462" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Button  BorderBrush="#b0816f" Background="#b0816f" Width="79" FontSize="16" HorizontalAlignment="Right" Margin="0,0,30,0"
                          Command="{Binding BackPushlisherCommand}" CommandParameter="{Binding ElementName=pushlisher_add}">戻る</Button>
             </Grid>
@@ -60,10 +60,10 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    <TextBlock  Grid.Row="0" Width="200" Height="36" TextAlignment="Center"  Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Right" FontSize="20" VerticalAlignment="Center" Padding="0,6,0,0" Text="出版社ID"></TextBlock>
-                    <TextBlock  Grid.Row="1" Width="200" Height="36" TextAlignment="Center"  Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Right" FontSize="20" VerticalAlignment="Center" Padding="0,6,0,0" Text="出版社名"></TextBlock>
-                    <TextBlock  Grid.Row="2" Width="200" Height="36" TextAlignment="Center"  Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Right" FontSize="20" VerticalAlignment="Center" Padding="0,6,0,0" Text="メールアドレス"></TextBlock>
-                    <TextBlock  Grid.Row="3" Width="200" Height="36" TextAlignment="Center"  Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Right" FontSize="20" VerticalAlignment="Center" Padding="0,6,0,0" Text="電話番号"></TextBlock>
+                    <TextBlock Width="200" Height="36" TextAlignment="Center"  Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Center" Padding="0,6,0,0" Text="出版社ID" Margin="123,0,0,0"/>
+                    <TextBlock  Grid.Row="1" Width="200" Height="36" TextAlignment="Center"  Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Center" Padding="0,6,0,0" Text="出版社名" Margin="123,0,0,0"></TextBlock>
+                    <TextBlock  Grid.Row="2" Width="200" Height="36" TextAlignment="Center"  Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Center" Padding="0,6,0,0" Text="メールアドレス" Margin="123,0,0,0"></TextBlock>
+                    <TextBlock  Grid.Row="3" Width="200" Height="36" TextAlignment="Center"  Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Center" Padding="0,6,0,0" Text="電話番号" Margin="123,0,0,0"></TextBlock>
                 </Grid>
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
@@ -72,22 +72,22 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    <TextBox TabIndex="0" Grid.Row="0" Width="250" Height="36" HorizontalAlignment="Left" Margin="20,0,0,0" Foreground="#2a3837" Background="#eee"
+                    <TextBox TabIndex="0" Grid.Row="0" Width="250" Height="36" HorizontalAlignment="Left" Margin="-30,1,0,1" Foreground="#2a3837" Background="#eee"
                          materialDesign:HintAssist.Hint="出版社ID" Text="{Binding PublisherID, UpdateSourceTrigger=PropertyChanged}"    >
                     </TextBox>
-                    <TextBox TabIndex="1" Grid.Row="1" Width="250" Height="36" HorizontalAlignment="Left" Margin="20,0,0,0" Foreground="#2a3837" Background="#eee"
+                    <TextBox TabIndex="1" Grid.Row="1" Width="250" Height="36" HorizontalAlignment="Left" Margin="-30,1,0,1" Foreground="#2a3837" Background="#eee"
                                   materialDesign:HintAssist.Hint="出版社名"  Text="{Binding PublisherName, UpdateSourceTrigger=PropertyChanged}">
                     </TextBox>
-                    <TextBox TabIndex="2" Grid.Row="2" Width="250" Height="36" HorizontalAlignment="Left" Margin="20,0,0,0" Foreground="#2a3837" Background="#eee"
+                    <TextBox TabIndex="2" Grid.Row="2" Width="250" Height="36" HorizontalAlignment="Left" Margin="-30,1,0,1" Foreground="#2a3837" Background="#eee"
                                   materialDesign:HintAssist.Hint="メールアドレス"  Text="{Binding Publisher_email, UpdateSourceTrigger=PropertyChanged}">
                     </TextBox>
-                    <TextBox TabIndex="3" Grid.Row="3" Width="250" Height="36" HorizontalAlignment="Left" Margin="20,0,0,0" Foreground="#2a3837" Background="#eee"
+                    <TextBox TabIndex="3" Grid.Row="3" Width="250" Height="36" HorizontalAlignment="Left" Margin="-30,1,0,1" Foreground="#2a3837" Background="#eee"
               materialDesign:HintAssist.Hint="電話番号"  Text="{Binding Publisher_Phone, UpdateSourceTrigger=PropertyChanged}">
                     </TextBox>
                 </Grid>
             </Grid>
             <Grid Grid.Row="2">
-                <Button  BorderBrush="#b0816f" Background="#b0816f" Width="90" Height="40" FontSize="16" HorizontalAlignment="Center" Margin="0,0,30,0"
+                <Button  BorderBrush="#b0816f" Background="#b0816f" Width="90" Height="40" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,0"
                          Command="{Binding Add_PushlisherCommand}" CommandParameter="{Binding ElementName=pushlisher_add}" Content="登録"></Button>
             </Grid>
         </Grid>
