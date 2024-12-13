@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KF31_図書館システム版3._0.Employ"
-                                                            mc:Ignorable="d"
+                                                                  mc:Ignorable="d"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:uc="clr-namespace:KF31_図書館システム版3._0.UserControl_KF31"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -50,6 +50,7 @@
                 <DatePicker VerticalAlignment="Center" SelectedDate="{Binding LastLogin}" Width="70" Margin="5 -6 5 -7" materialDesign:HintAssist.Hint="最後ログイン" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
                 <Button Margin="20,10,0,0" Width="100" BorderBrush="#b0816f" Background="#b0816f" 
                         Command="{Binding Search_Command}" CommandParameter="{Binding ElementName=list_employ}" Content="検索"></Button>
+                <Button Margin="20,10,0,0" Width="100" BorderBrush="#b0816f" Background="#b0816f" Content="戻る"></Button>
 
             </WrapPanel>
         </materialDesign:Card >
