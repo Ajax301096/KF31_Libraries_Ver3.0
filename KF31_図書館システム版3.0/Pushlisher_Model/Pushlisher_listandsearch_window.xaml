@@ -40,12 +40,13 @@
         <materialDesign:Card Grid.Row="1" Margin="5" Background="#F2F2F2">
             <WrapPanel Margin="0 10 0 10">
                 <ComboBox Margin="5 5 15 5" DisplayMemberPath="PublisherID" ItemsSource="{Binding Pushlisher}" SelectedItem="{Binding Select_PusID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                materialDesign:HintAssist.Hint="出版社ID" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}" ></ComboBox>
+             materialDesign:HintAssist.Hint="出版社ID" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}" ></ComboBox>
                 <TextBox Text="{Binding PublisherName, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="出版社名" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 <TextBox Text="{Binding Publisher_email, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="メールアドレス" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 <TextBox Text="{Binding Publisher_Phone, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="電話番号" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 <Button Margin="20,10,0,0" Width="100" BorderBrush="#b0816f" Background="#b0816f" 
-                        Command="{Binding Search_PushlisherCommand}" Content="検索"></Button>
+                     Command="{Binding Search_PushlisherCommand}" Content="検索"></Button>
+                <Button Margin="240,10,0,0" Width="100" BorderBrush="#b0816f" Background="#b0816f" Content="戻る"></Button>
 
             </WrapPanel>
         </materialDesign:Card >
