@@ -126,6 +126,11 @@ namespace KF31_図書館システム版3._0.ViewModel
                 if (SelectBook != null)
                 {
                     Title = SelectBook.Book_table.Book_title;
+                    var stockitem = DataProvider.Ins.Db.Stock_table.Where(x => x.BookID == SelectBook.BookID && x.LibratyID == Employ_Data.Instance.LibratyID).FirstOrDefault();
+                    if(stockitem != null)
+                    {
+                        MaxOutValue = stockitem.Quantity;
+                    }
                     var checkitem = DataProvider.Ins.Db.StockOut_Detail_table.FirstOrDefault(x => x.BookID == SelectBook.BookID && x.StockOut_ID == SelectStockOut.StockOut_ID);
                     if (checkitem != null)
                     {
@@ -136,22 +141,6 @@ namespace KF31_図書館システム版3._0.ViewModel
                 }
             }
         }
-        //private StockOut_Detail_table _SelectItem { get; set; }
-        //public StockOut_Detail_table SelectItem
-        //{
-        //    get => _SelectItem;
-        //    set
-        //    {
-        //        _SelectItem = value;
-        //        OnPropertyChanged();
-
-        //        if (SelectItem != null)
-        //        {
-
-        //            SelectBook.BookID = SelectItem.BookID;
-        //        }
-        //    }
-        //}
         private Libraty_table _SelectLibraty { get; set; }
         public Libraty_table SelectLibraty
         {
@@ -218,6 +207,8 @@ namespace KF31_図書館システム版3._0.ViewModel
 
             }
         }
+        private int? _MaxOutValue { get; set; }
+        public int? MaxOutValue { get => _MaxOutValue; set { _MaxOutValue = value;OnPropertyChanged(); } }
         //Window開くのコマンド
         public ICommand Add_WindowCommand { get; set; }
         public ICommand ListAndSearchWindowCommand { get; set; }
