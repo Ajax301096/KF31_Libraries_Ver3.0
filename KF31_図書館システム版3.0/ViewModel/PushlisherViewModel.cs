@@ -244,6 +244,11 @@ namespace KF31_図書館システム版3._0.ViewModel
                 {
                     return false;
                 }
+                var pushlisher = DataProvider.Ins.Db.Publisher_table.FirstOrDefault(x => x.PublisherID == Select_PusID.PublisherID);
+                if( PublisherName == pushlisher.PublisherName && Publisher_email == pushlisher.Publisher_email && Publisher_Phone == pushlisher.Publisher_Phone)
+                {
+                    return false;
+                }
                 return true;
             },
              (p) =>
