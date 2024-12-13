@@ -255,6 +255,12 @@ namespace KF31_図書館システム版3._0.ViewModel
                 {
                     return false;
                 }
+                var book = DataProvider.Ins.Db.Book_table.FirstOrDefault(x =>
+                     x.BookID == Selection_Book.BookID);
+                if(Title == Selection_Book.Book_title && Selection_Category == Selection_Book.Category_table && Author == Selection_Book.Book_Author && Selection_Publisher == Selection_Book.Publisher_table)
+                {
+                    return false;
+                }
                 return true;
             },
 (p) =>
