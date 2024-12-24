@@ -94,6 +94,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Employ\Employ_Delete_Window.xaml.cs">
+      <DependentUpon>Employ_Delete_Window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Loan_Model\Loan_ListAndSearchWindow.xaml.cs">
       <DependentUpon>Loan_ListAndSearchWindow.xaml</DependentUpon>
     </Compile>
@@ -227,6 +230,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Employ\Add_Employ_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employ\Employ_Delete_Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

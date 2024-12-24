@@ -124,7 +124,9 @@ namespace KF31_図書館システム版3._0.ViewModel
         public ICommand PasswordChangedCommand_shin { get; set; }
         public ICommand PasswordChangedCommand_shin1 { get; set; }
         public ICommand Search_Command { get; set; }
-        public ICommand Delete_Command { get; set; }
+        public ICommand Delete_Window_Command { get; set; }
+        public ICommand Delete_Command {  get; set; }
+
         private BitmapImage _qrCodeImage;
         public BitmapImage QRCodeImage
         {
@@ -199,7 +201,7 @@ namespace KF31_図書館システム版3._0.ViewModel
                 p.Close();
                 update.ShowDialog();
             });
-            Delete_Command = new RelayCommand<Window>(
+            Delete_Window_Command = new RelayCommand<Window>(
                 (p) =>
                 {
                     if (Employ_Data.Instance.Possition_ID != "1_MNG")
@@ -211,7 +213,9 @@ namespace KF31_図書館システム版3._0.ViewModel
 
             (p) =>
             {
-               
+               Employ_Delete_Window delete=new Employ_Delete_Window();
+                p.Close();
+                delete.ShowDialog();
             });
             List_Employ_WindowCommand = new RelayCommand<Window>(
                 (p) =>
@@ -227,7 +231,38 @@ namespace KF31_図書館システム版3._0.ViewModel
                 p.Close();
                 listandsearch.ShowDialog();
             });
+            Delete_Command = new RelayCommand<Window>((p) =>
+            {
+                if (Select_EmID == null)
+                {
+                    return false;
+                }
+                return true;
+            },
 
+          (p) =>
+          {
+              
+              var item = DataProvider.Ins.Db.Employee_table.FirstOrDefault(x => x.EmployID == Select_EmID.EmployID && x.possitionID != "1_MNG");
+              if (item == null)
+              {
+                  MessageBox.Show("選択された社員IDは存在してませんまたは削除できません!", "報告",
+                     MessageBoxButton.OK, MessageBoxImage.Information);
+                  return;
+              }
+              var result = MessageBox.Show("削除してもよろしいでしょうか？", "確認",
+                  MessageBoxButton.OKCancel, MessageBoxImage.Question);
+              if (result == MessageBoxResult.Cancel)
+              {
+                  return;
+              }
+              item.Em_flag = 1;
+              DataProvider.Ins.Db.SaveChanges();
+              MessageBox.Show("削除完了!", "確認",
+                  MessageBoxButton.OK, MessageBoxImage.Information);
+              LoadWindow();
+
+          });
 
             PasswordChangedCommand_moto = new RelayCommand<PasswordBox>((p) => { return true; }, (p) => { Em_password_moto = p.Password; });
             PasswordChangedCommand_shin = new RelayCommand<PasswordBox>((p) => { return true; }, (p) => { Em_password_shin = p.Password; });

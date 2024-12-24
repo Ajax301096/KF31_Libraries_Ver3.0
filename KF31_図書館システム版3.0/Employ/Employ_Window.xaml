@@ -45,7 +45,7 @@
             <Button Content="一覧&#xD;&#xA;表示" HorizontalAlignment="Left" Height="84" Margin="380,129,0,0" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" VerticalAlignment="Top" Width="89" FontSize="22"
                     Command="{Binding List_Employ_WindowCommand}" CommandParameter="{Binding ElementName=employWindow}"/>
             <Button Content="削除" HorizontalAlignment="Left" Height="84" Margin="550,129,0,0" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" VerticalAlignment="Top" Width="89" FontSize="22"
-         Command="{Binding List_Employ_WindowCommand}" CommandParameter="{Binding ElementName=employWindow}"/>
+         Command="{Binding Delete_Window_Command}" CommandParameter="{Binding ElementName=employWindow}"/>
 
             <Label Content="社員" HorizontalAlignment="Left" Margin="275,31,0,0" Foreground="#4c6462" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
             <Label Content="管理" HorizontalAlignment="Left" Margin="346,31,0,0" Foreground="#4c6462" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
