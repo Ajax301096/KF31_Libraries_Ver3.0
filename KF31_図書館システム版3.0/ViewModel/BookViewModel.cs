@@ -388,7 +388,7 @@ namespace KF31_図書館システム版3._0.ViewModel
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
-                Filter = "Image Files (.jpeg;)|*.jpeg;"
+                Filter = "Image Files (*.jpg;*.jpeg)|*.jpg;*.jpeg"
             };
 
             if (openFileDialog.ShowDialog() == true)

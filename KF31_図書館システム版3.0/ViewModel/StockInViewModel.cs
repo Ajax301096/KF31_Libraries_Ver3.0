@@ -454,7 +454,6 @@ namespace KF31_図書館システム版3._0.ViewModel
                           DataProvider.Ins.Db.SaveChanges();
 
                           LoadWindow();
-                          DataProvider.Ins.Db.Dispose();
 
                       }
                   }

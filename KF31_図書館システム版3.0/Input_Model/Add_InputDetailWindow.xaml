@@ -66,7 +66,7 @@
                             HorizontalAlignment="Left"
                             Command="{Binding Add_InputCommand}">新規</Button>
                         <Button Margin="300,0,0,0" Width="50" BorderBrush="#b0816f" Background="#b0816f"
-Command="{Binding ClearCommand}">
+                            Command="{Binding ClearCommand}">
                             <materialDesign:PackIcon Kind="Broom" />
                         </Button>
                     </Grid>
