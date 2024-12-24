@@ -22,8 +22,8 @@ namespace KF31_図書館システム版3._0.Model
         public string EmployID { get; set; }
         public Nullable<System.DateTime> Upload_Date { get; set; }
     
-        public virtual Employee_table Employee_table { get; set; }
         public virtual Status_table Status_table { get; set; }
         public virtual Yoyaku_table Yoyaku_table { get; set; }
+        public virtual Employee_table Employee_table { get; set; }
     }
 }

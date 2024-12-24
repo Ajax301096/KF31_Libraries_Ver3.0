@@ -29,6 +29,7 @@ namespace KF31_図書館システム版3._0.Model
         public string PublisherID { get; set; }
         public string Book_Image { get; set; }
         public string Book_BarCode { get; set; }
+        public Nullable<int> Book_flag { get; set; }
     
         public virtual Category_table Category_table { get; set; }
         public virtual Publisher_table Publisher_table { get; set; }

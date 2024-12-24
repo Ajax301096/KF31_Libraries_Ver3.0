@@ -20,8 +20,8 @@ namespace KF31_図書館システム版3._0.Model
         public string EmployID { get; set; }
         public Nullable<int> StockIn_Quantity { get; set; }
     
+        public virtual StockIN_Table StockIN_Table { get; set; }
         public virtual Book_table Book_table { get; set; }
         public virtual Employee_table Employee_table { get; set; }
-        public virtual StockIN_Table StockIN_Table { get; set; }
     }
 }

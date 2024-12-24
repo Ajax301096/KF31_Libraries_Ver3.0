@@ -78,8 +78,8 @@ namespace KF31_図書館システム版3._0.ViewModel
         public PushlisherViewModel()
         {
 
-            Pushlisher = new ObservableCollection<Publisher_table>(DataProvider.Ins.Db.Publisher_table);
-            PushlisherList = new ObservableCollection<Publisher_table>(DataProvider.Ins.Db.Publisher_table);
+            Pushlisher = new ObservableCollection<Publisher_table>(DataProvider.Ins.Db.Publisher_table.Where(x => x.Publisher_flag == 0));
+            PushlisherList = new ObservableCollection<Publisher_table>(DataProvider.Ins.Db.Publisher_table.Where(x => x.Publisher_flag == 0));
             //Window開くコマンド
             BackMainCommand = new RelayCommand<Window>((p) => { return true; },
             (p) =>
@@ -139,7 +139,7 @@ namespace KF31_図書館システム版3._0.ViewModel
          (p) =>
          {
              LoadWindow();
-             PushlisherList = new ObservableCollection<Publisher_table>(DataProvider.Ins.Db.Publisher_table);
+             PushlisherList = new ObservableCollection<Publisher_table>(DataProvider.Ins.Db.Publisher_table.Where(x => x.Publisher_flag == 0));
              Pushlisher_listandsearch_window listandsearch = new Pushlisher_listandsearch_window();
              p.Close();
              listandsearch.ShowDialog();
@@ -208,7 +208,8 @@ namespace KF31_図書館システム版3._0.ViewModel
                         PublisherID = PublisherID,
                         PublisherName = PublisherName,
                         Publisher_email = Publisher_email,
-                        Publisher_Phone = Publisher_Phone
+                        Publisher_Phone = Publisher_Phone,
+                        Publisher_flag = 0
                     };
                     DataProvider.Ins.Db.Publisher_table.Add(add_pushlisher);
                     DataProvider.Ins.Db.SaveChanges();
@@ -318,7 +319,7 @@ namespace KF31_図書館システム版3._0.ViewModel
         }
         public void LoadWindow()
         {
-            Pushlisher = new ObservableCollection<Publisher_table>(DataProvider.Ins.Db.Publisher_table);
+            Pushlisher = new ObservableCollection<Publisher_table>(DataProvider.Ins.Db.Publisher_table.Where(x=>x.Publisher_flag==0));
 
             PublisherID = string.Empty;
             PublisherName = string.Empty;

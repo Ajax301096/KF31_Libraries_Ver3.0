@@ -70,7 +70,7 @@ namespace KF31_図書館システム版3._0.ViewModel
              */
 
             string passEncode = MD5Hash(Base64Encode(PassWord));
-            var Employ = DataProvider.Ins.Db.Employee_table.FirstOrDefault(x => x.Em_userName == UserName && x.Em_password == passEncode);
+            var Employ = DataProvider.Ins.Db.Employee_table.FirstOrDefault(x => x.Em_userName == UserName && x.Em_password == passEncode && x.Em_flag == 0);
 
 
             if (Employ != null)

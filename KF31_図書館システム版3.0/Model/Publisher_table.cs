@@ -24,6 +24,7 @@ namespace KF31_図書館システム版3._0.Model
         public string PublisherName { get; set; }
         public string Publisher_email { get; set; }
         public string Publisher_Phone { get; set; }
+        public Nullable<int> Publisher_flag { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Book_table> Book_table { get; set; }

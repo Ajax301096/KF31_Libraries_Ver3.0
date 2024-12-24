@@ -114,9 +114,9 @@ namespace KF31_図書館システム版3._0.ViewModel
                 });
             Employ_Data.Instance.CheckStatusYoyaku();
             Category = new ObservableCollection<Category_table>(DataProvider.Ins.Db.Category_table);
-            Publisher = new ObservableCollection<Publisher_table>(DataProvider.Ins.Db.Publisher_table);
-            Books = new ObservableCollection<Book_table>(DataProvider.Ins.Db.Book_table);
-            BooksList = new ObservableCollection<Book_table>(DataProvider.Ins.Db.Book_table);
+            Publisher = new ObservableCollection<Publisher_table>(DataProvider.Ins.Db.Publisher_table.Where(x=>x.Publisher_flag==0));
+            Books = new ObservableCollection<Book_table>(DataProvider.Ins.Db.Book_table.Where(x => x.Book_flag == 0));
+            BooksList = new ObservableCollection<Book_table>(DataProvider.Ins.Db.Book_table.Where(x => x.Book_flag == 0));
 
 
             //Window開くコマンド
@@ -156,7 +156,7 @@ namespace KF31_図書館システム版3._0.ViewModel
             (p) =>
             {
                 LoadWindow();
-                BooksList = new ObservableCollection<Book_table>(DataProvider.Ins.Db.Book_table);
+                BooksList = new ObservableCollection<Book_table>(DataProvider.Ins.Db.Book_table.Where(x => x.Book_flag == 0));
                 Book_ListAndSearch_WIndow booklist = new Book_ListAndSearch_WIndow();
                 p.Close();
                 booklist.ShowDialog();
@@ -236,7 +236,8 @@ namespace KF31_図書館システム版3._0.ViewModel
                     PublisherID = Selection_Publisher.PublisherID,
                     CategoryID = Selection_Category.CategoryID,
                     Book_BarCode = GenerateBarcode(DateTime.Now.Year.ToString() + Selection_Category.CategoryID + category_count.ToString()),
-                    Book_Image = ImageFileName
+                    Book_Image = ImageFileName,
+                    Book_flag = 0
                 };
                 DataProvider.Ins.Db.Book_table.Add(item);
                 DataProvider.Ins.Db.SaveChanges();
@@ -428,7 +429,7 @@ namespace KF31_図書館システム版3._0.ViewModel
         }
         public void LoadWindow()
         {
-            Books = new ObservableCollection<Book_table>(DataProvider.Ins.Db.Book_table);
+            Books = new ObservableCollection<Book_table>(DataProvider.Ins.Db.Book_table.Where(x=>x.Book_flag==0));
             Selection_Book = null;
             Selection_Category = null;
             Selection_Publisher = null;

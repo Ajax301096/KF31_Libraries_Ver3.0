@@ -25,12 +25,9 @@ namespace KF31_図書館システム版3._0.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Book_table> Book_table { get; set; }
         public virtual DbSet<Category_table> Category_table { get; set; }
-        public virtual DbSet<Employee_table> Employee_table { get; set; }
         public virtual DbSet<Libraty_table> Libraty_table { get; set; }
         public virtual DbSet<Possition_table> Possition_table { get; set; }
-        public virtual DbSet<Publisher_table> Publisher_table { get; set; }
         public virtual DbSet<Status_table> Status_table { get; set; }
         public virtual DbSet<Stock_table> Stock_table { get; set; }
         public virtual DbSet<StockIn_Detail_table> StockIn_Detail_table { get; set; }
@@ -40,5 +37,8 @@ namespace KF31_図書館システム版3._0.Model
         public virtual DbSet<User_table> User_table { get; set; }
         public virtual DbSet<Yoyaku_table> Yoyaku_table { get; set; }
         public virtual DbSet<Lend_table> Lend_table { get; set; }
+        public virtual DbSet<Publisher_table> Publisher_table { get; set; }
+        public virtual DbSet<Book_table> Book_table { get; set; }
+        public virtual DbSet<Employee_table> Employee_table { get; set; }
     }
 }

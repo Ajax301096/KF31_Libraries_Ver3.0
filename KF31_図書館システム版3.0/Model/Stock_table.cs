@@ -25,9 +25,9 @@ namespace KF31_図書館システム版3._0.Model
         public Nullable<int> Quantity { get; set; }
         public string LibratyID { get; set; }
     
-        public virtual Book_table Book_table { get; set; }
         public virtual Libraty_table Libraty_table { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Yoyaku_table> Yoyaku_table { get; set; }
+        public virtual Book_table Book_table { get; set; }
     }
 }

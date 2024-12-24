@@ -136,8 +136,8 @@ namespace KF31_図書館システム版3._0.ViewModel
         {
 
             Possitions = new ObservableCollection<Possition_table>(DataProvider.Ins.Db.Possition_table);
-            Employs = new ObservableCollection<Employee_table>(DataProvider.Ins.Db.Employee_table);
-            EmploysList = new ObservableCollection<Employee_table>(DataProvider.Ins.Db.Employee_table);
+            Employs = new ObservableCollection<Employee_table>(DataProvider.Ins.Db.Employee_table.Where(x=>x.Em_flag==0));
+            EmploysList = new ObservableCollection<Employee_table>(DataProvider.Ins.Db.Employee_table.Where(x => x.Em_flag == 0));
 
             LoadedWindowCommand = new RelayCommand<Window>((p) => { return true; },
                 (p) =>
@@ -207,7 +207,7 @@ namespace KF31_図書館システム版3._0.ViewModel
             (p) =>
             {
                 LoadWindow();
-                EmploysList = new ObservableCollection<Employee_table>(DataProvider.Ins.Db.Employee_table);
+                EmploysList = new ObservableCollection<Employee_table>(DataProvider.Ins.Db.Employee_table.Where(x => x.Em_flag == 0));
                 Employ_ListandSearch_Window listandsearch = new Employ_ListandSearch_Window();
                 p.Close();
                 listandsearch.ShowDialog();
@@ -319,6 +319,7 @@ namespace KF31_図書館システム版3._0.ViewModel
             Em_Address = Em_Address,
             Em_DisplayName = Em_DisplayName,
             Em_Lastlogin = DateTime.Now,
+            Em_flag = 0,
             Em_BarCode = GenerateEmployeeQRCode(EmployID, Em_DisplayName, Select_Possition.possitionName, Em_Email, "000000")
 
 
@@ -556,7 +557,7 @@ namespace KF31_図書館システム版3._0.ViewModel
         public void LoadWindow()
         {
             Possitions = new ObservableCollection<Possition_table>(DataProvider.Ins.Db.Possition_table);
-            Employs = new ObservableCollection<Employee_table>(DataProvider.Ins.Db.Employee_table);
+            Employs = new ObservableCollection<Employee_table>(DataProvider.Ins.Db.Employee_table.Where(x => x.Em_flag == 0));
 
             Select_EmID = null;
             EmployID = null;
