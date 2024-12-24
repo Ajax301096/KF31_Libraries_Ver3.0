@@ -376,7 +376,7 @@ namespace KF31_図書館システム版3._0.ViewModel
               {
                   return;
               }
-              DataProvider.Ins.Db.Book_table.Remove(item);
+              item.Book_flag = 1;
               DataProvider.Ins.Db.SaveChanges();
               MessageBox.Show("削除完了!", "確認",
                   MessageBoxButton.OK, MessageBoxImage.Information);

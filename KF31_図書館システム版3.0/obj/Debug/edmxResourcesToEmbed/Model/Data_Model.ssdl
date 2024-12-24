@@ -11,6 +11,7 @@
     <Property Name="PublisherID" Type="varchar" MaxLength="50" />
     <Property Name="Book_Image" Type="varchar" MaxLength="50" />
     <Property Name="Book_BarCode" Type="nvarchar(max)" />
+    <Property Name="Book_flag" Type="int" />
   </EntityType>
   <EntityType Name="Category_table">
     <Key>
@@ -34,6 +35,7 @@
     <Property Name="Em_DisplayName" Type="nvarchar(max)" />
     <Property Name="Em_BarCode" Type="nvarchar(max)" />
     <Property Name="Em_Lastlogin" Type="datetime" />
+    <Property Name="Em_flag" Type="int" />
   </EntityType>
   <EntityType Name="Lend_table">
     <Key>
@@ -70,6 +72,7 @@
     <Property Name="PublisherName" Type="nvarchar" MaxLength="255" />
     <Property Name="Publisher_email" Type="varchar" MaxLength="255" />
     <Property Name="Publisher_Phone" Type="varchar" MaxLength="13" />
+    <Property Name="Publisher_flag" Type="int" />
   </EntityType>
   <EntityType Name="Status_table">
     <Key>
@@ -152,7 +155,7 @@
     <Property Name="Yoyaku_Barcode" Type="varchar(max)" />
     <Property Name="start_time" Type="datetime" />
   </EntityType>
-  <Association Name="FK__Book_tabl__Categ__4CA06362">
+  <Association Name="FK__Book_tabl__Book___4CA06362">
     <End Role="Category_table" Type="Self.Category_table" Multiplicity="0..1" />
     <End Role="Book_table" Type="Self.Book_table" Multiplicity="*" />
     <ReferentialConstraint>
@@ -408,7 +411,7 @@
     <EntitySet Name="StockOut_table" EntityType="Self.StockOut_table" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User_table" EntityType="Self.User_table" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Yoyaku_table" EntityType="Self.Yoyaku_table" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Book_tabl__Categ__4CA06362" Association="Self.FK__Book_tabl__Categ__4CA06362">
+    <AssociationSet Name="FK__Book_tabl__Book___4CA06362" Association="Self.FK__Book_tabl__Book___4CA06362">
       <End Role="Category_table" EntitySet="Category_table" />
       <End Role="Book_table" EntitySet="Book_table" />
     </AssociationSet>

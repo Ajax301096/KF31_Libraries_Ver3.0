@@ -1,41 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="KF31_LliM5_DataBaseModelStoreContainer" CdmEntityContainer="KF31_LliM5_DataBaseEntities">
-    <EntitySetMapping Name="Book_table">
-      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.Book_table">
-        <MappingFragment StoreEntitySet="Book_table">
-          <ScalarProperty Name="BookID" ColumnName="BookID" />
-          <ScalarProperty Name="Book_title" ColumnName="Book_title" />
-          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-          <ScalarProperty Name="Book_Author" ColumnName="Book_Author" />
-          <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
-          <ScalarProperty Name="Book_Image" ColumnName="Book_Image" />
-          <ScalarProperty Name="Book_BarCode" ColumnName="Book_BarCode" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Category_table">
       <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.Category_table">
         <MappingFragment StoreEntitySet="Category_table">
           <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
           <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Employee_table">
-      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.Employee_table">
-        <MappingFragment StoreEntitySet="Employee_table">
-          <ScalarProperty Name="EmployID" ColumnName="EmployID" />
-          <ScalarProperty Name="possitionID" ColumnName="possitionID" />
-          <ScalarProperty Name="Em_userName" ColumnName="Em_userName" />
-          <ScalarProperty Name="Em_password" ColumnName="Em_password" />
-          <ScalarProperty Name="Em_Birthday" ColumnName="Em_Birthday" />
-          <ScalarProperty Name="Em_Hiredate" ColumnName="Em_Hiredate" />
-          <ScalarProperty Name="Em_Address" ColumnName="Em_Address" />
-          <ScalarProperty Name="Em_Email" ColumnName="Em_Email" />
-          <ScalarProperty Name="Em_DisplayName" ColumnName="Em_DisplayName" />
-          <ScalarProperty Name="Em_BarCode" ColumnName="Em_BarCode" />
-          <ScalarProperty Name="Em_Lastlogin" ColumnName="Em_Lastlogin" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -53,16 +23,6 @@
         <MappingFragment StoreEntitySet="Possition_table">
           <ScalarProperty Name="possitionID" ColumnName="possitionID" />
           <ScalarProperty Name="possitionName" ColumnName="possitionName" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Publisher_table">
-      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.Publisher_table">
-        <MappingFragment StoreEntitySet="Publisher_table">
-          <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
-          <ScalarProperty Name="PublisherName" ColumnName="PublisherName" />
-          <ScalarProperty Name="Publisher_email" ColumnName="Publisher_email" />
-          <ScalarProperty Name="Publisher_Phone" ColumnName="Publisher_Phone" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -165,6 +125,49 @@
           <ScalarProperty Name="Rental_Date" ColumnName="Rental_Date" />
           <ScalarProperty Name="YoyakuID" ColumnName="YoyakuID" />
           <ScalarProperty Name="Lend_ID" ColumnName="Lend_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Publisher_table">
+      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.Publisher_table">
+        <MappingFragment StoreEntitySet="Publisher_table">
+          <ScalarProperty Name="Publisher_flag" ColumnName="Publisher_flag" />
+          <ScalarProperty Name="Publisher_Phone" ColumnName="Publisher_Phone" />
+          <ScalarProperty Name="Publisher_email" ColumnName="Publisher_email" />
+          <ScalarProperty Name="PublisherName" ColumnName="PublisherName" />
+          <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Book_table">
+      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.Book_table">
+        <MappingFragment StoreEntitySet="Book_table">
+          <ScalarProperty Name="Book_flag" ColumnName="Book_flag" />
+          <ScalarProperty Name="Book_BarCode" ColumnName="Book_BarCode" />
+          <ScalarProperty Name="Book_Image" ColumnName="Book_Image" />
+          <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+          <ScalarProperty Name="Book_Author" ColumnName="Book_Author" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="Book_title" ColumnName="Book_title" />
+          <ScalarProperty Name="BookID" ColumnName="BookID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee_table">
+      <EntityTypeMapping TypeName="KF31_LliM5_DataBaseModel.Employee_table">
+        <MappingFragment StoreEntitySet="Employee_table">
+          <ScalarProperty Name="Em_flag" ColumnName="Em_flag" />
+          <ScalarProperty Name="Em_Lastlogin" ColumnName="Em_Lastlogin" />
+          <ScalarProperty Name="Em_BarCode" ColumnName="Em_BarCode" />
+          <ScalarProperty Name="Em_DisplayName" ColumnName="Em_DisplayName" />
+          <ScalarProperty Name="Em_Email" ColumnName="Em_Email" />
+          <ScalarProperty Name="Em_Address" ColumnName="Em_Address" />
+          <ScalarProperty Name="Em_Hiredate" ColumnName="Em_Hiredate" />
+          <ScalarProperty Name="Em_Birthday" ColumnName="Em_Birthday" />
+          <ScalarProperty Name="Em_password" ColumnName="Em_password" />
+          <ScalarProperty Name="Em_userName" ColumnName="Em_userName" />
+          <ScalarProperty Name="possitionID" ColumnName="possitionID" />
+          <ScalarProperty Name="EmployID" ColumnName="EmployID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -124,6 +124,7 @@ namespace KF31_図書館システム版3._0.ViewModel
         public ICommand PasswordChangedCommand_shin { get; set; }
         public ICommand PasswordChangedCommand_shin1 { get; set; }
         public ICommand Search_Command { get; set; }
+        public ICommand Delete_Command { get; set; }
         private BitmapImage _qrCodeImage;
         public BitmapImage QRCodeImage
         {
@@ -197,6 +198,20 @@ namespace KF31_図書館システム版3._0.ViewModel
                 Update_Window update = new Update_Window();
                 p.Close();
                 update.ShowDialog();
+            });
+            Delete_Command = new RelayCommand<Window>(
+                (p) =>
+                {
+                    if (Employ_Data.Instance.Possition_ID != "1_MNG")
+                    {
+                        return false;
+                    }
+                    return true;
+                },
+
+            (p) =>
+            {
+               
             });
             List_Employ_WindowCommand = new RelayCommand<Window>(
                 (p) =>
