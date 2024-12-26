@@ -211,3 +211,5 @@ C:\Users\C2175\Source\Repos\KF31_Libraries_Ver3.0\KF31_図書館システム版3
 >>>>>>> f4836f5165ba01102f663633099929dc11a86fef
 C:\Users\hoany\OneDrive\Máy tính\各部の提出宿題\システム開発演習２\KF31_図書館システム版3.0\KF31_図書館システム版3.0\obj\Debug\Employ\Employ_Delete_Window.g.cs
 C:\Users\hoany\OneDrive\Máy tính\各部の提出宿題\システム開発演習２\KF31_図書館システム版3.0\KF31_図書館システム版3.0\obj\Debug\Employ\Employ_Delete_Window.baml
+C:\Users\hoany\OneDrive\Máy tính\各部の提出宿題\システム開発演習２\KF31_図書館システム版3.0\KF31_図書館システム版3.0\obj\Debug\Pushlisher_Model\Pushlisher_Delete.g.cs
+C:\Users\hoany\OneDrive\Máy tính\各部の提出宿題\システム開発演習２\KF31_図書館システム版3.0\KF31_図書館システム版3.0\obj\Debug\Pushlisher_Model\Pushlisher_Delete.baml

@@ -33,12 +33,15 @@
         </Grid>
         <Grid Grid.Row="1" Background="#F2F2F2">
             <Rectangle Width="750" Height="350" Fill="#E6E1DD" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Button Content="登録" HorizontalAlignment="Left" Height="116" Margin="163,177,0,0" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" VerticalAlignment="Top" Width="114" FontSize="40" 
+            <Button Content="登録" HorizontalAlignment="Left" Height="116" Margin="60,177,0,0" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" VerticalAlignment="Top" Width="114" FontSize="40" 
                     Command="{Binding Add_Pushlisher_WindowCommand}" CommandParameter="{Binding ElementName=pushliser}"/>
-            <Button Content="更新" HorizontalAlignment="Center" Height="116" Margin="0,177,0,0" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" VerticalAlignment="Top" Width="114" FontSize="40" 
+            <Button Content="更新" HorizontalAlignment="Left" Height="116" Margin="230,177,0,0" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" VerticalAlignment="Top" Width="114" FontSize="40" 
                     Command="{Binding Update_Pushlisher_WindowCommand}" CommandParameter="{Binding ElementName=pushliser}"/>
-            <Button Content="一覧&#xD;&#xA;表示" HorizontalAlignment="Left" Height="116" Margin="522,177,0,0" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" VerticalAlignment="Top" Width="114" FontSize="40" 
+            <Button Content="一覧&#xD;&#xA;表示" HorizontalAlignment="Left" Height="116" Margin="400,177,0,0" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" VerticalAlignment="Top" Width="114" FontSize="40" 
                     Command="{Binding ListandSearch_Pushlisher_WindowCommand}" CommandParameter="{Binding ElementName=pushliser}"/>
+            <Button Content="削除" HorizontalAlignment="Left" Height="116" Margin="580,177,0,0" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" VerticalAlignment="Top" Width="114" FontSize="40" 
+         Command="{Binding Delete_WindowCommand}" CommandParameter="{Binding ElementName=pushliser}"/>
+
             <Label Content="出版社管理" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,29,0,0" VerticalAlignment="Top" FontSize="40" Foreground="#4C6462" Height="52" Width="208" />
 
         </Grid>

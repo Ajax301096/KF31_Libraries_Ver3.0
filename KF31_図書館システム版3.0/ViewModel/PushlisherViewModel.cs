@@ -70,10 +70,12 @@ namespace KF31_図書館システム版3._0.ViewModel
         public ICommand Add_Pushlisher_WindowCommand { get; set; }
         public ICommand Update_Pushlisher_WindowCommand { get; set; }
         public ICommand ListandSearch_Pushlisher_WindowCommand { get; set; }
+        public ICommand Delete_WindowCommand { get; set; }
         //機能処理コマンド
         public ICommand Add_PushlisherCommand { get; set; }
         public ICommand Update_PushlisherCommand { get; set; }
         public ICommand Search_PushlisherCommand { get; set; }
+        public ICommand Delete_PushlisherCommand { get; set; }
 
         public PushlisherViewModel()
         {
@@ -111,6 +113,22 @@ namespace KF31_図書館システム版3._0.ViewModel
             {
                 LoadWindow();
                 Pushlisher_Add_window pushadd = new Pushlisher_Add_window();
+                p.Close();
+                pushadd.ShowDialog();
+            }
+            );
+            Delete_WindowCommand = new RelayCommand<Window>((p) =>
+            {
+                if (Employ_Data.Instance.Possition_ID != "1_MNG")
+                {
+                    return false;
+                }
+                return true;
+            },
+            (p) =>
+            {
+                LoadWindow();
+                Pushlisher_Delete pushadd = new Pushlisher_Delete();
                 p.Close();
                 pushadd.ShowDialog();
             }
@@ -290,6 +308,60 @@ namespace KF31_図書館システム版3._0.ViewModel
 
              }
              );
+            Delete_PushlisherCommand = new RelayCommand<Window>((p) =>
+            {
+                if (Select_PusID == null)
+                {
+                    return false;
+                }
+                //出版社名
+                if (String.IsNullOrEmpty(PublisherName))
+                {
+                    return false;
+                }
+
+                //メール
+                if (String.IsNullOrEmpty(Publisher_email))
+                {
+                    return false;
+                }
+
+                //電話番号
+                if (String.IsNullOrEmpty(Publisher_Phone))
+                {
+                    return false;
+                }               
+                return true;
+            },
+            (p) =>
+            {
+                var checkitem = DataProvider.Ins.Db.Book_table.Where(x => x.Book_flag == 0 && x.PublisherID == Select_PusID.PublisherID).Count();
+                if (checkitem != 0)
+                {
+                    MessageBox.Show("選択された出版社IDは本テーブルに連携していますので、削除できません！", "報告",
+                   MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
+                }
+                var result = MessageBox.Show("削除してもよろしいでしょうか？", "確認",
+                MessageBoxButton.OKCancel, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Cancel)
+                {
+                    return;
+                }
+                var Push_item = DataProvider.Ins.Db.Publisher_table.Where(x => x.PublisherID == Select_PusID.PublisherID).FirstOrDefault();
+                if (Push_item != null)
+                {
+                    Push_item.Publisher_flag = 1;
+                }
+                DataProvider.Ins.Db.SaveChanges();
+                MessageBox.Show("削除完了しました！", "報告",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+                OnPropertyChanged("Pushlisher");
+                LoadWindow();
+
+
+            }
+            );
             Search_PushlisherCommand = new RelayCommand<Window>(
             (p) =>
             {

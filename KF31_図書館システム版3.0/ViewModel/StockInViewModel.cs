@@ -543,7 +543,7 @@ namespace KF31_図書館システム版3._0.ViewModel
             Status = new ObservableCollection<Status_table>(DataProvider.Ins.Db.Status_table.Where(x => x.statusID == "YT01" || x.statusID == "NKR01" || x.statusID == "KS01"));
             StockIn = new ObservableCollection<StockIN_Table>(DataProvider.Ins.Db.StockIN_Table);
             StockInSearch = new ObservableCollection<StockIN_Table>(DataProvider.Ins.Db.StockIN_Table);
-            Books = new ObservableCollection<Book_table>(DataProvider.Ins.Db.Book_table);
+            Books = new ObservableCollection<Book_table>(DataProvider.Ins.Db.Book_table.Where(x=>x.Book_flag == 0));
             StockInDetailList = new ObservableCollection<StockIn_Detail_table>(DataProvider.Ins.Db.StockIn_Detail_table);
             StockInDetail = new ObservableCollection<StockIn_Detail_table>(DataProvider.Ins.Db.StockIn_Detail_table);
 
@@ -560,7 +560,7 @@ namespace KF31_図書館システム版3._0.ViewModel
             Employ_Data.Instance.CheckStatusYoyaku();
             Status = new ObservableCollection<Status_table>(DataProvider.Ins.Db.Status_table.Where(x => x.statusID == "YT01" || x.statusID == "NKR01" || x.statusID == "KS01"));
             StockIn = new ObservableCollection<StockIN_Table>(DataProvider.Ins.Db.StockIN_Table);
-            Books = new ObservableCollection<Book_table>(DataProvider.Ins.Db.Book_table);
+            Books = new ObservableCollection<Book_table>(DataProvider.Ins.Db.Book_table.Where(x => x.Book_flag == 0));
             StockInDetailList = new ObservableCollection<StockIn_Detail_table>(DataProvider.Ins.Db.StockIn_Detail_table);
 
             StockInDetail.Clear();

@@ -175,6 +175,9 @@
     <Compile Include="Pushlisher_Model\Pushlisher_Add_window.xaml.cs">
       <DependentUpon>Pushlisher_Add_window.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pushlisher_Model\Pushlisher_Delete.xaml.cs">
+      <DependentUpon>Pushlisher_Delete.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pushlisher_Model\Pushlisher_listandsearch_window.xaml.cs">
       <DependentUpon>Pushlisher_listandsearch_window.xaml</DependentUpon>
     </Compile>
@@ -349,6 +352,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pushlisher_Model\Pushlisher_Add_window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pushlisher_Model\Pushlisher_Delete.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

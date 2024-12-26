@@ -48,29 +48,29 @@ FontFamily="{DynamicResource MaterialDesignFont}"
 
             <!-- 社員名とTextBox -->
             <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="35" Margin="63,209,0,0" TextWrapping="Wrap" Text=" 社員名"  VerticalAlignment="Top" Width="200" FontSize="23" FontWeight="Bold"/>
-            <TextBox TabIndex="0" Foreground="#2a3837" Background="#eee" HorizontalAlignment="Left" Height="34" Margin="263,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="14"
-                      Text="{Binding Em_DisplayName, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <TextBlock  Foreground="#2a3837" Background="#eee" HorizontalAlignment="Left" Height="34" Margin="263,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="14"
+                   Padding="20,10,0,0"   Text="{Binding Em_DisplayName, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
 
 
             <!-- メールとTextBox -->
             <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="36" Margin="63,245,0,0" TextWrapping="Wrap" Text=" メール"  VerticalAlignment="Top" Width="200" FontSize="23" FontWeight="Bold"/>
-            <TextBox TabIndex="0" Foreground="#2a3837" Background="#eee" HorizontalAlignment="Left" Height="31" Margin="263,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" FontSize="14"
-                      Text="{Binding Em_Email, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <TextBlock  Foreground="#2a3837" Background="#eee" HorizontalAlignment="Left" Height="31" Margin="263,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" FontSize="14"
+                  Padding="20,10,0,0"    Text="{Binding Em_Email, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
 
             <!-- 入社年月日と日付一覧 -->
             <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="35" Margin="63,282,0,0" TextWrapping="Wrap" Text=" 入社年月日"  VerticalAlignment="Top" Width="200" FontSize="23" FontWeight="Bold"/>
-            <DatePicker TabIndex="7" HorizontalAlignment="Left" Height="30"  VerticalAlignment="Top" Width="132"
-             SelectedDate="{Binding Em_Hiredate, UpdateSourceTrigger=PropertyChanged}" Margin="263,284,0,0" />
+            <DatePicker IsEnabled="False" TabIndex="7" HorizontalAlignment="Left" Height="30"  VerticalAlignment="Top" Width="132"
+           Padding="20,10,0,0"  SelectedDate="{Binding Em_Hiredate, UpdateSourceTrigger=PropertyChanged}" Margin="263,284,0,0" />
 
             <!-- 住所とTextBox -->
             <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="35" Margin="63,318,0,0" TextWrapping="Wrap" Text=" 住所"  VerticalAlignment="Top" Width="200" FontSize="23" FontWeight="Bold"/>
-            <TextBox TabIndex="2" Foreground="#2a3837" Background="#f2f2f2" HorizontalAlignment="Left" Height="35" Margin="263,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="401" FontSize="14"
-                        Text="{Binding Em_Address, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <TextBlock  Foreground="#2a3837" Background="#f2f2f2" HorizontalAlignment="Left" Height="35" Margin="263,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="401" FontSize="14"
+                 Padding="20,10,0,0"       Text="{Binding Em_Address, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
 
             <!-- 役職とComboBox -->
             <TextBlock Padding="0,5,0,0" Foreground="#2a3837" Background="#cad2c5" HorizontalAlignment="Left" Height="35" Margin="63,354,0,0" TextWrapping="Wrap" Text=" 役職"  VerticalAlignment="Top" Width="200" FontSize="23" FontWeight="Bold"/>
             <ComboBox HorizontalAlignment="Left" Background="#eee" Margin="263,354,0,0" VerticalAlignment="Top" Width="160" Height="35"
-                        DisplayMemberPath="possitionName" ItemsSource="{Binding Possitions}" SelectedItem="{Binding Select_Possition, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+               Padding="20,0,0,0" IsEnabled="False"  DisplayMemberPath="possitionName" ItemsSource="{Binding Possitions}" SelectedItem="{Binding Select_Possition, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
             <!-- 更新ボタン -->
             <Button Content="削除" HorizontalAlignment="Left" FontSize="28" Margin="522,387,0,0" VerticalAlignment="Top" Width="117" BorderBrush="#b0816f" Foreground="#4c6462" Background="#F2F2F2" Height="56"
