@@ -50,10 +50,6 @@ namespace KF31_図書館システム版3._0.ViewModel
             Check_PasswordCommand = new RelayCommand<PasswordBox>((p) => { return true; }, (p) => { CheckPassword(p); });
 
 
-            ButtonVisibility = CheckIfDataExists() ? Visibility.Collapsed : Visibility.Visible;
-            //サンブルデータ登録
-
-
 
         }
         void Login(Window p)
@@ -98,46 +94,7 @@ namespace KF31_図書館システム版3._0.ViewModel
                 MessageBox.Show("ユーザ名またはパスワードが間違います！");
             }
         }
-
-        //データ存在するかどうかチェック
-        private bool CheckIfDataExists()
-        {
-
-            using (var context = new KF31_LliM5_DataBaseEntities())
-            {
-                //データ存在チェック
-                return context.Book_table.Any() ||
-                       context.Category_table.Any() ||
-                       context.Employee_table.Any() ||
-                       false;
-            }
-        }
-        private void DeleteAllData()
-        {
-            using (var context = new KF31_LliM5_DataBaseEntities())
-            {
-                // データを全部削除
-                context.Employee_table.RemoveRange(context.Employee_table);
-                context.Publisher_table.RemoveRange(context.Publisher_table);
-                context.Category_table.RemoveRange(context.Category_table);
-                context.Book_table.RemoveRange(context.Book_table);
-                context.Possition_table.RemoveRange(context.Possition_table);
-                context.Libraty_table.RemoveRange(context.Libraty_table);
-                context.StockIN_Table.RemoveRange(context.StockIN_Table);
-                context.StockIn_Detail_table.RemoveRange(context.StockIn_Detail_table);
-                context.StockOut_table.RemoveRange(context.StockOut_table);
-                context.StockOut_Detail_table.RemoveRange(context.StockOut_Detail_table);
-                context.Stock_table.RemoveRange(context.Stock_table);
-                context.User_table.RemoveRange(context.User_table);
-                context.Yoyaku_table.RemoveRange(context.Yoyaku_table);
-                context.Lend_table.RemoveRange(context.Lend_table);
-                context.Status_table.RemoveRange(context.Status_table);
-
-                context.SaveChanges(); // Lưu thay đổi vào cơ sở dữ liệu
-                MessageBox.Show("データ削除完了！");
-            }
-        }
-
+   
         public static string Base64Encode(string plainText)
         {
             var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
